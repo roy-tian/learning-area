@@ -1,0 +1,34 @@
+body {
+    -webkit-display: flex;
+    display: flex;
+}
+    
+.flex {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+    
+.flex-left {
+    flex: 1;
+    flex-grow: 1;
+    -webkit-flex: 1;
+    -webkit-flex-grow: 1;
+}
+    
+.flex-right {
+    flex: 2;
+    flex-grow: 2;
+    -webkit-flex: 2;
+    -webkit-flex-grow: 2;
+}
+    
+#test-target {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+#console-log {
+    overflow: auto;
+}

@@ -1,0 +1,22 @@
+body {
+    width: 640px;
+    margin: 0 auto;
+}
+.wrong {
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+.failed {
+    background-color: darkslateblue;
+    color: azure;
+}
+
+.higher {
+    background-color: indianred;
+    color: darkred;
+}
+
+.lower {
+    background-color: lightgreen;
+    color: seagreen;
+}

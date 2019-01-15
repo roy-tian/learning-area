@@ -1,0 +1,93 @@
+body {
+    width: 640px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.div-current {
+    height: 480px;
+    position: relative;
+}
+
+#div-full {
+    width: 100%;
+    height: 480px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../gallery/images/pic1.jpg");
+    transition-duration: .5s;
+    filter: brightness(1) blur(0px) grayscale(0);
+    z-index: 8;
+}
+
+.btn-img-op {
+    position: absolute;
+    top: 1em;
+    opacity: .5;
+    text-shadow: 1px 1px 1px white;
+    font-size: medium;
+    cursor: pointer;
+    transition-duration: .5s;
+    z-index: 9;
+}
+
+.btn-img-op:hover {
+    opacity: .8;
+}
+
+.btn-img-op:active {
+    opacity: .3;
+}
+
+#btn-brightness {
+    left: 1em;
+}
+
+#btn-blur {
+    left: 5em;
+}
+
+#btn-gray {
+    left: 9em;
+}
+
+.div-slide {
+    height: 96px;
+}
+
+.div-slide-item {
+    display: block;
+    height: 96px;
+    float: left;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+.div-slide-item:hover {
+    opacity: .5;
+}
+
+.div-slide-item:active {
+    opacity: .8;
+}
+
+.div-nav {
+    width: 10%;
+    background-color: gray;
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-thumb {
+    width: 20%;
+    background-size: 100% 100%;
+}
+

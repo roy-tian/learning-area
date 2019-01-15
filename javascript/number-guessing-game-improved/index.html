@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>猜数字游戏</title>
+</head>
+
+<body>
+    <h1>猜数字游戏</h1>
+    <p>
+        我手里有一张卡片上有一个 100 以内的自然数。<br>
+        看你能否在十次内猜出这个数字。<br>
+        每次挑战后我会告诉你刚猜的数字是高了还是低了。
+    </p>
+    <p>
+        <label for="guess">请输入一个数字：</label>
+        <input type="text" name="guess" id="guess" style="width: 5em"/>
+        <input type="button" value="我猜！" id="btn-guess" />
+        <input type="button" value="重新开始" id="btn-restart" />
+    </p>
+    <div id="logs"> </div>
+    <script src="main.js"></script>
+</body>
+</html>

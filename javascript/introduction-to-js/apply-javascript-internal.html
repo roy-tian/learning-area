@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>使用 JavaScript 的示例</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function createParagraph() {
+          var para = document.createElement('p');
+          para.textContent = '你点击了这个按钮！';
+          document.body.appendChild(para);
+        }
+
+        var buttons = document.querySelectorAll('button');
+
+        for(var i = 0; i < buttons.length ; i++) {
+          buttons[i].addEventListener('click', createParagraph);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button>点我呀</button>
+  </body>
+</html>
