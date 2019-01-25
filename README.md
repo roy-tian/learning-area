@@ -21,7 +21,7 @@ JavaScript 入门|什么是 JavaScript？|[代码](https://github.com/roy-tian/m
 ## 服务器端编程
 示例|章节|代码
 ---|:--:|---
-本地图书馆|Express 教程|[代码](https://github.com/roy-tian/mdn-examples/tree/master/server/local-library-express)
+本地图书馆|Express 教程|[代码](https://github.com/roy-tian/mdn-examples/tree/master/server/express-locallibrary-tutorial)
 
 ## 改进/衍生版本
 示例|代码|在线演示

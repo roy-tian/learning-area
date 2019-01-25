@@ -133,15 +133,70 @@ function createBooks(cb) {
             [genres[0],],
             callback
         ),
+        callback => bookCreate(
+            "The Wise Man's Fear (The Kingkiller Chronicle, #2)",
+            'Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.',
+            '9788401352836',
+            authors[0],
+            [genres[0],],
+            callback
+        ),
+        callback => bookCreate(
+            "The Slow Regard of Silent Things (Kingkiller Chronicle)",
+            'Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.',
+            '9780756411336',
+            authors[0],
+            [genres[0],],
+            callback
+        ),
+        callback => bookCreate(
+            "Apes and Angels",
+            "Humankind headed out to the stars not for conquest, nor exploration, nor even for curiosity. Humans went to the stars in a desperate crusade to save intelligent life wherever they found it. A wave of death is spreading through the Milky Way galaxy, an expanding sphere of lethal gamma ...",
+            '9780765379528',
+            authors[1],
+            [genres[1],],
+            callback
+        ),
+        callback => bookCreate(
+            "Death Wave",
+            "In Ben Bova's previous novel New Earth, Jordan Kell led the first human mission beyond the solar system. They discovered the ruins of an ancient alien civilization. But one alien AI survived, and it revealed to Jordan Kell that an explosion in the black hole at the heart of the Milky Way galaxy has created a wave of deadly radiation, expanding out from the core toward Earth. Unless the human race acts to save itself, all life on Earth will be wiped out...",
+            '9780765379504',
+            authors[1],
+            [genres[1],],
+            callback
+        )
     ], cb); // 可选回调
 }
-
 
 function createBookInstances(cb) {
     async.parallel([
         callback => bookInstanceCreate(
-            books[0], 'London Gollancz, 2014.', false, 'Available', callback
+            books[0], 'London Gollancz, 2014.', false, '可供借阅', callback
         ),
+        callback => bookInstanceCreate(
+            books[1], ' Gollancz, 2011.', false, '已借出', callback
+        ),
+        callback => bookInstanceCreate(
+            books[2], ' Gollancz, 2015.', false, false, callback
+        ),
+        callback => bookInstanceCreate(
+            books[3], 'New York Tom Doherty Associates, 2016.', false, '可供借阅', callback
+        ),
+        callback => bookInstanceCreate(
+            books[3], 'New York Tom Doherty Associates, 2016.', false, '可供借阅', callback
+        ),
+        callback => bookInstanceCreate(
+            books[3], 'New York Tom Doherty Associates, 2016.', false, '可供借阅', callback
+        ),
+        callback => bookInstanceCreate(
+            books[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, '可供借阅', callback
+        ),
+        callback => bookInstanceCreate(
+            books[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, '馆藏维护', callback
+        ),
+        callback => bookInstanceCreate(
+            books[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, '已借出', callback
+        )
     ], cb); // 可选回调
 }
 
