@@ -66,7 +66,7 @@ function bookCreate(title, summary, isbn, author, genre, cb) {
     title   : title,
     summary : summary,
     author  : author,
-    isbn  : isbn,
+    isbn    : isbn,
     genre   : (genre !== false) ? genre : undefined
   });
 
@@ -84,7 +84,7 @@ function bookCreate(title, summary, isbn, author, genre, cb) {
 
 function bookInstanceCreate(book, imprint, due_back, status, cb) {
   const bookInstance = new BookInstance({
-    book   : book,
+    book     : book,
     imprint  : imprint,
     due_back : (due_back !== false) ? due_back : undefined,
     status   : (status !== false) ? status : undefined
@@ -105,11 +105,11 @@ function bookInstanceCreate(book, imprint, due_back, status, cb) {
 
 function createGenres(cb) {
   async.parallel([
-    callback => genreCreate("奇幻", callback),
-    callback => genreCreate("科幻", callback),
-    callback => genreCreate("诗歌", callback),
-    callback => genreCreate("历史", callback),
-    callback => genreCreate("伦理", callback)
+    callback => genreCreate('奇幻', callback),
+    callback => genreCreate('科幻', callback),
+    callback => genreCreate('诗歌', callback),
+    callback => genreCreate('历史', callback),
+    callback => genreCreate('伦理', callback)
   ], cb); // 可选回调
 }
 
@@ -158,16 +158,16 @@ function createBooks(cb) {
       callback
     ), 
     callback => bookCreate(
-      "丰乳肥臀",
-      "记录百年中国风云变幻的恢宏“史诗”，经由一双婴儿的眼睛，目睹一个家族历的战争、贫穷、、荒淫。有爱有欲，有生有死，有人性的愚昧、贪婪，也有人情的温暖、博爱。无情，有情，疯癫——用一个故事看懂中国。",
+      '丰乳肥臀',
+      '记录百年中国风云变幻的恢宏“史诗”，经由一双婴儿的眼睛，目睹一个家族历的战争、贫穷、、荒淫。有爱有欲，有生有死，有人性的愚昧、贪婪，也有人情的温暖、博爱。无情，有情，疯癫——用一个故事看懂中国。',
       '9787533946630',
       authors[3],
       [genres[3],genres[4]],
       callback
     ),
     callback => bookCreate(
-      "Foundation",
-      "The Foundation series is Isaac Asimov’s iconic masterpiece. Unfolding against the backdrop of a crumbling Galactic Empire, the story of Hari Seldon’s two Foundations is a lasting testament to an extraordinary imagination, one whose unprecedented scale shaped science fiction as we know it today.",
+      'Foundation',
+      'The Foundation series is Isaac Asimov’s iconic masterpiece. Unfolding against the backdrop of a crumbling Galactic Empire, the story of Hari Seldon’s two Foundations is a lasting testament to an extraordinary imagination, one whose unprecedented scale shaped science fiction as we know it today.',
       '0008117497',
       authors[4],
       [genres[1],],

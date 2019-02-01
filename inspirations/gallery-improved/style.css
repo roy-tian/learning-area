@@ -19,7 +19,6 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("../gallery/images/pic1.jpg");
     transition-duration: .5s;
     filter: brightness(1) blur(0px) grayscale(0);
     z-index: 8;

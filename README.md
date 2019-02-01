@@ -8,7 +8,7 @@
 
 ## JavaScript
 示例|章节|代码|在线演示
----|:--:|:--:|---
+---|:---:|:---:|---
 JavaScript 入门|什么是 JavaScript？|[代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/introduction-to-js)|[在线演示](https://roy-tian.github.io/mdn-examples/javascript/introduction-to-js/javascript-label.html)
 猜数字游戏|JavsScript 初体验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/number-guessing-game)|[在线演示](https://roy-tian.github.io/mdn-examples/javascript/number-guessing-game/number-guessing-game.html)
 笑话机|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/silly-story-genarator)|[在线演示](https://roy-tian.github.io/mdn-examples/javascript/silly-story-genarator)
@@ -20,12 +20,12 @@ JavaScript 入门|什么是 JavaScript？|[代码](https://github.com/roy-tian/m
 
 ## 服务器端编程
 示例|章节|代码
----|:--:|---
+---|:---:|---
 本地图书馆|Express 教程|[代码](https://github.com/roy-tian/mdn-examples/tree/master/server/express-locallibrary-tutorial)
 
 ## 改进/衍生版本
 示例|代码|在线演示
----|:--:|---
+---|:---:|---
 猜数字游戏改进版|[代码](https://github.com/roy-tian/mdn-examples/tree/master/inspirations/number-guessing-game)|[在线演示](https://roy-tian.github.io/mdn-examples/inspirations/number-guessing-game-improved)
 照片库改进版|[代码](https://github.com/roy-tian/mdn-examples/tree/master/inspirations/gallery-improved)|[在线演示](https://roy-tian.github.io/mdn-examples/inspirations/gallery-improved)
 俄罗斯方块|[代码](https://github.com/roy-tian/mdn-examples/tree/master/inspirations/tetris)|[在线演示](https://roy-tian.github.io/mdn-examples/inspirations/tetris)
