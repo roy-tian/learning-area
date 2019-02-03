@@ -43,21 +43,21 @@
 
       // 开始编写 JavaScript 代码
 
-      var randomNumber = Math.floor(Math.random() * 100) + 1;
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-      var guesses = document.querySelector('.guesses');
-      var lastResult = document.querySelector('.lastResult');
-      var lowOrHi = document.querySelector('.lowOrHi');
+      const guesses = document.querySelector('.guesses');
+      const lastResult = document.querySelector('.lastResult');
+      const lowOrHi = document.querySelector('.lowOrHi');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const guessField = document.querySelector('.guessField');
 
-      var guessSubmit = document.querySelector('.guessSubmit');
-      var guessField = document.querySelector('.guessField');
-      var guessCount = 1;
-      var resetButton;
+      let guessCount = 1;
+      let resetButton;
 
       guessField.focus();
 
       function checkGuess() {
-        var userGuess = Number(guessField.value);
+        const userGuess = Number(guessField.value);
         if(guessCount === 1) {
           guesses.textContent = '上次猜的数: ';
         }
@@ -102,8 +102,8 @@
       function resetGame() {
         guessCount = 1;
 
-        var resetParas = document.querySelectorAll('.resultParas p');
-        for(var i = 0 ; i < resetParas.length ; i++) {
+        const resetParas = document.querySelectorAll('.resultParas p');
+        for(let i = 0 ; i < resetParas.length ; i++) {
           resetParas[i].textContent = '';
         }
 

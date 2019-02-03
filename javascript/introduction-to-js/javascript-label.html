@@ -25,10 +25,10 @@
     <p>玩家1：小明</p>
 
     <script>
-      var para = document.querySelector('p');
+      const para = document.querySelector('p');
       para.addEventListener('click', updateName);
       function updateName() {
-        var name = prompt('输入一个新的名字：');
+        const name = prompt('输入一个新的名字：');
         para.textContent = '玩家1：' + name;
       }
     </script>
