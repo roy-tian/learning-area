@@ -29,6 +29,6 @@
 
 |示例|代码|在线演示|
 |----|:----:|:----:|
-|猜数字游戏改进版|[代码](https://github.com/roy-tian/mdn-examples/tree/master/extras/number-guessing-game)|[在线演示](https://roy-tian.github.io/mdn-examples/extras/number-guessing-game-improved)|
+|猜数字游戏改进版|[代码](https://github.com/roy-tian/mdn-examples/tree/master/extras/number-guessing-game-improved)|[在线演示](https://roy-tian.github.io/mdn-examples/extras/number-guessing-game-improved)|
 |照片库改进版|[代码](https://github.com/roy-tian/mdn-examples/tree/master/extras/gallery-improved)|[在线演示](https://roy-tian.github.io/mdn-examples/extras/gallery-improved)|
 |俄罗斯方块|[代码](https://github.com/roy-tian/mdn-examples/tree/master/extras/tetris)|[在线演示](https://roy-tian.github.io/mdn-examples/extras/tetris)|
