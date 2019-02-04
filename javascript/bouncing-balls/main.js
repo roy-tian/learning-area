@@ -4,12 +4,15 @@ const BALL_SIZE_MAX = 20;
 const BALL_SPEED_MAX = 7;
 
 // 设定画布
-
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
+// 将画布窗尺寸置为窗口内尺寸
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
+
+// 定义一个数组来保存所有的球
+const balls = [];
 
 // 生成随机数的函数
 function random(min,max) {
@@ -80,9 +83,6 @@ Ball.prototype.collisionDetect = function() {
     }
   }
 };
-
-// 定义一个数组来保存所有的球
-const balls = [];
 
 // 定义一个循环来不停地播放
 function loop() {

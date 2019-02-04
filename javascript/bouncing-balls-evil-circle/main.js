@@ -8,6 +8,7 @@ const para = document.querySelector('p');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
+// 将画布窗尺寸置为窗口内尺寸
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
@@ -167,16 +168,16 @@ let count = 0;
 loop();
 
 // 生成随机数的函数
-function random(min,max) {
+function random(min, max) {
   return Math.floor(Math.random()*(max-min)) + min;
 }
 
 // 生成随机颜色的函数
 function randomColor() {
   return 'rgb(' +
-       random(0, 255) + ', ' +
-       random(0, 255) + ', ' +
-       random(0, 255) + ')';
+         random(0, 255) + ', ' +
+         random(0, 255) + ', ' +
+         random(0, 255) + ')';
 }
 
 // 定义一个循环来不停地播放
