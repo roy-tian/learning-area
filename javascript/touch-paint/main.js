@@ -1,8 +1,8 @@
-let ongoingTouches = [];
-let el = document.getElementById("canvas");
-let ctx = el.getContext("2d");
+const ongoingTouches = [];
+const el = document.getElementById("canvas");
+const ctx = el.getContext("2d");
 
-window.onload = function startup() {
+window.onload = () => {
   el.width = 600;
   el.height = 600;
   el.addEventListener("touchstart", handleStart, false);
@@ -15,14 +15,13 @@ window.onload = function startup() {
 function handleStart(evt) {
   evt.preventDefault();
   log("触摸开始。");
-  let touches = evt.changedTouches;
+  const touches = evt.changedTouches;
 
   for (let i = 0; i < touches.length; i++) {
     log("开始第 " + i + " 个触摸 ...");
     ongoingTouches.push(copyTouch(touches[i]));
-    let color = colorForTouch(touches[i]);
     ctx.beginPath();
-    ctx.fillStyle = color;
+    ctx.fillStyle = colorForTouch(touches[i]);
     ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false); 
     // 在起点画一个圆
     ctx.fill();
@@ -32,10 +31,10 @@ function handleStart(evt) {
 
 function handleMove(evt) {
   evt.preventDefault();
-  let touches = evt.changedTouches;
+  const touches = evt.changedTouches;
   for (let i = 0; i < touches.length; i++) {
-    let color = colorForTouch(touches[i]);
-    let idx = ongoingTouchIndexById(touches[i].identifier);
+    const color = colorForTouch(touches[i]);
+    const idx = ongoingTouchIndexById(touches[i].identifier);
     if (idx >= 0) {
       log("继续第 " + idx + " 个触摸。");
       ctx.beginPath();
@@ -59,10 +58,10 @@ function handleMove(evt) {
 function handleEnd(evt) {
   evt.preventDefault();
   log("触摸结束。");
-  let touches = evt.changedTouches;
+  const touches = evt.changedTouches;
   for (let i = 0; i < touches.length; i++) {
-    let color = colorForTouch(touches[i]);
-    let idx = ongoingTouchIndexById(touches[i].identifier);
+    const color = colorForTouch(touches[i]);
+    const idx = ongoingTouchIndexById(touches[i].identifier);
     if (idx >= 0) {
       ctx.lineWidth = 4;
       ctx.fillStyle = color;
@@ -81,10 +80,10 @@ function handleEnd(evt) {
 function handleCancel(evt) {
   evt.preventDefault();
   log("触摸取消。");
-  let touches = evt.changedTouches;
+  const touches = evt.changedTouches;
   
   for (let i = 0; i < touches.length; i++) {
-    let idx = ongoingTouchIndexById(touches[i].identifier);
+    const idx = ongoingTouchIndexById(touches[i].identifier);
     ongoingTouches.splice(idx, 1);  // 用完后删除
   }
 }
@@ -92,13 +91,10 @@ function handleCancel(evt) {
 // 以下是便捷函数
 
 function colorForTouch(touch) {
-  let r = touch.identifier % 16;
-  let g = Math.floor(touch.identifier / 3) % 16;
-  let b = Math.floor(touch.identifier / 7) % 16;
-  r = r.toString(16); // 转换为十六进制字符串
-  g = g.toString(16); // 转换为十六进制字符串
-  b = b.toString(16); // 转换为十六进制字符串
-  let color = "#" + r + g + b;
+  const r = (touch.identifier % 16).toString(16);
+  const g = (Math.floor(touch.identifier / 3) % 16).toString(16);
+  const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
+  const color = "#" + r + g + b;
   log("identifier " + touch.identifier + " 的颜色为：" + color);
   return color;
 }
@@ -113,7 +109,7 @@ function copyTouch(touch) {
 
 function ongoingTouchIndexById(idToFind) {
   for (let i = 0; i < ongoingTouches.length; i++) {
-    let id = ongoingTouches[i].identifier;
+    const id = ongoingTouches[i].identifier;
     
     if (id == idToFind) {
       return i;
@@ -123,7 +119,7 @@ function ongoingTouchIndexById(idToFind) {
 }
 
 function log(msg) {
-  let p = document.getElementById('log');
+  const p = document.getElementById('log');
   p.innerHTML = 
     new Date().toString().substring(16, 24) + ' ' + msg + "\n" + p.innerHTML;
 }

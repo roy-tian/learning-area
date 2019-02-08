@@ -15,17 +15,17 @@ const Author        = require('./models/author');
 const Genre         = require('./models/genre');
 const BookInstance  = require('./models/bookinstance');
 
-const mongoose    = require('mongoose');
-const mongoDB     = userArgs[0];
+const mongoose      = require('mongoose');
+const mongoDB       = userArgs[0];
 mongoose.connect(mongoDB);
-mongoose.Promise  = global.Promise;
+mongoose.Promise    = global.Promise;
 
-const db          = mongoose.connection;
+const db            = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB 连接错误：'));
 
-const authors     = [];
-const genres      = [];
-const books       = [];
+const authors       = [];
+const genres        = [];
+const books         = [];
 const bookinstances = [];
 
 function authorCreate(first_name, family_name, d_birth, d_death, cb) {

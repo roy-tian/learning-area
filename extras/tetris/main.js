@@ -249,21 +249,21 @@ function acceptBlock() {
 
 function onKeyDown(e) {
   switch (e.key) {
-    case 'ArrowLeft':
-      moveLeft();
-      break;
-    case 'ArrowRight':
-      moveRight();
-      break;
-    case 'ArrowDown':
-      moveDown();
-      break;
-    case 'ArrowUp':
-      turnClockwise();
-      break;
-    case ' ':
-      pauseGame();
-      break;
+  case 'ArrowLeft':
+    moveLeft();
+    break;
+  case 'ArrowRight':
+    moveRight();
+    break;
+  case 'ArrowDown':
+    moveDown();
+    break;
+  case 'ArrowUp':
+    turnClockwise();
+    break;
+  case ' ':
+    pauseGame();
+    break;
   }
 }
 
