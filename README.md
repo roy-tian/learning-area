@@ -6,6 +6,12 @@
 
 以下列表会不定期更新，有问题请留言:)
 
+## HTML
+
+|示例|章节|代码|在线演示|
+|----|----|:----:|:----:|
+|测试页面 “Mozilla 酷毙了”|HTML/CSS/JS 基础|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/beginner-site-scripted/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/beginner-site-scripted/)|
+
 ## JavaScript
 
 |示例|章节|代码|在线演示|
