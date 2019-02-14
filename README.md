@@ -1,10 +1,7 @@
 # mdn-examples
 
-欢迎访问 mdn-examples !
+欢迎访问 mdn-examples！这里有来自 [MDN Learning Area](https://developer.mozilla.org/zh-CN/docs/learn) 中部分示例的中文版本，以及原示例的改进版本、衍生版本，以下列表会不定期更新，希望你能喜欢。
 
-这里有来自 [MDN Learning Area](https://developer.mozilla.org/zh-CN/docs/learn) 中部分示例的中文版本，以及原示例的改进版本、衍生版本，希望你能喜欢。
-
-以下列表会不定期更新。
 觉得还不错请双击 666 :) 有问题请留言 :)
 
 ## HTML
