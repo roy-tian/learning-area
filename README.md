@@ -4,13 +4,15 @@
 
 这里有来自 [MDN Learning Area](https://developer.mozilla.org/zh-CN/docs/learn) 中部分示例的中文版本，以及原示例的改进版本、衍生版本，希望你能喜欢。
 
-以下列表会不定期更新，有问题请留言:)
+以下列表会不定期更新。
+觉得还不错请双击 666 :) 有问题请留言 :)
 
 ## HTML
 
 |示例|章节|代码|在线演示|
 |----|----|:----:|:----:|
 |测试页面 “Mozilla 酷毙了”|HTML/CSS/JS 基础|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/beginner-site-scripted/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/beginner-site-scripted/)|
+|简单站点|HTML 文档和站点结构|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/site-structure)|[在线演示](https://roy-tian.github.io/mdn-examples/html/site-structure/)|
 
 ## JavaScript
 
