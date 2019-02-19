@@ -8,8 +8,8 @@
 
 |示例|章节|代码|在线演示|
 |----|----|:----:|:----:|
-|测试页面 “Mozilla 酷毙了”|HTML/CSS/JS 基础|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/beginner-site-scripted/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/beginner-site-scripted/)|
-|简单站点|HTML 文档和站点结构|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/site-structure)|[在线演示](https://roy-tian.github.io/mdn-examples/html/site-structure/)|
+|测试页面“Mozilla 酷毙了”|HTML/CSS/JS 基础|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/beginner-site-scripted/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/beginner-site-scripted/)|
+|简单站点“二次元俱乐部”|HTML 文档和站点结构|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/site-structure)|[在线演示](https://roy-tian.github.io/mdn-examples/html/site-structure/)|
 
 ## JavaScript
 
