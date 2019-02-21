@@ -69,7 +69,7 @@ main, header, nav, article, aside, footer, section {
 h1 {
   flex: 5;
   text-transform: uppercase;
-  color: #fff;
+  color: black;
 }
 
 header img {
