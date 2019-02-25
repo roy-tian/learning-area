@@ -12,7 +12,7 @@
 |简单站点“二次元俱乐部”|HTML 文档和站点结构|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/site-structure)|[在线演示](https://roy-tian.github.io/mdn-examples/html/site-structure/)|
 |HTML 调试示例|HTML 调试|[代码](https://github.com/roy-tian/mdn-examples/blob/master/html/debug)|[在线演示](https://roy-tian.github.io/mdn-examples/html/debug/debug-example.html)|
 |纽臂大学邮件|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/letter)|[在线演示](https://roy-tian.github.io/mdn-examples/html/letter/)|
-|简单站点“鸟类博物馆”|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/bird-watching)|[在线演示](https://roy-tian.github.io/mdn-examples/html/bird-watching/)|
+|简单站点“观鸟网”|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/bird-watching)|[在线演示](https://roy-tian.github.io/mdn-examples/html/bird-watching/)|
 
 ## JavaScript
 
