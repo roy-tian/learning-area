@@ -25,7 +25,7 @@ HTMLElement.prototype.setFilter = function(name, value) {
           );
 };
 
-btnBrightness.onclick = () => {
+btnBrightness.addEventListener('click', () => {
   if (btnBrightness.textContent === '变暗') {
     divFull.setFilter('brightness', 0.3);
     btnBrightness.textContent = '变亮';
@@ -33,9 +33,9 @@ btnBrightness.onclick = () => {
     divFull.setFilter('brightness', 1);
     btnBrightness.textContent = '变暗';
   }
-};
+});
 
-btnBlur.onclick = () => {
+btnBlur.addEventListener('click', () => {
   if (btnBlur.textContent === '模糊') {
     divFull.setFilter('blur', '10px');
     btnBlur.textContent = '清晰';
@@ -43,9 +43,9 @@ btnBlur.onclick = () => {
     divFull.setFilter('blur', '0px');
     btnBlur.textContent = '模糊';
   }
-};
+});
 
-btnGray.onclick = () => {
+btnGray.addEventListener('click', () => {
   if (btnGray.textContent === '黑白') {
     divFull.setFilter('grayscale', 1);
     btnGray.textContent = '彩色';
@@ -53,7 +53,7 @@ btnGray.onclick = () => {
     divFull.setFilter('grayscale', 0);
     btnGray.textContent = '黑白';
   }
-};
+});
 
 // 点击任意缩略图，即显示在主图位置
 document.querySelectorAll('.div-thumb').forEach(value => {
