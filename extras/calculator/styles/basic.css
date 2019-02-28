@@ -1,0 +1,126 @@
+@font-face {
+  font-family: apple-display;
+  src: url('../resources/SF-UI-Display-Ultralight.woff');
+}
+
+@font-face {
+  font-family: apple-button;
+  src: url('../resources/SF-UI-Display-Light.woff');
+}
+
+table {
+  border-spacing: 0px;
+}
+
+table #display {
+  background-color: #292929;
+  color: #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px solid #181818;
+  border-right: 1px solid #181818;
+  border-top: 1px solid #181818;
+  font-family: apple-display;
+  font-size: 48px;
+  text-align: right;
+  padding: 21px 12px 0px 12px;
+}
+
+table #btn-0 {
+  text-align: left;
+  padding-left: 23px;
+}
+
+.button {
+  font-family: apple-button;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.functional {
+  font-size: 18px;
+  background-color: #d6d6d6;
+}
+
+.functional:active {
+  background-color: #a9a9a9;
+}
+
+.digit {
+  font-size: 22px;
+  background-color: #e0e0e0;
+}
+.digit:active {
+  background-color: #b2b2b2;
+}
+
+.operator {
+  font-size: 28px;
+  background-color: #f5923e;
+  color: #ffffff;
+}
+.operator:active {
+  background-color: #c2732f;
+  color: #555555;
+}
+
+.top-left, .left {
+  border-left: 1px solid #181818;  
+  border-right: 1px solid #8e8e8e;
+  border-bottom: 1px solid #8e8e8e;
+  width: 55px;
+  height: 46px;
+}
+.top, .center {
+  border-right: 1px solid #8e8e8e;
+  border-bottom: 1px solid #8e8e8e;
+  width: 56px;
+}
+.bottom-left {
+  border-bottom-left-radius: 5px;
+  border-left: 1px solid #181818; 
+  border-right: 1px solid #8e8e8e;
+  border-bottom: 1px solid #181818;
+}
+.bottom {
+  border-right: 1px solid #8e8e8e;
+  border-bottom: 1px solid #181818;
+  height: 47.5px;
+}
+.top-right, .right {
+  border-right: 1px solid #181818;
+  border-bottom: 1px solid #8e8e8e;
+  width: 56px;
+}
+.bottom-right {
+  border-bottom-right-radius: 5px;
+  border-right: 1px solid #181818;
+  border-bottom: 1px solid #181818;
+}
+.convertion {
+  color: #ffffff;
+  font-family: apple-button;
+}
+
+.light.convertion {
+  background-color: #555555;
+}
+
+.dark.convertion {
+  background-color: #292929;
+}
+
+.binary {
+   transition: 0.2s; 
+   cursor: pointer;
+}
+
+.binary:hover {
+  background-color: #5a5a5a
+}
+
+.ruler {
+  font-weight: bolder;
+  font-size: 8px;
+}
