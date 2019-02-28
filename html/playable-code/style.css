@@ -1,0 +1,35 @@
+
+body {
+  font-family: '微软雅黑', Helvetica, Arial, sans-serif;
+  margin: 10px;
+  background: #f5f9fa;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
+.output {
+  min-height: 50px;
+}
+
+.input {
+  min-height: 100px;
+  width: 95%;
+}
+
+.a11y-label {
+  margin: 0;
+  text-align: right;
+  font-size: 0.7rem;
+  width: 98%;
+}
+
+.controls {
+  width: 96%;
+  text-align: right;
+}
