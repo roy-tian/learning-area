@@ -35,23 +35,22 @@ function onDigitClicked(digitClicked) {
   if (result != "") { // restart a calculation.
     onClearClicked();
   }
-  let numberDisplayed = display.textContent;
   if (flag) { // means a new number arisen.
-    numberDisplayed = display.textContent = "0";
+    display.textContent = "0";
     flag = false;
   }
   if ( digitClicked >= 0 && digitClicked <= 9 &&
-       numberDisplayed === "0" ) {
+       display.textContent === "0" ) {
   // if numberDisplay is 0, digitClicked will be the 1st digit to go.
     display.textContent = "";
   }
-  if (digitClicked === '.' && numberDisplayed.includes('.')) {
+  if (digitClicked === '.' && display.textContent.includes('.')) {
   // needs no more dots 'cause there's already a dot in numberDisplayed.
     digitClicked = '';
   }
-  numberDisplayed =  display.textContent += digitClicked;
+  display.textContent += digitClicked;
   (operator === "") ? 
-    (operand1 = numberDisplayed) : (operand2 = numberDisplayed);
+    (operand1 = display.textContent) : (operand2 = display.textContent);
   currentStatus();
 }
 
@@ -81,8 +80,8 @@ function onEqualsClicked() {
   if (operator !== "" && operand2 === "") {
     operand2 = display.textContent;
   }
-  let operand1Value = parseFloat(operand1);
-  let operand2Value = parseFloat(operand2);
+  const operand1Value = parseFloat(operand1);
+  const operand2Value = parseFloat(operand2);
   switch (operator) {
   case "+":
     result = String(operand1Value + operand2Value);
@@ -113,18 +112,10 @@ function onClearClicked() {
 }
 
 function onPercentClicked() {
-  function doPercent(value, percent = 1) {
-    let returnValue = parseFloat(value);
-    returnValue /= 100;
-    returnValue *= percent;
-    return String(returnValue);
-  }
   if (result != "") {
-    display.textContent = 
-      result = doPercent(result);
+    display.textContent = result = doPercent(result);
   } else if (operand2 !== "") {
-    display.textContent = 
-      operand2 = doPercent(operand1, operand2);
+    display.textContent = operand2 = doPercent(operand1, operand2);
   } else if (operand1 !== "") {
     display.textContent =
       operator === "" ?
@@ -135,11 +126,6 @@ function onPercentClicked() {
 }
 
 function onPnClicked() {
-  function doNegative(value) {
-    let returnValue = parseFloat(value);
-    returnValue *= -1;
-    return String(returnValue);
-  }
   if (result !== "") {
     display.textContent = result = doNegative(result);
   } else if (operand2 !== "") {
@@ -148,6 +134,19 @@ function onPnClicked() {
     display.textContent = operand1 = doNegative(operand1);
   }
   currentStatus();
+}
+
+function doPercent(value, percent = 1) {
+  let returnValue = parseFloat(value);
+  returnValue /= 100;
+  returnValue *= percent;
+  return String(returnValue);
+}
+
+function doNegative(value) {
+  let returnValue = parseFloat(value);
+  returnValue *= -1;
+  return String(returnValue);
 }
 
 function currentStatus() {

@@ -2,116 +2,95 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>程序员计算器</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/calc.css" />
+  <meta charset="utf-8" />
+  <title>程序员计算器</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/binary.js" defer></script>
 </head>
 
 <body>
-    <table>
-        <tr> <td id="display" colspan="7">0</td> </tr>
-        <tr class="light convertion"> 
-            <td>OCT:</td>
-            <td colspan="6">00</td>
+  <table>
+    <tr> <td id="display" colspan="7">0</td> </tr>
+    <tr class="light convertion"> 
+      <td>OCT:</td>
+      <td colspan="6">00</td>
+    </tr>
+    <tr class="dark convertion"> 
+      <td>DEC:</td>
+      <td colspan="6">0</td> 
+    </tr>
+    <tr class="light convertion">
+      <td>HEX:</td>
+      <td colspan="6">0x0</td>
+    </tr>
+    <tr class="dark convertion"> <td colspan="7">
+      <table>
+        <tr id="binary-row-1"></tr>
+        <tr>
+          <td class="ruler" colspan="20">63</td>
+          <td class="ruler" colspan="18">47</td>
+          <td class="ruler">32</td>
         </tr>
-        <tr class="dark convertion"> 
-            <td>DEC:</td>
-            <td colspan="6">0</td> 
+        <tr id="binary-row-2"></tr>
+        <tr>
+          <td class="ruler" colspan="20">31</td>
+          <td class="ruler" colspan="18">15</td>
+          <td class="ruler">0</td>
         </tr>
-        <tr class="light convertion">
-            <td>HEX:</td>
-            <td colspan="6">0x0</td>
-        </tr>
-        <tr class="dark convertion"> <td colspan="7">
-            <table>
-                <tr><script>
-                    var iter = 63;
-                    for (var iter1 = 0; iter1 != 7; iter1++) {
-                        for (var iter2 = 0; iter2 != 4; iter2++) {
-                            document.write("<td class=\"binary\" id=\"d" + String(iter--) + "\">0</td>");
-                        }
-                        document.write("<td>&nbsp;</td>");
-                    }
-                    for (var iter2 = 0; iter2 != 4; iter2++) {
-                        document.write("<td class=\"binary\" id=\"d" + String(iter--) + "\">0</td>");
-                    }
-                </script></tr>
-                <tr>
-                    <td class="ruler" colspan="20">63</td>
-                    <td class="ruler" colspan="18">47</td>
-                    <td class="ruler">32</td>
-                </tr>
-                <tr><script>
-                    var iter = 31;
-                    for (var iter1 = 0; iter1 != 7; iter1++) {
-                        for (var iter2 = 0; iter2 != 4; iter2++) {
-                            document.write("<td class=\"binary\" id=\"d" + String(iter--) + "\">0</td>");
-                        }
-                        document.write("<td>&nbsp;</td>");
-                    }
-                    for (var iter2 = 4; iter2 > 0; iter2--) {
-                        document.write("<td class=\"bit binary\" id=\"d" + String(iter--) + "\">0</td>");
-                    }
-                </script></tr>
-                <tr>
-                    <td class="ruler" colspan="20">31</td>
-                    <td class="ruler" colspan="18">15</td>
-                    <td class="ruler">0</td>
-                </tr>
-            </table>
+      </table>
 
-        </td></tr>
-        <tr>
-            <td class="top-left functional button">AND</td>
-            <td class="top functional button">OR</td>
-            <td class="top digit button">D</td>
-            <td class="top digit button">E</td>
-            <td class="top digit button">F</td>
-            <td class="top functional button">AC</td>
-            <td class="top-right functional button">C</td>
-        </tr>
-        <tr>
-            <td class="left functional button">NOR</td>
-            <td class="center functional button">XOR</td>
-            <td class="center digit button">A</td>
-            <td class="center digit button">B</td>
-            <td class="center digit button">C</td>
-            <td class="center functional button">RoL</td>
-            <td class="right functional button">RoR</td>
-        </tr>
-        <tr>
-            <td class="left functional button">&lt;&lt;</td>
-            <td class="center  functional button">&gt;&gt;</td>
-            <td class="center  digit button">7</td>
-            <td class="center  digit button">8</td>
-            <td class="center  digit button">9</td>
-            <td class="center  functional button">2&prime;s</td>
-            <td class="right functional button">1&prime;s</td>
-        </tr>
-        <tr>
-            <td class="left functional button">X&Lt;Y</td>
-            <td class="center functional button">X&Gt;Y</td>
-            <td class="center digit button">4</td>
-            <td class="center digit button">5</td>
-            <td class="center digit button">6</td>
-            <td class="center operator button">&divide;</td>
-            <td class="right operator button">&minus;</td>
-        </tr>
-        <tr>
-            <td class="left functional button" colspan="2">字节翻转</td>
-            <td class="center digit button">1</td>
-            <td class="center digit button">2</td>
-            <td class="center digit button">3</td>
-            <td class="center operator button">&times;</td>
-            <td class="right operator button">&plus;</td>
-        </tr>
-        <tr>
-            <td class="bottom-left functional button" colspan="2">字翻转</td>
-            <td class="bottom digit button">.</td>
-            <td class="bottom digit button">0</td>
-            <td class="bottom digit button">00</td>
-            <td class="bottom-right operator button" colspan="2">&equals;</td>
-        </tr>
+    </td></tr>
+    <tr>
+      <td class="top-left functional button">AND</td>
+      <td class="top functional button">OR</td>
+      <td class="top digit button">D</td>
+      <td class="top digit button">E</td>
+      <td class="top digit button">F</td>
+      <td class="top functional button">AC</td>
+      <td class="top-right functional button">C</td>
+    </tr>
+    <tr>
+      <td class="left functional button">NOR</td>
+      <td class="center functional button">XOR</td>
+      <td class="center digit button">A</td>
+      <td class="center digit button">B</td>
+      <td class="center digit button">C</td>
+      <td class="center functional button">RoL</td>
+      <td class="right functional button">RoR</td>
+    </tr>
+    <tr>
+      <td class="left functional button">&lt;&lt;</td>
+      <td class="center  functional button">&gt;&gt;</td>
+      <td class="center  digit button">7</td>
+      <td class="center  digit button">8</td>
+      <td class="center  digit button">9</td>
+      <td class="center  functional button">2&prime;s</td>
+      <td class="right functional button">1&prime;s</td>
+    </tr>
+    <tr>
+      <td class="left functional button">X&Lt;Y</td>
+      <td class="center functional button">X&Gt;Y</td>
+      <td class="center digit button">4</td>
+      <td class="center digit button">5</td>
+      <td class="center digit button">6</td>
+      <td class="center operator button">&divide;</td>
+      <td class="right operator button">&minus;</td>
+    </tr>
+    <tr>
+      <td class="left functional button" colspan="2">字节翻转</td>
+      <td class="center digit button">1</td>
+      <td class="center digit button">2</td>
+      <td class="center digit button">3</td>
+      <td class="center operator button">&times;</td>
+      <td class="right operator button">&plus;</td>
+    </tr>
+    <tr>
+      <td class="bottom-left functional button" colspan="2">字翻转</td>
+      <td class="bottom digit button">.</td>
+      <td class="bottom digit button">0</td>
+      <td class="bottom digit button">00</td>
+      <td class="bottom-right operator button" colspan="2">&equals;</td>
+    </tr>
 </body>
 
 </html>
