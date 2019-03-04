@@ -1,90 +1,68 @@
 const btnReset = document.getElementById('btn-reset');
 const btnSolution = document.getElementById('btn-solution');
+const selectItem = document.getElementById('select-item');
 const blockOutput = document.querySelector('.output');
 const blockInput = document.querySelector('.input');
 
-const originalText = '刀枪剑戟 斧钺钩叉';
+let userEntry = "";
+let item = 'italics';
 
-function init() {
-  blockInput.textContent = originalText;
-  blockOutput.textContent = originalText;
-}
-// TODO
-/*
-const textarea = document.getElementById('code');
-const reset = document.getElementById('reset');
-const solution = document.getElementById('solution');
-const output = document.querySelector('.output');
-const code = textarea.value;
-const userEntry = textarea.value;
+init(item);
 
-function updateCode() {
-  output.innerHTML = textarea.value;
-}
+btnReset.addEventListener('click', () => init(item));
 
-reset.addEventListener('click', function() {
-  textarea.value = code;
-  userEntry = textarea.value;
-  solutionEntry = htmlSolution;
-  solution.value = 'Show solution';
-  updateCode();
-});
-
-solution.addEventListener('click', function() {
-  if(solution.value === 'Show solution') {
-    textarea.value = solutionEntry;
-    solution.value = 'Hide solution';
+btnSolution.addEventListener('click', () => {
+  if (btnSolution.textContent === '显示答案') {
+    blockInput.value =
+    blockOutput.innerHTML = CODE_DB[item].answer;
+    btnSolution.textContent = '隐藏答案';
   } else {
-    textarea.value = userEntry;
-    solution.value = 'Show solution';
+    blockInput.value =
+    blockOutput.innerHTML = userEntry;
+    btnSolution.textContent = '显示答案';
   }
-  updateCode();
 });
 
-const htmlSolution = '<em>This is my text.</em>';
-const solutionEntry = htmlSolution;
-
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
-
-// stop tab key tabbing out of textarea and
-// make it write a tab at the caret position instead
-
-textarea.onkeydown = function(e){
-  if (e.keyCode === 9) {
+blockInput.addEventListener('keydown', (e) => {
+  switch (e.key) {
+  case 'Tab':
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCursor('\t');
+    break;
+  case "Escape":
+    blockInput.blur();
+    break;
   }
+});
 
-  if (e.keyCode === 27) {
-    textarea.blur();
-  }
-};
+blockInput.addEventListener('keyup', () => {
+  userEntry = blockInput.value;
+  blockOutput.innerHTML = blockInput.value;
+});
 
-function insertAtCaret(text) {
-  const scrollPos = textarea.scrollTop;
-  const caretPos = textarea.selectionStart;
+selectItem.addEventListener('change', () => {
+  item = selectItem.value;
+  init(item);
+});
 
-  const front = (textarea.value).substring(0, caretPos);
-  const back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
-  textarea.value = front + text + back;
-  caretPos = caretPos + text.length;
-  textarea.selectionStart = caretPos;
-  textarea.selectionEnd = caretPos;
-  textarea.focus();
-  textarea.scrollTop = scrollPos;
+function init(item) {
+  userEntry =
+  blockOutput.innerHTML =
+  blockInput.value = CODE_DB[item].original;
+  btnSolution.textContent = '显示答案';
 }
 
-// Update the saved userCode every time the user updates the text area code
+function insertAtCursor(text) {
+  const scrollPos = blockInput.scrollTop;
+  const cursorPos = blockInput.selectionStart;
 
-textarea.onkeyup = function(){
-  // We only want to save the state when the user code is being shown,
-  // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Show solution') {
-    userEntry = textarea.value;
-  } else {
-    solutionEntry = textarea.value;
-  }
+  const front = blockInput.value.substring(0, cursorPos);
+  const back = blockInput.value.substring(
+    blockInput.selectionEnd, blockInput.value.length);
 
-  updateCode();
-};*/
+  blockInput.value = front + text + back;
+  blockInput.selectionStart = 
+  blockInput.selectionEnd = cursorPos + text.length;
+  blockInput.focus();
+  blockInput.scrollTop = scrollPos;
+}
