@@ -9,8 +9,8 @@ h2 {
   font-size: 16px;
 }
 
-code {
-  font-family: Consolas, monospace;
+code, textarea {
+  font-family: Consolas, Menlo, monospace;
 }
 
 .output {
