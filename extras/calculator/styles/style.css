@@ -35,8 +35,12 @@ table {
   font-family: apple-button;
   text-align: center;
   cursor: pointer;
+}
+
+.button:active {
   transition-duration: 0.5s;
 }
+
 
 .functional {
   font-size: 18px;
