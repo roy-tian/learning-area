@@ -14,11 +14,11 @@ code, textarea {
 }
 
 .output {
-  min-height: 50px;
+  min-height: 200px;
 }
 
 .input {
-  min-height: 100px;
+  min-height: 200px;
   width: 95%;
 }
 
