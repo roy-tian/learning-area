@@ -38,6 +38,9 @@ blockInput.addEventListener('keydown', (e) => {
 blockInput.addEventListener('keyup', () => {
   userEntry = blockInput.value;
   blockOutput.innerHTML = blockInput.value;
+  if (btnSolution.textContent === '隐藏答案') {
+    btnSolution.textContent = '显示答案';
+  } 
 });
 
 selectItem.addEventListener('change', () => {
