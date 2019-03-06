@@ -146,6 +146,48 @@ const CODE_DB = [
 `<h1>AlphaGo 李世乭五番棋</h1>
 
 <p><strong>2016年3月8日</strong>到<strong>3月15日</strong>，韩国职业棋士<strong>李世乭（이세돌）<em>九段</em></strong>与由 Google DeepMind 开发的计算机围棋软件 <strong>AlphaGo</strong> 对弈的五局三胜制围棋比赛在韩国<strong>首尔</strong>举行。结果为 AlphaGo 以<strong>四胜一负</strong>的战绩击败李世乭。赛后韩国棋院授予 AlphaGo <strong>荣誉九段</strong>的称号。</p>`
+  },
+  {
+    name: 'description',
+    description: '描述列表',
+    original:
+`培根
+整个世界的粘合剂。
+鸡蛋
+一块蛋糕的粘合剂。
+咖啡
+一种浅棕色的饮料。
+可以在清晨带来活力。`,
+    answer:
+`<dl>
+  <dt>培根</dt>
+    <dd>整个世界的粘合剂。</dd>
+  <dt>鸡蛋</dt>
+    <dd>一块蛋糕的粘合剂。</dd>
+  <dt>咖啡</dt>
+    <dd>一种浅棕色的饮料。</dd>
+    <dd>可以在清晨带来活力。</dd>
+</dl>`
+  },
+  {
+    name: 'quote',
+    description: '引用',
+    original:
+`<p>你好！欢迎访问我的激励网页！孔子曰：</p>
+<p>譬如为山，未成一篑，止，吾止也。譬如平地，虽覆一篑，进，吾往也。</p>
+<p>要保持乐观，不要说泄气的话。（源自 Affirmations for Positive Thinking。）</p>`,
+    answer:
+`<p>你好！欢迎访问我的激励网页！<a href="https://zh.wikipedia.org/zh-hans/孔子"><cite>孔子<cite></a>曰：</p>
+<blockquote cite="https://zh.wikipedia.org/zh-hans/孔子">
+  <p>譬如为山，未成一篑，止，吾止也。譬如平地，虽覆一篑，进，吾往也。</p>
+</blockquote>
+<p>要保持乐观，不要<q cite="http://www.affirmationsforpositivethinking.com/">说泄气的话</q>。（源自 <a href="http://www.affirmationsforpositivethinking.com/"><cite>Affirmations for Positive Thinking</cite></a>。）</p>`
+  },
+  {
+    name: 'abbreviation',
+    description: '缩略语',
+    original: '<p>NASA 做了一些动人心弦的事情。</p>',
+    answer: '<p><abbr title="美国国家航空航天局（National Aeronautics and Space Administration）">NASA</abbr> 做了一些动人心弦的事情。</p>'
   }
 ];
 
