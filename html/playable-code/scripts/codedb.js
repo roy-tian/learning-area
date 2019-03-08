@@ -40,10 +40,10 @@ const CODE_DB = [
     original: '豆浆 油条 豆汁 焦圈',
     answer:
 `<ul>
-<li>豆浆</li>
-<li>油条</li>
-<li>豆汁</li>
-<li>焦圈</li>
+  <li>豆浆</li>
+  <li>油条</li>
+  <li>豆汁</li>
+  <li>焦圈</li>
 </ul>`
   },
   {
@@ -57,11 +57,11 @@ const CODE_DB = [
 继续走 300 米，学校就在你的右手边`,
     answer:
 `<ol>
-<li>沿着条路走到头</li>
-<li>右转</li>
-<li>直行穿过第一个十字路口</li>
-<li>在第三个十字路口处左转</li>
-<li>继续走 300 米，学校就在你的右手边</li>
+  <li>沿着条路走到头</li>
+  <li>右转</li>
+  <li>直行穿过第一个十字路口</li>
+  <li>在第三个十字路口处左转</li>
+  <li>继续走 300 米，学校就在你的右手边</li>
 </ol>`    
   },
   {
@@ -220,8 +220,10 @@ const CODE_DB = [
   {
     name: 'iframe',
     description: '用<iframe>嵌入视频',
-    original: '',
-    answer: '<iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>'
+    original: '<p>改革春风吹满地</p>',
+    answer: 
+`<iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p>改革春风吹满地</p>`
   },
   {
     name: 'svg',
@@ -235,10 +237,7 @@ const CODE_DB = [
   <text x="50" y="100" font-family="微软雅黑" font-size="55" fill="#F5F5F5" stroke="#212121" stroke-width="2">
     你好！
   </text>
-</svg>
-
-`
-
+</svg>`
   }
 ];
 
