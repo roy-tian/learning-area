@@ -5,7 +5,7 @@ const blockOutput = document.querySelector('.output');
 const blockInput = document.querySelector('.input');
 
 let userEntry = "";
-let item = 'italic';
+let item = 'emphasis';
 
 initSelections();
 initBlocksAndBtns(item);

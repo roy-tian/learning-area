@@ -1,7 +1,7 @@
 const CODE_DB = [
   {
-    name: 'italic',
-    description: '斜体字',
+    name: 'emphasis',
+    description: '强调显示',
     original: '刀枪剑戟 斧钺钩叉',
     answer: '<em>刀枪剑戟 斧钺钩叉</em>'
   },
@@ -12,8 +12,8 @@ const CODE_DB = [
     answer: '<p>欲练<a href="https://zh.wikipedia.org/zh-hans/葵花宝典" title="葵花宝典简介" target="_blank">葵花宝典</a>，需引刀自宫</p>'
   },
   {
-    name: 'image',
-    description: '添加图片',
+    name: 'decorate',
+    description: '添加新特征',
     original: '<p>相思无用，惟别而已。别期若有定，千般煎熬又何如？莫道黯然销魂，何处柳暗花明？</p>',
     answer:
 `<h1>经典回忆</h1>
@@ -188,6 +188,57 @@ const CODE_DB = [
     description: '缩略语',
     original: '<p>NASA 做了一些动人心弦的事情。</p>',
     answer: '<p><abbr title="美国国家航空航天局（National Aeronautics and Space Administration）">NASA</abbr> 做了一些动人心弦的事情。</p>'
+  },
+  {
+    name: 'image',
+    description: '添加图片',
+    original: 'https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg',
+    answer: 
+`<img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+  alt="一只恐龙头部和躯干的骨架，它有一个巨大的头，长着锋利的牙齿。"
+  width="200"
+  height="171"
+  title="曼彻斯特大学博物馆展出的一只霸王龙的化石">`
+  },
+  {
+    name: 'figure',
+    description: '<figure>标签',
+    original: 
+`<img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+  alt="一只恐龙头部和躯干的骨架，它有一个巨大的头，长着锋利的牙齿。"
+  width="200"
+  height="171">`,
+    answer:
+`<figure>
+  <img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+     alt="一只恐龙头部和躯干的骨架，它有一个巨大的头，长着锋利的牙齿。"
+     width="200"
+     height="171">
+  <figcaption>曼彻斯特大学博物馆展出的一只霸王龙的化石</figcaption>
+</figure>`
+  },
+  {
+    name: 'iframe',
+    description: '用<iframe>嵌入视频',
+    original: '',
+    answer: '<iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>'
+  },
+  {
+    name: 'svg',
+    description: '添加矢量图',
+    original: '你好！',
+    answer:
+`<svg width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F44336" />
+  <circle cx="100%" cy="100%" r="150" fill="#2196F3" stroke="black" />
+  <polygon points="120,0 240,225 0,225" fill="#4CAF50"/>
+  <text x="50" y="100" font-family="微软雅黑" font-size="55" fill="#F5F5F5" stroke="#212121" stroke-width="2">
+    你好！
+  </text>
+</svg>
+
+`
+
   }
 ];
 
