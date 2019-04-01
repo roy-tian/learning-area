@@ -6,9 +6,7 @@ let operator = "";
 let result = "";
 let flag = false;
 
-init();
-
-function init() {
+window.onload = () => {
   for (let i = 0; i != 10; i++) {
     document.getElementById('btn-' + i)
       .addEventListener('click', () => onDigitClicked(i));
@@ -29,7 +27,7 @@ function init() {
     .addEventListener('click', () => onOperatorClicked('+'));
   document.getElementById('btn-equals')
     .addEventListener('click', onEqualsClicked);
-}
+};
 
 function onDigitClicked(digitClicked) {
   if (result != "") { // restart a calculation.
@@ -44,13 +42,15 @@ function onDigitClicked(digitClicked) {
   // if numberDisplay is 0, digitClicked will be the 1st digit to go.
     display.textContent = "";
   }
-  if (digitClicked === '.' && display.textContent.includes('.')) {
+  if (!(digitClicked === '.' && display.textContent.includes('.'))) {
   // needs no more dots 'cause there's already a dot in numberDisplayed.
-    digitClicked = '';
+    display.textContent += digitClicked;
   }
-  display.textContent += digitClicked;
-  (operator === "") ? 
-    (operand1 = display.textContent) : (operand2 = display.textContent);
+  if (operator === "") {
+    operand1 = display.textContent;
+  } else {
+    operand2 = display.textContent;
+  }
   currentStatus();
 }
 
