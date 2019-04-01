@@ -57,7 +57,7 @@ function initBlocksAndBtns(item) {
 }
 
 function initSelections() {
-  for (let i = 0; i != CODE_DB.length; i++) {
+  for (let i = 0; i !== CODE_DB.length; i++) {
     const option = document.createElement('option');
     option.setAttribute('value', getName(i));
     option.textContent = getDescription(i);
