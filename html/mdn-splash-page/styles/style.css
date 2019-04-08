@@ -1,6 +1,6 @@
 /* header and body setup */
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
   background: url(../images/pattern.png);
 }
 body {
@@ -41,6 +41,8 @@ p {
 iframe {
   float: left;
   margin: 0 20px 20px 0;
+  width: 400px;
+  height: 225px;
   max-width: 100%;
 }
 /* further info links */
