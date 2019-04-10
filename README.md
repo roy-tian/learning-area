@@ -15,6 +15,7 @@
 |纽臂大学邮件|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/letter/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/letter/)|
 |简单站点“观鸟网”|入门章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/bird-watching/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/bird-watching/)|
 |Mozilla 宣传主页|多媒体章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/mdn-splash-page/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/mdn-splash-page/)|
+|太阳系行星数据|表格章节测验|[代码](https://github.com/roy-tian/mdn-examples/tree/master/html/planets-data/)|[在线演示](https://roy-tian.github.io/mdn-examples/html/planets-data/)|
 
 ## JavaScript
 
