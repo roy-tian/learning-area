@@ -1,6 +1,6 @@
-/* header and body setup */
+/* header、body 设置 */
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
   background: url(../images/pattern.png);
 }
 body {
@@ -10,7 +10,8 @@ body {
   background-color: white;
   position: relative;
 }
-/* Header styling */
+
+/* 标题样式 */
 header {
   height: 150px;
 }
@@ -25,7 +26,8 @@ h1 {
   line-height: 140px;
   margin: 0 0 0 32.5px;
 }
-/* main section and video styling */
+
+/* 主体区段和视频样式 */
 main {
   background: #ccc;
 }
@@ -41,9 +43,11 @@ p {
 iframe {
   float: left;
   margin: 0 20px 20px 0;
+
   max-width: 100%;
 }
-/* further info links */
+
+/* 更多信息链接 */
 .further-info {
   clear: left;
   padding: 40px 0;
@@ -62,7 +66,8 @@ iframe {
 .clearfix {
   clear: both;
 }
-/* Red panda image */
+
+/* 小熊猫图片 */
 .red-panda img {
   display: block;
   max-width: 100%;
