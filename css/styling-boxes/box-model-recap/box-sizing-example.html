@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Box sizing example</title>
+    <link href="box-sizing-example.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="one"></div>
+
+    <div class="two"></div>
+
+    <script>
+
+      var one = document.querySelector('.one');
+      var two = document.querySelector('.two');
+
+      function outputWH(box) {
+        var width = box.offsetWidth;
+        var height = box.offsetHeight;
+        box.textContent = 'Width: ' + width + 'px, Height: ' + height + 'px.'
+      }
+
+      outputWH(one);
+      outputWH(two);
+
+    </script>
+  </body>
+</html>

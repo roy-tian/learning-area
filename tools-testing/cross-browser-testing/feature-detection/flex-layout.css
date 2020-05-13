@@ -1,0 +1,12 @@
+main {
+  display: flex;
+}
+
+main div {
+  padding-right: 4%;
+  flex: 1;
+}
+
+main div:last-child {
+  padding-right: 0;
+}

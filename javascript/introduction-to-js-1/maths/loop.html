@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic loop example</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: monospace;
+      }
+
+      body {
+        width: 700px;
+        margin: 0 auto;
+      }
+
+      div {
+        width: 50%;
+        float: left;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <p>Invoice totals before sales tax ($):</p>
+
+      <ul class="before">
+
+      </ul>
+      
+    </div>
+
+    <div>
+      <p>Invoice totals with 6% sales tax added ($):</p>
+
+      <ul class="after">
+
+      </ul>
+
+    </div>
+
+    
+  </body>
+
+  <script>
+
+const totals = [191.45, 890.56, 67.99, 12.34, 235.64];
+const beforeList = document.querySelector('.before');
+const afterList = document.querySelector('.after');
+for(let i = 0; i < totals.length; i++) {
+    const listItem = document.createElement('li');
+    listItem.textContent = totals[i];
+    beforeList.appendChild(listItem);
+}
+for(let j = 0; j < totals.length; j++) {
+    const listItem = document.createElement('li');
+    listItem.textContent = (totals[j] * 1.06).toFixed(2);
+    afterList.appendChild(listItem);
+}
+    
+  </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Allowance updater example</title>
+  </head>
+  <body>
+    <label for="shopping-check">Has the shopping been done? </label>
+    <input type="checkbox" id="shopping-check">
+
+    <p></p>
+
+    <script>
+      const checkBox = document.querySelector('input');
+      const para = document.querySelector('p');
+      let shoppingDone = false;
+
+      checkBox.addEventListener('change',function() {
+        checkBox.disabled = true;
+        shoppingDone = true;
+        updateAllowance();
+      });
+
+      function updateAllowance() {
+        if(shoppingDone === true) {
+          var childsAllowance = 10;
+        } else {
+          var childsAllowance = 5;
+        }
+
+        para.textContent = 'Child has earned $' + childsAllowance + ' this week.';
+      }
+
+      updateAllowance();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+main div {
+  width: 22%;
+  float: left;
+  padding-right: 4%;
+}
+
+main div:last-child {
+  padding-right: 0;
+}
+
+footer {
+  clear: left;
+}

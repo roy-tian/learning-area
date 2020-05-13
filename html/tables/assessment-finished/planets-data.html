@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>太阳系行星数据</title>
+    <link href="minimal-table.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>太阳系行星数据</h1>
+
+    <table>
+      <caption>太阳系中行星的一些数据。（资料取自<a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA 行星数据 - 公制</a>，图片取自<a href="https://www.nasa.gov/multimedia/imagegallery/">NASA 照片库</a>。）</caption>
+      <colgroup>
+        <col span="2">
+        <col style="border: 2px solid black">
+      </colgroup>
+      <thead>
+        <tr>
+          <td colspan="2"></td>
+          <th scope="col">名字</th>
+          <th scope="col">图片</th>
+          <th scope="col">质量 (10<sup>24</sup>kg)</th>
+          <th scope="col">直径 (km)</th>
+          <th scope="col">密度 (kg/m<sup>3</sup>)</th>
+          <th scope="col">重力 (m/s<sup>2</sup>)</th>
+          <th scope="col">天长 (小时)</th>
+          <th scope="col">与太阳距离 (10<sup>6</sup>km)</th>
+          <th scope="col">平均温度 (°C)</th>
+          <th scope="col">卫星数量</th>
+          <th scope="col">备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="4" colspan="2" scope="rowgroup">类地行星</th>
+          <th scope="row">水星</th>
+          <td><img src="images/mercury.jpg" alt="水星"></td>
+          <td>0.330</td>
+          <td>4,879</td>
+          <td>5427</td>
+          <td>3.7</td>
+          <td>4222.6</td>
+          <td>57.9</td>
+          <td>167</td>
+          <td>0</td>
+          <td>距太阳最近</td>
+        </tr>
+        <tr>
+          <th scope="row">金星</th>
+          <td><img src="images/venus.jpg" alt="金星"></td>
+          <td>4.87</td>
+          <td>12,104</td>
+          <td>5243</td>
+          <td>8.9</td>
+          <td>2802.0</td>
+          <td>108.2</td>
+          <td>464</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">地球</th>
+          <td><img src="images/earth.png" alt="地球"></td>
+          <td>5.97</td>
+          <td>12,756</td>
+          <td>5514</td>
+          <td>9.8</td>
+          <td>24.0</td>
+          <td>149.6</td>
+          <td>15</td>
+          <td>1</td>
+          <td>我们的世界</td>
+        </tr>
+        <tr>
+          <th scope="row">火星</th>
+          <td><img src="images/mars.jpg" alt="火星"></td>
+          <td>0.642</td>
+          <td>6,792</td>
+          <td>3933</td>
+          <td>3.7</td>
+          <td>24.7</td>
+          <td>227.9</td>
+          <td>-65</td>
+          <td>2</td>
+          <td>红色星球</td>
+        </tr>
+        <tr>
+          <th rowspan="4" scope="rowgroup">类木行星</th>
+          <th rowspan="2" scope="rowgroup">气巨星</th>
+          <th scope="row">木星</th>
+          <td><img src="images/jupiter.jpg" alt="木星"></td>
+          <td>1898</td>
+          <td>142,984</td>
+          <td>1326</td>
+          <td>23.1</td>
+          <td>9.9</td>
+          <td>778.6</td>
+          <td>-110</td>
+          <td>67</td>
+          <td>太阳系最大</td>
+        </tr>
+        <tr>
+          <th scope="row">土星</th>
+          <td><img src="images/saturn.jpg" alt="土星"></td>
+          <td>568</td>
+          <td>120,536</td>
+          <td>687</td>
+          <td>9.0</td>
+          <td>10.7</td>
+          <td>1433.5</td>
+          <td>-140</td>
+          <td>62</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">冰巨星</th>
+          <th scope="row">天王星</th>
+          <td><img src="images/uranus.jpg" alt="天王星"></td>
+          <td>86.8</td>
+          <td>51,118</td>
+          <td>1271</td>
+          <td>8.7</td>
+          <td>17.2</td>
+          <td>2872.5</td>
+          <td>-195</td>
+          <td>27</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">海王星</th>
+          <td><img src="images/neptune.jpg" alt="海王星"></td>
+          <td>102</td>
+          <td>49,528</td>
+          <td>1638</td>
+          <td>11.0</td>
+          <td>16.1</td>
+          <td>4495.1</td>
+          <td>-200</td>
+          <td>14</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2" scope="rowgroup">矮行星</th>
+          <th scope="row">冥王星</th>
+          <td><img src="images/pluto.jpg" alt="冥王星"></td>
+          <td>0.0146</td>
+          <td>2,370</td>
+          <td>2095</td>
+          <td>0.7</td>
+          <td>153.3</td>
+          <td>5906.4</td>
+          <td>-225</td>
+          <td>5</td>
+          <td>2006年降格，但<a href="http://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578959/">尚存争议</a>。</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </body>
+</html>
