@@ -1,33 +1,125 @@
-# mdn-examples
+# learning-area
 
-欢迎访问 mdn-examples！这里有来自 [MDN Learning Area](https://developer.mozilla.org/zh-CN/docs/learn) 中部分示例的中文版本，以及原示例的改进版本、衍生版本，以下列表会不定期更新，希望你能喜欢。
+欢迎访问 [MDN 学习区](https://developer.mozilla.org/zh-CN/Learn) Github 仓库中文版。
 
-觉得还不错请双击 666 :) 
+这里有学习区中展示、讨论的大部分示例代码，本 repo 文件夹结构与网站结构保持一致。
 
+英文版中 [Web 入门]()、[服务器端编程]() 示例是单独的 repos，本 repo 一并收录。
 
-| 示例 | 章节 | 代码 |
-| --- | --- | --- |
-| **HTML** |
-| [Mozilla 酷毙了](https://roy-tian.github.io/mdn-examples/html/mozilla-is-cool-scripted/) | [HTML基础](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics/) / [CSS基础](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics/) / [JS 基础](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/JavaScript_basics) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/mozilla-is-cool-scripted/) |
-| [代码操场](https://roy-tian.github.io/mdn-examples/html/playable-code/) | [开始学习 HTML](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/playable-code/) |
-| [二次元俱乐部](https://roy-tian.github.io/mdn-examples/html/site-structure/) | [HTML 文档和站点结构](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/文件和网站结构) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/site-structure/) |
-| [HTML 调试示例](https://roy-tian.github.io/mdn-examples/html/debug/debug-example.html) | [HTML 调试](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/debug) |
-| [纽臂大学邮件](https://roy-tian.github.io/mdn-examples/html/letter/) | [入门章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/letter/) |
-| [观鸟网](https://roy-tian.github.io/mdn-examples/html/bird-watching/) | [入门章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/bird-watching/) |
-| [Mozilla 宣传页](https://roy-tian.github.io/mdn-examples/html/mdn-splash-page/) | [多媒体章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/mdn-splash-page/) |
-| [太阳系行星数据](https://roy-tian.github.io/mdn-examples/html/planets-data/) | [表格章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/html/planets-data/) |
-| **CSS** |
-| [颜色选择工具](https://roy-tian.github.io/mdn-examples/css/color-picker/) | [颜色选择工具](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Colors/Color_picker_tool) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/css/color-picker) |
-| **JavaScript** |
-| [JavaScript 入门](https://roy-tian.github.io/mdn-examples/javascript/introduction-to-js/javascript-label.html) | [什么是 JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/introduction-to-js/) |
-| [猜数字游戏](https://roy-tian.github.io/mdn-examples/javascript/number-guessing-game/number-guessing-game.html) | [JavsScript 初体验](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/number-guessing-game/) |
-| [猜数字游戏改进版](https://roy-tian.github.io/mdn-examples/javascript/number-guessing-game-improved/) | [JavsScript 初体验](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/number-guessing-game-improved/) |
-| [笑话机](https://roy-tian.github.io/mdn-examples/javascript/silly-story-genarator/) | [入门章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/silly-story-genarator/) |
-| [照片库](https://roy-tian.github.io/mdn-examples/javascript/gallery/) | [基础要件章节测验](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/Building_blocks/相片走廊) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/gallery/) |
-| [照片库改进版](https://roy-tian.github.io/mdn-examples/javascript/gallery-improved/) | [基础要件章节测验](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/Building_blocks/相片走廊) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/gallery-improved/) |
-| [弹球](https://roy-tian.github.io/mdn-examples/javascript/bouncing-balls/) | [实践对象构造](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_building_practice/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/bouncing-balls/) |
-| [弹球 + 恶魔圈](https://roy-tian.github.io/mdn-examples/javascript/bouncing-balls-evil-circle/) | [对象章节测验](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/%E5%90%91%E2%80%9C%E5%BC%B9%E8%B7%B3%E7%90%83%E2%80%9D%E6%BC%94%E7%A4%BA%E7%A8%8B%E5%BA%8F%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%8A%9F%E8%83%BD) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/bouncing-balls-evil-circle/) |
-| [按键事件](https://roy-tian.github.io/mdn-examples/javascript/key-event) | [KeyboardEvent.key](https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent/key) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/key-event/) |
-| [触摸绘图板](https://roy-tian.github.io/mdn-examples/javascript/touch-paint/) | [触摸事件](https://developer.mozilla.org/zh-CN/docs/Web/API/Touch_events/) | [代码](https://github.com/roy-tian/mdn-examples/tree/master/javascript/touch-paint/) |
-| **Server** |
-| 本地图书馆 | [Express 教程](https://github.com/roy-tian/mdn-examples/tree/master/server/express-locallibrary-tutorial/) | [代码](https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Express_Nodejs) |
+以下内容不定期更新，希望老铁你能喜欢，觉得还不错请双击 666~ 😂
+
+----
+
+## 汉化目录
+
+### 0. Web 入门
+
+1. [示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics) |
+HTML 基础：Mozilla 酷毙了
+2. [示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-styled)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-styled) 
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics) |
+CSS 基础：Mozilla 酷毙了（样式版）
+3. [示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-scripted)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-scripted)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/JavaScript_basics) |
+JavaScript 基础：Mozilla 酷毙了（脚本版）
+
+### 1. HTML
+
+#### 1.1 HTML 初步
+
+1. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/getting-started)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/getting-started)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started) |
+开始学习 HTML
+1. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/document-and-website-structure)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/document-and-website-structure)
+[章节](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/文件和网站结构) |
+文档和站点结构：二次元俱乐部
+2. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/debugging-html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML) |
+HTML 调试
+3. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/marking-up-a-letter-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) |
+章节测验：纽臂大学邮件
+4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/structuring-a-page-of-content-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/structuring-a-page-of-content-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content) |
+章节测验：观鸟网
+
+#### 1.2 HTML 多媒体和嵌入元素
+
+1. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/mdn-splash-page-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/multimedia-and-embedding/mdn-splash-page-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page) |
+章节测验：Mozilla 宣传页
+
+#### 1.3 HTML 表格
+
+1. [示例](https://roy-tian.github.io/learning-area/html/tables/assessment-finished/planets-data.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/assessment-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data) |
+章节测验：太阳系行星数据
+
+### 3. JavaScript
+
+#### 3.1 JavaScript 初步
+
+1. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/javascript-label.html) 
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/what-is-js)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript) |
+什么是 JavaScript
+2. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/first-splash/number-guessing-game.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript//introduction-to-js-1/first-splash)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash) |
+JavaScript 初体验：猜数字游戏
+3. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) |
+章节测验：笑话机
+
+#### 3.2 JavaScript 基础要件
+
+1. [示例](https://roy-tian.github.io/learning-area/javascript/building-blocks/gallery)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/building-blocks/gallery)
+[章节](https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/Building_blocks/相片走廊) |
+章节测验：照片库
+
+#### 3.3 JavaScript 对象
+
+1. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/bouncing-balls)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/bouncing-balls)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_building_practice) |
+实践对象构造：弹球
+2. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/assessment)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
+章节测验：弹球 + 恶魔圈
+2. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/assessment-es-class)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment-es-class)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
+章节测验：弹球 + 恶魔圈（ES6 版）
+
+### A. 其他工具
+
+1. [示例](https://roy-tian.github.io/learning-area/html/playable-code)
+[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/html/mozilla-is-cool-scripted)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics) |
+Web 入门：代码操场
+2. [示例](https://roy-tian.github.io/learning-area/css/color-picker)
+[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/css/color-picker)
+[章节](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Colors/Color_picker_tool) |
+CSS 颜色选择工具
+3. [示例](https://roy-tian.github.io/learning-area/javascript/key-event)
+[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/key-event)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash) |
+按键事件
+4. [示例](https://roy-tian.github.io/learning-area/javascript/touch-paint)
+[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/touch-paint)
+[章节](https://developer.mozilla.org/zh-CN/docs/Web/API/Touch_events) |
+触摸绘图板
