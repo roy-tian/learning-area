@@ -3,35 +3,32 @@ const consoleLog = document.getElementById('console-log');
 const btnClearConsole = document.getElementById('btn-clear-console');
 
 function logMessage(message) {
-  const p = document.createElement('p');
-  p.appendChild(document.createTextNode(message));
-  consoleLog.appendChild(p);
+  document.getElementById("console-log").innerHTML += message + "<br>";
 }
 
-textarea.addEventListener('keydown', e => {
+textarea.addEventListener('keydown', (e) => {
   if (!e.repeat)
-    logMessage(`第一个 keydown 事件。key 属性的值为"${e.key}"`);
+    logMessage(`按下 "${e.key}" 键 [事件： keydown]`);
   else
-    logMessage(`keydown 事件重复。key 属性的值为"${e.key}"`);
-});
-  
-textarea.addEventListener('beforeinput', e => {
-  logMessage(`beforeinput 事件。你准备输入"${e.data}"`);
-});
-  
-textarea.addEventListener('input', e => {
-  logMessage(`input 事件。你刚刚输入了"${e.data}"`);
-});
-  
-textarea.addEventListener('keyup', e => {
-  logMessage(`keyup 事件。key 属性的值为"${e.key}"`);
+    logMessage(`重复 "${e.key}" 键 [事件： keydown]`);
 });
 
-  
-btnClearConsole.addEventListener('click', e => {
-  let child = consoleLog.firstChild;
-  while (child) {
-    consoleLog.removeChild(child);
-    child = consoleLog.firstChild;
+textarea.addEventListener('beforeinput', (e) => {
+  logMessage(`即将输入 "${e.data}" [事件： beforeinput]`);
+});
+
+textarea.addEventListener('input', (e) => {
+  logMessage(`输入 "${e.data}" [事件： input]`);
+});
+
+textarea.addEventListener('keyup', (e) => {
+  logMessage(`释放 "${e.key}" 键 [事件： keyup]\n`);
+});
+
+btnClearConsole.addEventListener('click', () => {
+  let child = consoleLog.firstChild;
+  while (child) {
+   consoleLog.removeChild(child);
+   child = consoleLog.firstChild;
   }
 });
