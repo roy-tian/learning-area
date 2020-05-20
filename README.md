@@ -40,7 +40,7 @@ JavaScript 基础：Mozilla 酷毙了（脚本版）
 [章节](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/文件和网站结构) |
 文档和站点结构：二次元俱乐部
 2. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
-[代码](https://github.com/roy-tian/learning-area/tree/master/html/debugging-html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/debugging-html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML) |
 HTML 调试
 3. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
@@ -75,11 +75,11 @@ HTML 调试
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript) |
 什么是 JavaScript
 2. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/first-splash/number-guessing-game.html)
-[代码](https://github.com/roy-tian/learning-area/tree/master/javascript//introduction-to-js-1/first-splash)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/first-splash)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash) |
 JavaScript 初体验：猜数字游戏
 3. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
-[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) |
 章节测验：笑话机
 
@@ -107,19 +107,19 @@ JavaScript 初体验：猜数字游戏
 
 ### A. 其他工具
 
-1. [示例](https://roy-tian.github.io/learning-area/html/playable-code)
-[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/html/mozilla-is-cool-scripted)
+1. [示例](https://roy-tian.github.io/learning-area/extras/tools/playable-code)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/tools/playable-code)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics) |
 Web 入门：代码操场
-2. [示例](https://roy-tian.github.io/learning-area/css/color-picker)
-[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/css/color-picker)
+2. [示例](https://roy-tian.github.io/learning-area/extras/tools/color-picker)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/tools/color-picker)
 [章节](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Colors/Color_picker_tool) |
 CSS 颜色选择工具
-3. [示例](https://roy-tian.github.io/learning-area/javascript/key-event)
-[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/key-event)
-[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash) |
+3. [示例](https://roy-tian.github.io/learning-area/extras/tools/key-event)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/tools/key-event)
+[章节](https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent/key) |
 按键事件
-4. [示例](https://roy-tian.github.io/learning-area/javascript/touch-paint)
-[代码](https://github.com/roy-tian/learning-area/tree/master/https://github.com/roy-tian/learning-area/tree/master/javascript/touch-paint)
+4. [示例](https://roy-tian.github.io/learning-area/extras/tools/touch-paint)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/tools/touch-paint)
 [章节](https://developer.mozilla.org/zh-CN/docs/Web/API/Touch_events) |
 触摸绘图板
