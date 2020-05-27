@@ -35,19 +35,23 @@ JavaScript 基础：Mozilla 酷毙了（脚本版）
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/getting-started)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started) |
 开始学习 HTML
-1. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/document-and-website-structure)
+2. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/document-and-website-structure)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/document-and-website-structure)
 [章节](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/文件和网站结构) |
 文档和站点结构：二次元俱乐部
-2. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
+3. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/the-html-head/css-and-js.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/the-html-head/css-and-js.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
+HTML 元数据
+4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/debugging-html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML) |
 HTML 调试
-3. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
+5. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/marking-up-a-letter-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) |
 章节测验：纽臂大学邮件
-4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/structuring-a-page-of-content-finished)
+6. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/structuring-a-page-of-content-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/structuring-a-page-of-content-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content) |
 章节测验：观鸟网
@@ -100,7 +104,7 @@ JavaScript 初体验：猜数字游戏
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
 章节测验：弹球 + 恶魔圈
-2. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/assessment-es-class)
+3. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/assessment-es-class)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment-es-class)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
 章节测验：弹球 + 恶魔圈（ES6 版）
