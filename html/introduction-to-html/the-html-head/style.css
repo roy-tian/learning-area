@@ -1,10 +1,11 @@
 html {
-  background-color: green;
+  background-color: darkgreen;
+  color: azure;
   font-size: 20px;
 }
 
 ul {
-  background: red;
+  background: darkred;
   padding: 10px;
   border: 1px solid black;
 }
