@@ -41,7 +41,7 @@ JavaScript 基础：Mozilla 酷毙了（脚本版）
 文档和站点结构：二次元俱乐部
 3. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/the-html-head/css-and-js.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/the-html-head/css-and-js.html)
-[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML) |
 HTML 元数据
 4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/debugging-html)
@@ -82,7 +82,15 @@ HTML 调试
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/first-splash)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/A_first_splash) |
 JavaScript 初体验：猜数字游戏
-3. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
+3. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
+JavaScipt 比较运算符：状态机
+4. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional2.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional2.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
+JavaScipt 比较运算符：今天心情如何
+5. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) |
 章节测验：笑话机
