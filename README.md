@@ -43,15 +43,19 @@ JavaScript 基础：Mozilla 酷毙了（脚本版）
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/the-html-head/css-and-js.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML) |
 HTML 元数据
-4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
+4. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/navigation-menu-marked-up)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/navigation-menu-marked-up)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks) |
+HTML 超链接
+5. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/debugging-html/debug-example.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/debugging-html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML) |
 HTML 调试
-5. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
+6. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/marking-up-a-letter-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/marking-up-a-letter-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) |
 章节测验：纽臂大学邮件
-6. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/structuring-a-page-of-content-finished)
+7. [示例](https://roy-tian.github.io/learning-area/html/introduction-to-html/structuring-a-page-of-content-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/introduction-to-html/structuring-a-page-of-content-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content) |
 章节测验：观鸟网
