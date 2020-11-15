@@ -74,7 +74,19 @@ HTML 调试
 
 #### 1.2 HTML 多媒体和嵌入元素
 
-1. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/mdn-splash-page-finished)
+1. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/images-in-html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/multimedia-and-embedding/images-in-html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) |
+HTML 中的图片
+2. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/multimedia-and-embedding/video-and-audio-content)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content) |
+视频和音频
+3. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/multimedia-and-embedding/adding-vector-graphics-to-the-web)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web) |
+向量图形
+4. [示例](https://roy-tian.github.io/learning-area/html/multimedia-and-embedding/mdn-splash-page-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/multimedia-and-embedding/mdn-splash-page-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page) |
 章节测验：Mozilla 宣传页
