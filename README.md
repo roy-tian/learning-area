@@ -93,7 +93,23 @@ HTML 中的图片
 
 #### 1.3 HTML 表格
 
-1. [示例](https://roy-tian.github.io/learning-area/html/tables/assessment-finished/planets-data.html)
+1. [示例](https://roy-tian.github.io/learning-area/html/tables/basic/dogs-table-fixed.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/basic/dogs-table-fixed.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics) |
+HTML表格基础：狗的表格
+2. [示例](https://roy-tian.github.io/learning-area/html/tables/basic/animals-table-fixed.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/basic/animals-table-fixed.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics) |
+HTML表格基础：动物表格
+3. [示例](https://roy-tian.github.io/learning-area/html/tables/basic/timetable-fixed.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/basic/timetable-fixed.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics) |
+HTML表格基础：课程表
+4. [示例](https://roy-tian.github.io/learning-area/html/tables/basic/personal-pronouns-styled.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/basic/personal-pronouns-styled.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics) |
+HTML表格基础：人称代词表
+5. [示例](https://roy-tian.github.io/learning-area/html/tables/assessment-finished/planets-data.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data) |
 章节测验：太阳系行星数据
