@@ -109,7 +109,19 @@ HTML表格基础：课程表
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/basic/personal-pronouns-styled.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics) |
 HTML表格基础：人称代词表
-5. [示例](https://roy-tian.github.io/learning-area/html/tables/assessment-finished/planets-data.html)
+5. [示例](https://roy-tian.github.io/learning-area/html/tables/advanced/nested-tables.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/advanced/nested-tables.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced) |
+HTML表格高阶：嵌套表格
+6. [示例](https://roy-tian.github.io/learning-area/html/tables/advanced/items-sold-headers.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/advanced/personal-pronouns-styled.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced) |
+HTML表格高阶：销售统计
+7. [示例](https://roy-tian.github.io/learning-area/html/tables/advanced/spending-record-finished.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/advanced/spending-record-finished.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced) |
+HTML表格高阶：消费记录
+8. [示例](https://roy-tian.github.io/learning-area/html/tables/assessment-finished/planets-data.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/tables/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data) |
 章节测验：太阳系行星数据
