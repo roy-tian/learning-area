@@ -2,50 +2,50 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Advanced examples</title>
+  <meta charset="utf-8">
+  <title>高阶示例</title>
 </head>
 
 <body>
-    <form>
-        <p>
-          <label for="age">What is your age?</label>
-          <input type="number" name="age" id="age" min="1" max="10" step="2">
-        </p>
-        <p>
-          <label for="beans">How many beans can you eat?</label>
-          <input type="range" name="beans" id="beans" min="0" max="500" step="10">
-          <span class="beancount"></span>
-        </p>
-        <p>
-          <label for="myDate">When are you available this summer?</label>
-          <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" id="myDate">
-        </p>
-        <p>
-          <label for="meet">When shall we have the meeting?</label>
-          <input type="datetime-local" name="meet" id="meet">
-        </p>
-        <p>
-          <label for="month">What month is your favorite?</label>
-          <input type="month" name="month" id="month">
-        </p>
-        <p>
-          <label for="time">Set the time for your wifi fridge</label>
-          <input type="time" name="time" id="time">
-        </p>
-        <p>
-          <label for="color">What is your favourite color?</label>
-          <input type="color" name="color" id="color">
-        </p>
-    </form>
+  <form>
+    <p>
+      <label for="age">请输入你的年龄：</label>
+      <input type="number" name="age" id="age" min="1" max="10" step="2">
+    </p>
+    <p>
+      <label for="beans">你能吃多少豆子？</label>
+      <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+      <span class="beanCount"></span>
+    </p>
+    <p>
+      <label for="myDate">这个夏天你什么时候有空？</label>
+      <input type="date" name="myDate" min="2020-06-01" max="2020-08-31" id="myDate">
+    </p>
+    <p>
+      <label for="meet">会议什么时候召开？</label>
+      <input type="datetime-local" name="meet" id="meet">
+    </p>
+    <p>
+      <label for="month">你最喜欢的月份是？</label>
+      <input type="month" name="month" id="month">
+    </p>
+    <p>
+      <label for="time">请为智能冰箱设置时间：</label>
+      <input type="time" name="time" id="time">
+    </p>
+    <p>
+      <label for="color">你最喜欢的颜色是？</label>
+      <input type="color" name="color" id="color">
+    </p>
+  </form>
 <script>
-   var beans = document.querySelector('#beans');
-   var count = document.querySelector('.beancount');
+   const beans = document.querySelector('#beans');
+   const count = document.querySelector('.beanCount');
 
    count.textContent = beans.value;
 
    beans.oninput = function() {
-     count.textContent = beans.value;
+   count.textContent = beans.value;
    }
 </script>
 </body>
