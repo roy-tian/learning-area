@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>File upload example</title>
-    <style>
-      div {
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
-  <body>
-      <form>
-       <div>
-         <label for="file">Choose file to upload</label>
-         <input type="file" id="file" name="file" multiple>
-       </div>
-       <div>
-         <button>Submit</button>
-       </div>
-      </form>
-     <script>
-       var test = document.querySelector('input');
-     </script>
-  </body>
+<head>
+  <title>文件示例</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <div>
+      <label for="file">选择要上传的文件</label>
+      <input type="file" id="file" name="file" multiple>
+    </div>
+    <div>
+      <button>提交</button>
+    </div>
+  </form>
+  <script>
+    const test = document.querySelector('input');
+  </script>
+</body>
 </html>
