@@ -56,23 +56,20 @@
 
 <script>
 // 定义变量
-const nativePicker = document.querySelector('.nativeDatePicker');
-const fallbackPicker = document.querySelector('.fallbackDatePicker');
-const fallbackLabel = document.querySelector('.fallbackLabel');
+var nativePicker = document.querySelector('.nativeDatePicker');
+var fallbackPicker = document.querySelector('.fallbackDatePicker');
+var fallbackLabel = document.querySelector('.fallbackLabel');
 
-const yearSelect = document.querySelector('#year');
-const monthSelect = document.querySelector('#month');
-const daySelect = document.querySelector('#day');
+var yearSelect = document.querySelector('#year');
+var monthSelect = document.querySelector('#month');
+var daySelect = document.querySelector('#day');
 
 // 默认隐藏兼容模式
 fallbackPicker.style.display = 'none';
 fallbackLabel.style.display = 'none';
 
-// 前一次日期选择
-let previousDay;
-
 // 测试是否支持日期输入框
-const test = document.createElement('input');
+var test = document.createElement('input');
 
 try {
   test.type = 'date';
@@ -93,7 +90,7 @@ if(test.type === 'text') {
 }
 
 function isLeapYear(year) {
-  return (new Date(year, 1, 29).getMonth() == 1);
+  return (new Date(year, 1, 29).getMonth() === 1);
 }
 
 function dayOfMonth(year, month) {
@@ -115,11 +112,11 @@ function populateDays() {
     daySelect.removeChild(daySelect.firstChild);
   }
 
-  let dayNum = dayOfMonth(Number(yearSelect.value), monthSelect.value);
+  var dayNum = dayOfMonth(Number(yearSelect.value), monthSelect.value);
 
   // 为日期 <select> 注入正确数量的新 <option> 元素。
-  for(let i = 1; i <= dayNum; i++) {
-    const option = document.createElement('option');
+  for(var i = 1; i <= dayNum; i++) {
+    var option = document.createElement('option');
     option.textContent = i;
     daySelect.appendChild(option);
   }
@@ -145,24 +142,27 @@ function populateDays() {
 
 function populateYears() {
   // 取当前年份的数值
-  const date = new Date();
-  const year = date.getFullYear();
+  var date = new Date();
+  var year = date.getFullYear();
 
   // 在年份 <select> 注入当前你年份及之前的100年
-  for(let i = 0; i <= 100; i++) {
-    const option = document.createElement('option');
+  for(var i = 0; i <= 100; i++) {
+    var option = document.createElement('option');
     option.textContent = year - i;
     yearSelect.appendChild(option);
   }
 }
 
 // 在修改月份或年份的 <select> 时，重新运行 populateDays() 使日期有效。
-yearSelect.onchange = () => populateDays();
+yearSelect.onchange = function() { populateDays(); }
 
-monthSelect.onchange = () => populateDays();
+monthSelect.onchange = function() { populateDays(); }
+
+// 前一次日期选择
+var previousDay;
 
 // 更新上一轮设置的日期，参见 populateDays()
-daySelect.onchange = () => previousDay = daySelect.value;
+daySelect.onchange = function() { previousDay = daySelect.value; }
 </script>
 </body>
 
