@@ -2,33 +2,33 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Minimum and maximum examples</title>
-    <style>
-      input:invalid {
-        border: 2px dashed red;
-      }
+  <meta charset="utf-8">
+  <title>最大最小示例</title>
+  <style>
+    input:invalid {
+      border: 2px dashed red;
+    }
 
-      input:valid {
-        border: 2px solid black;
-      }
-    </style>
+    input:valid {
+      border: 2px solid black;
+    }
+  </style>
 </head>
 
 <body>
-    <form>
-      <p>
-        <label for="n1">How old are you?</label>
-        <input type="number" id="n1" name="age" pattern="\d+" min="12" max="120">
-      </p>
-      <p>
-        <label for="t3">Leave a short message</label>
-        <textarea id="t3" name="msg" rows="5" maxlength="10"></textarea>
-      </p>
-      <p>
-        <button>Submit</button>
-      </p>
-    </form>
+  <form>
+    <p>
+      <label for="n1">你多大年纪？</label>
+      <input type="number" id="n1" name="age" pattern="\d+" min="12" max="120">
+    </p>
+    <p>
+      <label for="t3">请留言：</label>
+      <textarea id="t3" name="msg" rows="5" maxlength="10"></textarea>
+    </p>
+    <p>
+      <button>提交</button>
+    </p>
+  </form>
 </body>
 
 </html>
