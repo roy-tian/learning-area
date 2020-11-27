@@ -2,13 +2,13 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <title>Toggle switch example</title>
+    <title>开关示例</title>
     <style>
       * {
         box-sizing: border-box;
       }
 
-      /* Flexbox fu to make the control and label line up */
+      /* 使用弹性盒子排列控件和标签 */
 
       li {
         width: 100px;
@@ -18,10 +18,7 @@
         position: relative;
       }
 
-      /*
-         Size the label, and make the on and off parts sit on top
-         of one another using positioning
-      */
+      /* 设置标签尺寸，使用绝对位置将开、关图形叠放 */
 
       label {
         width: 20px;
@@ -34,10 +31,7 @@
         position: absolute;
       }
 
-      /*
-         remove the default styling of the checkbox using appearance
-         and create the outer toggle area
-      */
+      /* 使用 apperance 删除单选框的默认样式，设置外围点击区域 */
 
       input[type="checkbox"] {
         -webkit-appearance: none;
@@ -50,10 +44,7 @@
         transition: all 0.4s;
       }
 
-      /*
-         style the ::before content to look like
-         the inner toggle switch - the bit that moves
-      */
+      /* 设置 ::before 内容的样式，使之与内部开关动作样式一致。 */
 
       input[type="checkbox"]::before {
         width: 16px;
@@ -67,10 +58,7 @@
         transition: all 0.4s;
       }
 
-      /*
-         change the outer background color and move the inner toggle switch
-         when the checkbox is checked; use transitions for smooth animation
-      */
+      /* 设置外围背景色，设置内部开关动画，使用 transition 让动画流畅 */
 
       input[type="checkbox"]:checked {
         background-color: #ffaa00;
@@ -82,10 +70,7 @@
         transition: all 0.4s;
       }
 
-      /*
-         cause the On and Off parts of the label to be visible when the checkbox is
-         checked and unchecked, respectively
-      */
+      /* 让标签的 开、关 部分响应点击 */
 
       input[type="checkbox"] ~ label .on, input[type="checkbox"]:checked ~ label .off {
         opacity: 0;
@@ -95,10 +80,7 @@
         opacity: 1;
       }
 
-      /*
-         make the focus outline a bit more subtle on Chrome, rather than the
-         default heavy blue outline
-      */
+      /* 让 Chrome 在聚焦时的外围框架更细，而不现实默认的蓝色粗线。 */
 
       input:focus {
         outline: 1px dotted black;
@@ -110,7 +92,7 @@
     <ul>
       <li>
         <input type="checkbox" name="power" id="power">
-        <label for="power"><span class="on">On</span> <span class="off">Off</span></label>
+        <label for="power"><span class="on">开</span> <span class="off">关</span></label>
       </li>
     </ul>
   </body>
