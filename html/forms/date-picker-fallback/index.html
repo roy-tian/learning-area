@@ -148,7 +148,7 @@ function populateYears() {
   // 在年份 <select> 注入当前你年份及之前的100年
   for(var i = 0; i <= 100; i++) {
     var option = document.createElement('option');
-    option.textContent = year - i;
+    option.textContent = (year - i).toString();
     yearSelect.appendChild(option);
   }
 }
