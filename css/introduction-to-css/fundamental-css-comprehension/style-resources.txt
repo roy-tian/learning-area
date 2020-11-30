@@ -1,4 +1,4 @@
-/* General styles - put these straight into your stylesheet */
+/* 一般样式 - 将以下内容直接填入样式表 */
 
 body {
   margin: 0;
@@ -10,14 +10,14 @@ html {
   background-color: #ccc;
 }
 
-/* Selectors to be matched up with rulesets */
+/* 规则集合匹配选择器 */
 
 .card article img
 .card footer
 .card header
 .card
 
-/* Rulesets to be matched up with selectors */
+/* 选择器匹配规则集合 */
 
 {
   width: 35em;
