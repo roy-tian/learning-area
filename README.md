@@ -126,6 +126,98 @@ HTML表格高阶：消费记录
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data) |
 章节测验：太阳系行星数据
 
+#### 1.4 表单
+
+1. [示例](https://roy-tian.github.io/learning-area/html/forms/your-first-HTML-form/first-form-styled.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/your-first-HTML-form/first-form-styled.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Your_first_HTML_form) |
+创建我的第一个表单
+2. [示例](https://roy-tian.github.io/learning-area/html/forms/html-form-structure/payment-form.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/html-form-structure/payment-form.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Your_first_HTML_form) |
+付费表单示例
+3. [示例](https://roy-tian.github.io/learning-area/html/forms/form-validation/full-example.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/form-validation/full-example.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Data_form_validation) |
+表单数据校验
+4. [示例](https://roy-tian.github.io/learning-area/html/forms/native-form-widgets/advanced-examples.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/native-form-widgets/advanced-examples.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+本地表单控件
+5. [示例](https://roy-tian.github.io/learning-area/html/forms/pseudo-classes/enabled-disabled-shipping.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/pseudo-classes/enabled-disabled-shipping.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+伪类：启用/禁用
+6. [示例](https://roy-tian.github.io/learning-area/html/forms/pseudo-classes/valid-invalid.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/pseudo-classes/valid-invalid.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+伪类：表单校验
+7. [示例](https://roy-tian.github.io/learning-area/html/forms/basic-input-examples/index.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/basic-input-examples/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：基础输入
+8. [示例](https://roy-tian.github.io/learning-area/html/forms/color-example/index.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/color-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：色彩
+9. [示例](https://roy-tian.github.io/learning-area/html/forms/datetime-local-picker-fallback/index.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/datetime-local-picker-fallback/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：日期选择（兼容版）
+10. [示例](https://roy-tian.github.io/learning-area/html/forms/file-examples/file-example.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/file-examples/file-example.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：文件选择
+11. [示例](https://roy-tian.github.io/learning-area/html/forms/indeterminate-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/indeterminate-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：回调
+12. [示例](https://roy-tian.github.io/learning-area/html/forms/month-examples/month-validation.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/month-examples/month-validation.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：月份测试
+13. [示例](https://roy-tian.github.io/learning-area/html/forms/number-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/number-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：数字
+14. [示例](https://roy-tian.github.io/learning-area/html/forms/range-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/range-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：选择范围
+15. [示例](https://roy-tian.github.io/learning-area/html/forms/number-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/number-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：数字
+16. [示例](https://roy-tian.github.io/learning-area/html/forms/styling-examples/appearence-tester.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/styling-examples/appearence-tester.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：表单样式
+17. [示例](https://roy-tian.github.io/learning-area/html/forms/styling-examples/ugly-controls.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/styling-examples/ugly-controls.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：控件样式
+18. [示例](https://roy-tian.github.io/learning-area/html/forms/tel-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/tel-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：电话号码
+19. [示例](https://roy-tian.github.io/learning-area/html/forms/text-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/text-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：文本
+20. [示例](https://roy-tian.github.io/learning-area/html/forms/toggle-switch-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/toggle-switch-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：开关
+21. [示例](https://roy-tian.github.io/learning-area/html/forms/url-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/url-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：开关
+22. [示例](https://roy-tian.github.io/learning-area/html/forms/week-example/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/week-example/index.html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
+HTML 表单示例：开关
+
+
 ### 3. JavaScript
 
 #### 3.1 JavaScript 初步
