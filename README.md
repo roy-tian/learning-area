@@ -233,11 +233,11 @@ JavaScript 初体验：猜数字游戏
 3. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
-JavaScipt 比较运算符：状态机
+JavaScript 比较运算符：状态机
 4. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional2.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional2.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
-JavaScipt 比较运算符：今天心情如何
+JavaScript 比较运算符：今天心情如何
 5. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) |
