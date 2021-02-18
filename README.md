@@ -211,11 +211,11 @@ HTML 表单示例：开关
 21. [示例](https://roy-tian.github.io/learning-area/html/forms/url-example/)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/url-example/index.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
-HTML 表单示例：开关
+HTML 表单示例：URL
 22. [示例](https://roy-tian.github.io/learning-area/html/forms/week-example/)
 [代码](https://github.com/roy-tian/learning-area/tree/master/html/forms/week-example/index.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
-HTML 表单示例：开关
+HTML 表单示例：周的示例
 
 
 ### 3. JavaScript
