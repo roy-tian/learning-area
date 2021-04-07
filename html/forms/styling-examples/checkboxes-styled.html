@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Checkboxes styled</title>
-    <style>
-      input[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-      }
+  <meta charset="utf-8">
+  <title>含样式的单选按钮</title>
+  <style>
+    input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
 
-      input[type="checkbox"] {
-        position: relative;
-        width: 1em;
-        height: 1em;
-        border: 1px solid gray;
-        /* Adjusts the position of the checkboxes on the text baseline */
-        vertical-align: -2px;
-        /* Set here so that Windows' High-Contrast Mode can override */
-        color: green;
-      }
+    input[type="checkbox"] {
+      position: relative;
+      width: 1em;
+      height: 1em;
+      border: 1px solid gray;
+      /* 调整单选按钮的垂直位置 */
+      vertical-align: -2px;
+      /* 设置窗口的高对比度模式 */
+      color: green;
+    }
 
-      input[type="checkbox"]::before {
-        content: "✔";
-        position: absolute;
-        font-size: 1.2em;
-        right: 0;
-        top: -0.3em;
-        visibility: hidden;
-      }
+    input[type="checkbox"]::before {
+      content: "✔";
+      position: absolute;
+      font-size: 1.2em;
+      right: 0;
+      top: -0.3em;
+      visibility: hidden;
+    }
 
-      input[type="checkbox"]:checked::before {
-        /* Use `visibility` instead of `display` to avoid recalculating layout */
-        visibility: visible;
-      }
+    input[type="checkbox"]:checked::before {
+      /* 使用 'visibility' 代替 'display'，避免重复计算布局。 */
+      visibility: visible;
+    }
 
-      input[type="checkbox"]:disabled {
-        border-color: black;
-        background: #ddd;
-        color: gray;
-      }
+    input[type="checkbox"]:disabled {
+      border-color: black;
+      background: #ddd;
+      color: gray;
+    }
 
-    </style>
+  </style>
 </head>
 
 <body>
   <form>
     <fieldset>
-      <legend>Fruit preferences</legend>
+      <legend>水果属性</legend>
 
       <p>
         <label>
           <input type="checkbox" name="fruit-1" value="cherry">
-          I like cherry
+          我喜欢樱桃。
         </label>
       </p>
       <p>
         <label>
           <input type="checkbox" name="fruit-2" value="banana" disabled>
-          I can't like banana
+          我喜欢香蕉。
         </label>
       </p>
       <p>
         <label>
           <input type="checkbox" name="fruit-3" value="strawberry">
-          I like strawberry
+          我喜欢草莓。
         </label>
       </p>
     </fieldset>

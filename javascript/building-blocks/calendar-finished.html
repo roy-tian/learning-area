@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Simple calendar example</title>
+    <title>简易日历示例</title>
     <style>
       * {
         box-sizing: border-box;
@@ -25,44 +25,42 @@
     </style>
   </head>
   <body>
-    <label for="month">Select month: </label>
+    <label for="month">选择月份：</label>
     <select id="month">
-      <option value="January">January</option>
-      <option value="February">February</option>
-      <option value="March">March</option>
-      <option value="April">April</option>
-      <option value="May">May</option>
-      <option value="June">June</option>
-      <option value="July">July</option>
-      <option value="August">August</option>
-      <option value="September">September</option>
-      <option value="October">October</option>
-      <option value="November">November</option>
-      <option value="December">December</option>
+      <option>一月</option>
+      <option>二月</option>
+      <option>三月</option>
+      <option>四月</option>
+      <option>五月</option>
+      <option>六月</option>
+      <option>七月</option>
+      <option>八月</option>
+      <option>九月</option>
+      <option>十月</option>
+      <option>十一月</option>
+      <option>十二月</option>
     </select>
 
     <h1></h1>
 
-    <ul>
-
-    </ul>
+    <ul></ul>
 
     <script>
       const select = document.querySelector('select');
       const list = document.querySelector('ul');
       const h1 = document.querySelector('h1');
 
-      select.onchange = function() {
-        const choice = select.value;
-        let days = 31;
-
-        if(choice === 'February') {
-          days = 28;
-        } else if(choice === 'April' || choice === 'June' || choice === 'September' || choice === 'November') {
-          days = 30;
+      function daysOfMonth(month) {
+        switch (month) {
+          case '一月': case '三月': case '五月': case '七月': case '八月': case '十月': case '十二月':
+            return 31;
+          case '四月': case '六月': case '九月': case '十一月':
+            return 30;
+          case '二月':
+            return 28;
+          default:
+            return 0;
         }
-
-        createCalendar(days, choice);
       }
 
       function createCalendar(days, choice) {
@@ -74,8 +72,15 @@
           list.appendChild(listItem);
         }
       }
+      
+      select.onchange = function() {
+        const choice = select.value;
+        const days = daysOfMonth(choice);
 
-      createCalendar(31, 'January');
+        createCalendar(days, choice);
+      }
+
+      createCalendar(31, '一月');
     </script>
   </body>
 </html>

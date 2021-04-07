@@ -3,65 +3,64 @@
 
 <head>
   <meta charset="utf-8">
-  <title>callback test</title>
+  <title>回调测试</title>
 </head>
 
 <body>
   <form>
     <fieldset>
-    <legend>Complete the recipe</legend>
+      <legend>完成配方</legend>
       <div>
         <input type="checkbox" id="EnchTbl" name="EnchTbl">
-        <label for="EnchTbl">Enchantment table</label>
+        <label for="EnchTbl">魅力表</label>
         <ul>
           <li>
             <input type="checkbox" id="book" name="ingredient" value="book">
-            <label for="book">Book</label>
+            <label for="book">书</label>
           </li>
           <li>
             <input type="checkbox" id="diamonds" name="ingredient" value="diamonds">
-            <label for="diamonds">Diamonds (x2)</label>
+            <label for="diamonds">钻石 (x2)</label>
           </li>
           <li>
             <input type="checkbox" id="obsidian" name="ingredient" value="obsidian">
-            <label for="obsidian">Obsidian (x4)</label>
+            <label for="obsidian">黑曜石 (x4)</label>
           </li>
         </ul>
       </div>
     </fieldset>
   </form>
   <script>
-  var overall = document.querySelector('input[id="EnchTbl"]');
-  var ingredients = document.querySelectorAll('ul input');
+    const overall = document.querySelector('input[id="EnchTbl"]');
+    const ingredients = document.querySelectorAll('ul input');
 
-  overall.addEventListener('click', function(e) {
-    e.preventDefault();
-  });
+    overall.addEventListener('click', function(e) {
+      e.preventDefault();
+    });
 
-  for(var i = 0; i < ingredients.length; i++) {
-    ingredients[i].addEventListener('click', updateDisplay);
-  }
+    for(let i = 0; i < ingredients.length; i++) {
+      ingredients[i].addEventListener('click', updateDisplay);
+    }
 
-  function updateDisplay() {
-    var checkedCount = 0;
-    for(var i = 0; i < ingredients.length; i++) {
-      if(ingredients[i].checked) {
-        checkedCount++;
+    function updateDisplay() {
+      let checkedCount = 0;
+      for(let i = 0; i < ingredients.length; i++) {
+        if(ingredients[i].checked) {
+          checkedCount++;
+        }
+      }
+
+      if(checkedCount === 0) {
+        overall.checked = false;
+        overall.indeterminate = false;
+      } else if(checkedCount === ingredients.length) {
+        overall.checked = true;
+        overall.indeterminate = false;
+      } else {
+        overall.checked = false;
+        overall.indeterminate = true;
       }
     }
-
-    if(checkedCount === 0) {
-      overall.checked = false;
-      overall.indeterminate = false;
-    } else if(checkedCount === ingredients.length) {
-      overall.checked = true;
-      overall.indeterminate = false;
-    } else {
-      overall.checked = false;
-      overall.indeterminate = true;
-    }
-  }
-
   </script>
 </body>
 

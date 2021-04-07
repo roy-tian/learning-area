@@ -2,44 +2,46 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>&lt;input type="datetime-local"&gt; example</title>
-    <style>
-      div {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
+  <meta charset="utf-8">
+  <title>&lt;input type="datetime-local"&gt; 示例</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
 
-      label {
+    label {
       display: inline-block;
       width: 300px;
-      }
+    }
 
-      input:invalid+span:after {
-        content: '✖';
-        padding-left: 5px;
-      }
+    input:invalid+span:after {
+      content: '✖';
+      padding-left: 5px;
+    }
 
-      input:valid+span:after {
-        content: '✓';
-        padding-left: 5px;
-      }
-    </style>
+    input:valid+span:after {
+      content: '✓';
+      padding-left: 5px;
+    }
+  </style>
 </head>
 
 <body>
 <form>
-    <div>
-        <label for="party">Choose your preferred party date and time (required, June 1st 8.30am to June 30th 4.30pm):</label>
-        <input id="party" type="datetime-local" name="partydate"
-               min="2017-06-01T08:30" max="2017-06-30T16:30"
-               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" required>
-        <span class="validity"></span>
-    </div>
-    <div>
-        <input type="submit" value="Book party!">
-    </div>
-    <input type="hidden" id="timezone" name="timezone" value="-08:00">
+  <div>
+    <label for="party">选择聚会的日期时间（必填，6 月 1 日 8:30 至 6 月 30 日 4:30 之间）：</label>
+    <input id="party" type="datetime-local" name="partydate"
+           min="2017-06-01T08:30" max="2017-06-30T16:30"
+           pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" required>
+    <span class="validity"></span>
+  </div>
+  <div>
+    <input type="submit" value="预定聚会！">
+  </div>
+  <input type="hidden" id="timezone" name="timezone" value="-08:00">
 </form>
 </body>
+
+</html>

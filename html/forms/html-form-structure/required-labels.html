@@ -8,27 +8,27 @@
 
 <body>
     <form>
-        <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+        <p><abbr title="必填">*</abbr>为必填项目。</p>
 
-        <!-- So this: -->
+        <!-- 因此 -->
         <!--<div>
-          <label for="username">Name:</label>
+          <label for="username">名字：</label>
           <input type="text" name="username">
-          <label for="username"><abbr title="required">*</abbr></label>
+          <label for="username"><abbr title="必填">*</abbr></label>
         </div>-->
 
-        <!-- would be better done like this: -->
+        <!-- 这样写更好 -->
         <!--<div>
           <label for="username">
-            <span>Name:</span>
+            <span>名字：</span>
             <input id="username" type="text" name="username">
             <abbr title="required">*</abbr>
           </label>
         </div>-->
 
-        <!-- But this is probably best: -->
+        <!-- 但似乎这样写最好： -->
         <div>
-          <label for="username">Name: <abbr title="required">*</abbr></label>
+          <label for="username">名字：<abbr title="必填">*</abbr></label>
           <input id="username" type="text" name="username">
         </div>
     </form>

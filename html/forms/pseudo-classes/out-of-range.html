@@ -1,128 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>:out-of-range example</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Josefin Sans', sans-serif;
-        margin: 20px auto;
-        max-width: 460px;
-      }
+  <meta charset="utf-8">
+  <title>:out-of-range 溢出示例</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px auto;
+      max-width: 460px;
+    }
 
-      fieldset {
-        padding: 10px 30px 0;
-      }
+    fieldset {
+      padding: 10px 30px 0;
+    }
 
-      legend {
-        color: white;
-        background: black;
-        padding: 5px 10px;
-      }
+    legend {
+      color: white;
+      background: black;
+      padding: 5px 10px;
+    }
 
-      fieldset > div {
-        margin-bottom: 20px;
-        display: flex;
-        flex-flow: row wrap;
-      }
+    fieldset > div {
+      margin-bottom: 20px;
+      display: flex;
+      flex-flow: row wrap;
+    }
 
-      button, label, input {
-        display: block;
-        font-family: inherit;
-        font-size: 100%;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        width: 100%;
-        padding: 5px;
-        height: 30px;
-      }
+    button, label, input {
+      display: block;
+      font-family: inherit;
+      font-size: 100%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 5px;
+      height: 30px;
+    }
 
-      input {
-        box-shadow: inset 1px 1px 3px #ccc;
-        border-radius: 5px;
-      }
+    input {
+      box-shadow: inset 1px 1px 3px #ccc;
+      border-radius: 5px;
+    }
 
-      input:hover, input:focus {
-        background-color: #eee;
-      }
+    input:hover, input:focus {
+      background-color: #eee;
+    }
 
-      input + span {
-        position: relative;
-      }
+    input + span {
+      position: relative;
+    }
 
-      input + span::after {
-        font-size: 0.7rem;
-        position: absolute;
-        padding: 5px 10px;
-        top: -26px;
-      }
+    input + span::after {
+      font-size: 0.7rem;
+      position: absolute;
+      padding: 5px 10px;
+      top: -26px;
+    }
 
-      input:required + span::after {
-        color: white;
-        background-color: black;
-        content: "required";
-        left: -70px;
-      }
+    input:required + span::after {
+      color: white;
+      background-color: black;
+      content: "required";
+      left: -70px;
+    }
 
-      input:out-of-range + span::after {
-        color: white;
-        background-color: red;
-        width: 155px;
-        content: "Outside allowable value range";
-        left: -182px;
-      }
+    input:out-of-range + span::after {
+      color: white;
+      background-color: red;
+      width: 155px;
+      content: "Outside allowable value range";
+      left: -182px;
+    }
 
-      input + span::before {
-        position: absolute;
-        right: -20px;
-        top: 5px;
-      }
+    input + span::before {
+      position: absolute;
+      right: -20px;
+      top: 5px;
+    }
 
-      input:invalid {
-        border: 2px solid red;
-      }
+    input:invalid {
+      border: 2px solid red;
+    }
 
-      input:invalid + span::before {
-        content: '✖';
-        color: red;
-      }
+    input:invalid + span::before {
+      content: '✖';
+      color: red;
+    }
 
-      input:valid + span::before {
-        content: '✓';
-        color: green;
-      }
+    input:valid + span::before {
+      content: '✓';
+      color: green;
+    }
 
-      button {
-        width: 60%;
-        margin: 0 auto;
-      }
-    </style>
+    button {
+      width: 60%;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
     <form>
       <fieldset>
-        <legend>Feedback form</legend>
+        <legend>反馈表单</legend>
 
-        <p>Required fields are labelled with "required".</p>
+        <p>必填文本框和标签要添加 required 属性</p>
         <div>
-          <label for="name">Name: </label>
+          <label for="name">姓名：</label>
           <input id="name" name="name" type="text" required>
           <span></span>
         </div>
         <div>
-          <label for="age">Age (must be 12+): </label>
+          <label for="age">年龄（必须大于12岁）：</label>
           <input id="age" name="age" type="number" min="12" max="120" required>
           <span></span>
         </div>
         <div>
-          <label for="email">Email address (include if you want a response): </label>
+          <label for="email">电子邮件（填写以收到反馈）：</label>
           <input id="email" name="email" type="email">
           <span></span>
         </div>
-        <div><button>Submit</button></div>
+        <div><button>提交</button></div>
       </fieldset>
     </form>
 </body>

@@ -2,11 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Radio buttons :checked, :indeterminate</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>收音机按钮 :checked, :indeterminate</title>
     <style>
       body {
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: sans-serif;
       }
 
       input[type="radio"] {
@@ -19,7 +18,7 @@
         height: 20px;
         border-radius: 10px;
         border: 2px solid gray;
-        /* Adjusts the position of the checkboxes on the text baseline */
+        /* 调整单选框文字位置 */
         vertical-align: -2px;
         outline: none;
       }
@@ -62,21 +61,21 @@
 <body>
   <form>
     <fieldset>
-      <legend>Choose your favourite fruit</legend>
+      <legend>选择你最喜欢的苹果</legend>
 
 <p>
   <input type="radio" name="fruit" value="cherry" id="cherry">
-  <label for="cherry">Cherry</label>
+  <label for="cherry">樱桃</label>
   <span></span>
 </p>
       <p>
         <input type="radio" name="fruit" value="banana" id="banana">
-        <label for="banana">Banana</label>
+        <label for="banana">香蕉</label>
         <span></span>
       </p>
       <p>
         <input type="radio" name="fruit" value="strawberry" id="strawberry">
-        <label for="strawberry">Strawberry</label>
+        <label for="strawberry">草莓</label>
         <span></span>
       </p>
     </fieldset>

@@ -2,11 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>:required and :optional with generated content</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>:required 和 :optional - 生成的内容</title>
     <style>
       body {
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: sans-serif;
         margin: 20px auto;
         max-width: 460px;
       }
@@ -73,25 +72,25 @@
 <body>
     <form>
       <fieldset>
-        <legend>Feedback form</legend>
+        <legend>反馈表单</legend>
 
-        <p>Required fields are labelled with "required".</p>
+        <p>必填的文本框添加了“必填”标签</p>
         <div>
-          <label for="fname">First name: </label>
-          <input id="fname" name="fname" type="text" required>
-          <span></span>
-        </div>
-        <div>
-          <label for="lname">Last name: </label>
+          <label for="lname">姓：</label>
           <input id="lname" name="lname" type="text" required>
           <span></span>
         </div>
         <div>
-          <label for="email">Email address (include if you want a response): </label>
+          <label for="fname">名</label>
+          <input id="fname" name="fname" type="text" required>
+          <span></span>
+        </div>
+        <div>
+          <label for="email">电子邮件（填写以收到反馈）：</label>
           <input id="email" name="email" type="email">
           <span></span>
         </div>
-        <div><button>Submit</button></div>
+        <div><button>提交</button></div>
       </fieldset>
     </form>
 </body>

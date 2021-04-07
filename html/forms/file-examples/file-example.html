@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Complete file example</title>
+  <title>文件示例（完整版）</title>
   <style>
     html {
       font-family: sans-serif;
@@ -58,17 +58,18 @@
     }
   </style>
 </head>
+
 <body>
   <form>
     <div>
-      <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+      <label for="image_uploads">选择要上传的图片（PNG、JPG）</label>
       <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
     </div>
     <div class="preview">
-      <p>No files currently selected for upload</p>
+      <p>尚未选择图片</p>
     </div>
     <div>
-      <button>Submit</button>
+      <button>提交</button>
     </div>
   </form>
   <script>
@@ -87,7 +88,7 @@
       const curFiles = input.files;
       if(curFiles.length === 0) {
         const para = document.createElement('p');
-        para.textContent = 'No files currently selected for upload';
+        para.textContent = '尚未选择图片';
         preview.appendChild(para);
       } else {
         const list = document.createElement('ol');
@@ -98,14 +99,14 @@
           const para = document.createElement('p');
 
           if(validFileType(file)) {
-            para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+            para.textContent = `文件名 ${file.name}，文件大小 ${returnFileSize(file.size)}。`;
             const image = document.createElement('img');
             image.src = URL.createObjectURL(file);
 
             listItem.appendChild(image);
             listItem.appendChild(para);
           } else {
-            para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+            para.textContent = `文件名 ${file.name}：无效文件类型，请重新选择。`;
             listItem.appendChild(para);
           }
 

@@ -2,125 +2,119 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Detailed custom validation</title>
-    <style>
-      body {
-        font: 1em sans-serif;
-        width: 200px;
-        padding: 0;
-        margin : 0 auto;
-      }
+  <meta charset="utf-8">
+  <title>详细的自定义错误提示</title>
+  <style>
+    body {
+      font: 1em sans-serif;
+      width: 200px;
+      padding: 0;
+      margin : 0 auto;
+    }
 
-      p * {
-        display: block;
-      }
+    p * {
+      display: block;
+    }
 
-      input[type=email]{
-        -webkit-appearance: none;
-        appearance: none;
+    input[type=email]{
+      -webkit-appearance: none;
+      appearance: none;
 
-        width: 100%;
-        border: 1px solid #333;
-        margin: 0;
+      width: 100%;
+      border: 1px solid #333;
+      margin: 0;
 
-        font-family: inherit;
-        font-size: 90%;
+      font-family: inherit;
+      font-size: 90%;
 
-        box-sizing: border-box;
-      }
+      box-sizing: border-box;
+    }
 
-      /* This is our style for the invalid fields */
-      input:invalid{
-        border-color: #900;
-        background-color: #FDD;
-      }
+    /* 自定义的错误格式 */
+    input:invalid{
+      border-color: #900;
+      background-color: #FDD;
+    }
 
-      input:focus:invalid {
-        outline: none;
-      }
+    input:focus:invalid {
+      outline: none;
+    }
 
-      /* This is the style of our error messages */
-      .error {
-        width  : 100%;
-        padding: 0;
+    /* 错误信息样式 */
+    .error {
+      width  : 100%;
+      padding: 0;
 
-        font-size: 80%;
-        color: white;
-        background-color: #900;
-        border-radius: 0 0 5px 5px;
+      font-size: 80%;
+      color: white;
+      background-color: #900;
+      border-radius: 0 0 5px 5px;
 
-        box-sizing: border-box;
-      }
+      box-sizing: border-box;
+    }
 
-      .error.active {
-        padding: 0.3em;
-      }
-    </style>
+    .error.active {
+      padding: 0.3em;
+    }
+  </style>
 </head>
 
 <body>
   <form novalidate>
     <p>
       <label for="mail">
-        <span>Please enter an email address:</span>
+        <span>请输入一个电子邮件地址：</span>
         <input type="email" id="mail" name="mail" required minlength="8">
         <span class="error" aria-live="polite"></span>
       </label>
     </p>
-    <button>Submit</button>
+    <button>提交</button>
   </form>
 
   <script>
-    // There are many ways to pick a DOM node; here we get the form itself and the email
-    // input box, as well as the span element into which we will place the error message.
+    // 获取 DOM 节点有很多途径，这里我们获取整个表单，包括邮件输入框和显示出错信息的 <span>。
     const form  = document.getElementsByTagName('form')[0];
 
     const email = document.getElementById('mail');
     const emailError = document.querySelector('#mail + span.error');
 
     email.addEventListener('input', function (event) {
-      // Each time the user types something, we check if the
-      // form fields are valid.
+      // 每当用户输入信息时，检查表单输入框域是否合法。
 
       if (email.validity.valid) {
-        // In case there is an error message visible, if the field
-        // is valid, we remove the error message.
-        emailError.innerHTML = ''; // Reset the content of the message
-        emailError.className = 'error'; // Reset the visual state of the message
+        // 当前显示出错信息的情况下，如果邮件输入框内容合法，则移除错误信息。
+        emailError.innerHTML = '';      // 重置消息内容
+        emailError.className = 'error'; // 重置消息可见状态
       } else {
-        // If there is still an error, show the correct error
+        // 如果有错误，则显示对应的出错信息
         showError();
       }
     });
 
     form.addEventListener('submit', function (event) {
-      // if the form contains valid data, we let it submit
+      // 如果表单包含合法数据，则允许提交。
 
       if(!email.validity.valid) {
-        // If it isn't, we display an appropriate error message
+        // 否则显示对应的出错信息
         showError();
-        // Then we prevent the form from being sent by canceling the event
+        // 然后禁止表单通过取消事件提交
         event.preventDefault();
       }
     });
 
     function showError() {
       if(email.validity.valueMissing) {
-        // If the field is empty
-        // display the following error message.
-        emailError.textContent = 'You need to enter an e-mail address.';
+        // 如果邮件框为空，则显示下方出错信息。
+        emailError.textContent = '请输入一个电子邮件地址。';
       } else if(email.validity.typeMismatch) {
-        // If the field doesn't contain an email address
-        // display the following error message.
-        emailError.textContent = 'Entered value needs to be an e-mail address.';
+        // 如果邮件框不包含合法的邮件地址，则显示下方出错信息。
+        emailError.textContent = '请输入一个有效的电子邮件地址。';
       } else if(email.validity.tooShort) {
-        // If the data is too short
-        // display the following error message.
-        emailError.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+        // 如果输入内容过短，则显示下方出错信息。
+        emailError.textContent = `电子邮件地址长度至少为 ${ email.minLength } 个字符，当前你输入了 ${ email.value.length } 个字符。`;
       }
 
-      // Set the styling appropriately
+      // 设置合适的样式
       emailError.className = 'error active';
     }
   </script>

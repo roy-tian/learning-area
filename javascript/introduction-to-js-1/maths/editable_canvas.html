@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Editable canvas example</title>
+    <title>可编辑画布示例</title>
     <style>
       html {
         font-family: sans-serif;
@@ -50,18 +50,18 @@
     </style>
   </head>
   <body>
-    <h2>Live output</h2>
+    <h2>实时输出</h2>
     <canvas id="canvas" width="400" height="250" class="playable-canvas">
     </canvas>
 
-    <p>The rectangle is 50px wide and 50px high.</p>
+    <p>长 50 像素，宽 50 像素的矩形</p>
 
-    <h2>Editable code</h2>
-    <p class="a11y-label">Press Esc to move focus away from the code area (Tab inserts a tab character).</p>
+    <h2>可编辑代码</h2>
+    <p class="a11y-label">点击 ESC 取消编辑状态（点击 Tab 可插入制表符）。</p>
     <textarea id="code" class="playable-code" style="height: 150px;width: 95%">
-let x = 50; let y = 50;
+var x = 50; var y = 50;
 
-// Edit the two lines below here ONLY
+// 仅可编辑以下两行代码：
 x = 50;
 y = 50;
 
@@ -70,7 +70,7 @@ ctx.fillRect(10, 10, x, y);
     </textarea>
 
     <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
+      <input id="reset" type="button" value="重置" />
     </div>
   </body>
 
@@ -86,7 +86,7 @@ ctx.fillRect(10, 10, x, y);
     function drawCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       eval(textarea.value);
-      para.textContent = 'The rectangle is ' + x + 'px wide and ' + y + 'px high.';
+      para.textContent = '长 ' + x + ' 像素，宽 ' + y + ' 像素的矩形';
     }
 
     reset.addEventListener('click', function() {
@@ -96,10 +96,9 @@ ctx.fillRect(10, 10, x, y);
     textarea.addEventListener('input', drawCanvas);
     window.addEventListener('load', drawCanvas);
 
-    // stop tab key tabbing out of textarea and
-    // make it write a tab at the caret position instead
+    // 阻止 Tab 键跳出文本框，仅在文本框中插入一个制表符。
 
-    textarea.onkeydown = function(e){
+    textarea.onkeydown = function(e) {
       if (e.keyCode === 9) {
         e.preventDefault();
         insertAtCaret('\t');
