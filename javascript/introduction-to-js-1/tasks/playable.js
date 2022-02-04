@@ -1,8 +1,8 @@
-var section = document.querySelector('section');
-var editable = document.querySelector('.editable');
-var textareaJS = document.querySelector('.playable-js');
-var reset = document.getElementById('reset');
-var jsCode = textareaJS.value;
+const section = document.querySelector('section');
+const editable = document.querySelector('.editable');
+const textareaJS = document.querySelector('.playable-js');
+const reset = document.getElementById('reset');
+const jsCode = textareaJS.value;
 
 function fillCode() {
     editable.textContent = textareaJS.value;
@@ -10,7 +10,7 @@ function fillCode() {
       eval(editable.textContent);
     } catch(e) {
       section.innerHTML = ' ';
-      let para = document.createElement('p');
+      const para = document.createElement('p');
       para.textContent = e;
       section.appendChild(para);
     }

@@ -1,15 +1,11 @@
-/* Some default styling for cookbook examples */
-/*
-rgb(53,43,34)
-rgb(75,70,74)
-rgb(95,97,110)
-rgb(137,151,188)
-rgb(160,178,226)
-*/
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: #fff;
     color: #333;
-    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+    font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -26,9 +22,10 @@ h2 {
 
 p {
   margin: 0.5em 0;
+  color: purple;
 }
 
-/* styles for the editor */
+/* 编辑器样式 */
 
 .playable {
     font-family: monospace;
@@ -41,7 +38,6 @@ p {
     width: 90%;
     max-width: 700px;
     padding: 10px 10px 0px;
-    font-size: 90%;
   }
 
   .playable-css {
