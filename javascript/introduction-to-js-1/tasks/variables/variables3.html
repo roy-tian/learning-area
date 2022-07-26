@@ -1,45 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <title>变量：任务3</title>
     <link rel="stylesheet" href="../styles.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
-    </style>
   </head>
 
   <body>
-    <section class="preview">
-
-
-
-    </section>
+    <section class="preview"></section>
 
     <textarea class="playable playable-js" style="height: 220px;">
-
 // 在下方编写代码
 
 
 const myName = 'Default';
-myName = 'Chris'
+myName = '李雷'
 
-let myAge = '42';
+let myAge = '18';
 
 // 不要编写此行以下的代码！
 
 section.innerHTML = ' ';
 let para1 = document.createElement('p');
 let para2 = document.createElement('p');
-para1.textContent = myName;
-para2.textContent = `In 20 years, I will be ${myAge + 20}`;
+para1.textContent = `我是 ${myName}`;
+para2.textContent = `20 年后我 ${myAge + 20} 岁`;
 section.appendChild(para1);
 section.appendChild(para2);
     </textarea>
