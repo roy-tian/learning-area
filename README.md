@@ -1,6 +1,6 @@
 # learning-area
 
-欢迎访问 [MDN 学习区](https://developer.mozilla.org/zh-CN/Learn) Github 仓库中文版。
+欢迎访问 [MDN 学习区](https://developer.mozilla.org/zh-CN/docs/Learn) Github 仓库中文版。
 
 这里有学习区中展示、讨论的大部分示例代码，本 repo 文件夹结构与网站结构保持一致。
 
