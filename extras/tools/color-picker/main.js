@@ -698,7 +698,7 @@ let UIColorPicker = (function UIColorPicker() {
   };
 
   ColorPicker.prototype.updateAlphaGradient = function updateAlphaGradient() {
-    this.alpha_mask.style.backgroundColor = this.color.getHexa();
+    this.alpha_mask.style.setProperty('--alpha-color', this.color.getHexa());
   };
 
   ColorPicker.prototype.updatePreviewColor = function updatePreviewColor() {

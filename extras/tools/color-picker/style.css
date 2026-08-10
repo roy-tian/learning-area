@@ -31,7 +31,8 @@
 
 /* HSV format - Hue-Saturation-Value(Brightness) */
 .ui-color-picker .picking-area {
-  background: url('https://mdn.mozillademos.org/files/5707/picker_mask_200.png') center center;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0) 100%);
 
   background: -moz-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
         -moz-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
@@ -41,6 +42,8 @@
         -ms-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
   background: -o-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
         -o-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0) 100%);
 
   background-color: #F00;
 }
@@ -59,6 +62,9 @@
   background: -o-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
                   hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
         -o-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
+  background: linear-gradient(to bottom, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
+                  hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
+        linear-gradient(to right, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
   background-color: #F00;
 }
 
@@ -91,7 +97,8 @@
 }
 
 .ui-color-picker .hue {
-  background: url("https://mdn.mozillademos.org/files/5701/hue.png") center;
+  background: linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
+        #00F 66.66%, #F0F 83.33%, #F00 100%);
   background: -moz-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
         #00F 66.66%, #F0F 83.33%, #F00 100%);
   background: -webkit-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
@@ -100,17 +107,19 @@
         #00F 66.66%, #F0F 83.33%, #F00 100%);
   background: -o-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
         #00F 66.66%, #F0F 83.33%, #F00 100%);
+  background: linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
+        #00F 66.66%, #F0F 83.33%, #F00 100%);
 }
 
 .ui-color-picker .alpha {
   border: 1px solid #CCC;
-  background: url("https://mdn.mozillademos.org/files/5705/alpha.png");
+  background: url("images/alpha.svg");
 }
 
 .ui-color-picker .alpha-mask {
   width: 100%;
   height: 100%;
-  background: url("https://mdn.mozillademos.org/files/6089/alpha_mask.png");
+  background-image: linear-gradient(to right, transparent, var(--alpha-color, #000));
 }
 
 .ui-color-picker .slider-picker {
@@ -215,7 +224,7 @@
   margin: 5px;
   margin-top: 10px;
   border: 1px solid #DDD;
-  background-image: url("https://mdn.mozillademos.org/files/5705/alpha.png");
+  background-image: url("images/alpha.svg");
   float: left;
   position: relative;
 }
@@ -297,11 +306,11 @@
 .ui-input-slider-left, .ui-input-slider-right {
   width: 16px;
   cursor: pointer;
-  background: url("https://mdn.mozillademos.org/files/5679/arrows.png") center left no-repeat;
+  background: url("images/arrows.svg") center left no-repeat;
 }
 
 .ui-input-slider-right {
-  background: url("https://mdn.mozillademos.org/files/5679/arrows.png") center right no-repeat;
+  background: url("images/arrows.svg") center right no-repeat;
 }
 
 .ui-input-slider-name {
@@ -355,7 +364,7 @@ body {
 .resize-handle {
   width: 10px;
   height: 10px;
-  background: url('https://mdn.mozillademos.org/files/6083/resize.png') center center no-repeat;
+  background: url('images/resize.svg') center center no-repeat;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -462,7 +471,7 @@ body {
 #picker-samples .sample[data-active='true']:after {
   content: "";
   position: absolute;
-  background: url('https://mdn.mozillademos.org/files/6065/arrow.png') center no-repeat;
+  background: url('images/arrow.svg') center no-repeat;
   width: 100%;
   height: 12px;
   top: -12px;
@@ -541,12 +550,13 @@ body {
 }
 
 #controls .picker-icon {
-  background-image: url('https://mdn.mozillademos.org/files/6081/picker.png');
+  background-image: url('images/picker.svg');
 }
 
 #controls #void-sample {
   margin-right: 10px;
-  background-image: url('https://mdn.mozillademos.org/files/6087/void.png');
+  background-image: url('images/void.svg');
+  background-size: 96px 48px;
   background-position: center left;
 }
 
@@ -579,7 +589,7 @@ body {
 
 #controls .switch [data-active='true'] {
   color: #FFF;
-  background-image: url('https://mdn.mozillademos.org/files/6025/grain.png');
+  background-image: url('images/grain.svg');
   background-color: #777;
 }
 
@@ -591,7 +601,7 @@ body {
   width: 100%;
   height: 94px;
   background-color: #DDD;
-  background-image: url('https://mdn.mozillademos.org/files/6025/grain.png');
+  background-image: url('images/grain.svg');
   background-repeat: repeat;
 
   text-align: center;
@@ -606,7 +616,7 @@ body {
   height: 80%;
   border: 2px dashed #FFF;
   border-radius: 5px;
-  background: url('https://mdn.mozillademos.org/files/6085/trash-can.png') no-repeat center;
+  background: url('images/trash-can.svg') no-repeat center;
 
   position: absolute;
   top: 10%;
@@ -653,7 +663,7 @@ body {
   padding: 15px;
   font-size: 18px;
   text-align: center;
-  background-image: url('https://mdn.mozillademos.org/files/6071/color-wheel.png');
+  background-image: url('images/color-wheel.svg');
   background-repeat:no-repeat;
   background-position: center left 30%;
 }
@@ -707,7 +717,7 @@ body {
   height: 100%;
   padding: 0 5px;
   background-color: #FFF;
-  background-image: url('https://mdn.mozillademos.org/files/6073/copy.png');
+  background-image: url('images/copy.svg');
   background-repeat: no-repeat;
   background-position: center left;
   border-left: 1px solid #EEE;
@@ -727,7 +737,7 @@ body {
 #palette {
   width: 1000px;
   padding: 10px 0;
-  background-image: url('https://mdn.mozillademos.org/files/6025/grain.png');
+  background-image: url('images/grain.svg');
   background-repeat: repeat;
   background-color: #EEE;
   color: #777;
@@ -803,23 +813,21 @@ body {
   height: 24px;
   margin: 10px;
   padding: 3px;
-  background-image: url('https://mdn.mozillademos.org/files/6077/lock.png');
+  background-image: url('images/lock.svg');
+  background-size: 60px 60px;
   background-repeat: no-repeat;
   background-position: bottom right;
 }
 
 #color-palette .controls .lock:hover {
-  /*background-image: url('images/unlocked-hover.png');*/
   background-position: bottom left;
 }
 
 #color-palette .controls .lock[locked-state='true'] {
-  /*background-image: url('images/locked.png');*/
   background-position: top left ;
 }
 
 #color-palette .controls .lock[locked-state='true']:hover {
-  /*background-image: url('images/lock-hover.png');*/
   background-position: top right;
 }
 
@@ -832,7 +840,7 @@ body {
   height: 300px;
   min-height: 250px;
   border-top: 1px solid #DDD;
-  background-image: url('https://mdn.mozillademos.org/files/6025/grain.png');
+  background-image: url('images/grain.svg');
   background-repeat: repeat;
   position: relative;
   float: left;
@@ -849,7 +857,7 @@ body {
   width: 40%;
   padding: 30px 9% 70px 11%;
 
-  background-image: url('https://mdn.mozillademos.org/files/6075/drop.png');
+  background-image: url('images/drop.svg');
   background-repeat: no-repeat;
   background-position: left 35px top 60%;
 
@@ -903,7 +911,7 @@ body {
 #canvas .sample[data-active='true']:after {
   content: "";
   position: absolute;
-  background: url('https://mdn.mozillademos.org/files/6065/arrow.png') center no-repeat;
+  background: url('images/arrow.svg') center no-repeat;
   width: 100%;
   height: 12px;
   top: -12px;
@@ -923,7 +931,7 @@ body {
   width: 10px;
   height: 10px;
   margin: 5px;
-  background: url('https://mdn.mozillademos.org/files/6079/pick.png') center no-repeat;
+  background: url('images/pick.svg') center no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -934,7 +942,7 @@ body {
   width: 10px;
   height: 10px;
   margin: 5px;
-  background: url('https://mdn.mozillademos.org/files/6069/close.png') center no-repeat;
+  background: url('images/close.svg') center no-repeat;
   position: absolute;
   top: 0;
   right: 0;
@@ -950,7 +958,8 @@ body {
   width: 16px;
   height: 16px;
   margin: 5px;
-  background: url("images/canvas-controls.png") center left no-repeat;
+  background: url("images/canvas-controls.svg") center left no-repeat;
+  background-size: 32px 16px;
   position: absolute;
   top: 0;
   right: 0;
@@ -965,7 +974,8 @@ body {
 }
 
 #canvas[data-bg='true'] .toggle-bg {
-  background: url('https://mdn.mozillademos.org/files/6067/canvas-controls.png') center right no-repeat;
+  background: url('images/canvas-controls.svg') center right no-repeat;
+  background-size: 32px 16px;
 }
 
 #zindex {
@@ -995,4 +1005,3 @@ body {
   top: 0;
   opacity: 1;
 }
-
