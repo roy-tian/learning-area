@@ -1,25 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Responsive HTML images demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>响应式 HTML 图片示例</title>
     <style>
-
       img {
         width: 320px;
       }
-
     </style>
   </head>
   <body>
-    
-
-        <img srcset="elva-fairy-320w.jpg,
-                     elva-fairy-480w.jpg 1.5x,
-                     elva-fairy-640w.jpg 2x"
-             src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy"> 
-
-        
+    <img
+      srcset="
+        elva-fairy-320w.jpg,
+        elva-fairy-480w.jpg 1.5x,
+        elva-fairy-640w.jpg 2x
+      "
+      src="elva-fairy-640w.jpg"
+      alt="打扮成小仙女的埃尔瓦"
+      id="img"
+      onload="showUrl()"
+    />
+    <script>
+      function showUrl() {
+        const img = document.getElementById("img");
+        const p = document.createElement("p");
+        const fileName = img.currentSrc?.substring(
+          img.currentSrc.lastIndexOf("/"),
+        );
+        p.textContent = `已加载：${fileName}`;
+        document.body.appendChild(p);
+      }
+    </script>
   </body>
 </html>
