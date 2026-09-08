@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>My spending record</title>
+    <meta name="viewport" content="width=device-width">
+    <title>我的支出记录</title>
     <link href="minimal-table.css" rel="stylesheet" type="text/css">
     <style>
         tbody {
@@ -20,6 +21,7 @@
 
       <table>
         <caption>我的消费习惯</caption>
+        <thead>
           <tr>
             <th>购买</th>
             <th>地点</th>
@@ -27,10 +29,14 @@
             <th>评价</th>
             <th>花费（人民币）</th>
           </tr>
+        </thead>
+        <tfoot>
           <tr>
-            <td>合计</td>
+            <td colspan="4">合计</td>
             <td>118</td>
           </tr>
+        </tfoot>
+        <tbody>
           <tr>
             <td>理发</td>
             <td>理发店</td>
@@ -59,7 +65,8 @@
             <td>不错</td>
             <td>5</td>
           </tr>
-    </table>
+        </tbody>
+      </table>
 
   </body>
 </html>
