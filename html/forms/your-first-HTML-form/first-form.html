@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 	<head>
 		<meta charset="utf-8" />
 		<title>你的第一个 HTML 表单</title>
@@ -7,23 +7,21 @@
 
 	<body>
 		<form action="/my-handling-form-page" method="post">
-			<ul>
-				<li>
-					<label for="name">名字：</label>
-					<input type="text" id="name" name="user_name" />
-				</li>
-				<li>
-					<label for="mail">电子邮箱：</label>
-					<input type="email" id="mail" name="user_mail" />
-				</li>
-				<li>
-					<label for="msg">信息：</label>
-					<textarea id="msg" name="user_message"></textarea>
-				</li>
-				<li class="button">
-					<button type="submit">发送信息</button>
-				</li>
-			</ul>
+			<p>
+				<label for="name">名字：</label>
+				<input type="text" id="name" name="user_name" />
+			</p>
+			<p>
+				<label for="mail">电子邮箱：</label>
+				<input type="email" id="mail" name="user_mail" />
+			</p>
+			<p>
+				<label for="msg">信息：</label>
+				<textarea id="msg" name="user_message"></textarea>
+			</p>
+			<p class="button">
+				<button type="submit">发送你的信息</button>
+			</p>
 		</form>
 	</body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <title>完整的内置表单验证功能示例</title>
+  <style>
+    form {
+      font: 1em sans-serif;
+      max-width: 320px;
+    }
+
+    p > label {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    fieldset {
+      width : 100%;
+      border: 1px solid #333;
+      box-sizing: border-box;
+    }
+
+    input:invalid {
+      box-shadow: 0 0 5px 1px red;
+    }
+
+    input:focus:invalid {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>
+      <fieldset>
+        <legend>你有驾驶证吗？<abbr title="必填项" aria-label="必填">*</abbr></legend>
+        <!-- 由于单选按钮组只能选择一个选项，因此组中只有一个单选按钮有 "required" 属性即可。 -->
+        <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">有</label>
+        <input type="radio" required name="driver" id="r2" value="no"><label for="r2">没有</label>
+      </fieldset>
+    </p>
+    <p>
+      <label for="n1">你多大年纪？</label>
+      <!-- pattern 属性在浏览器不支持数字输入类型作为兼容选项。注意支持正则表达式的浏览器数字输入域会自动失效。此处用法仅用作回退。 -->
+      <input type="number" min="12" max="120" step="1" id="n1" name="age"
+             pattern="\d+">
+    </p>
+    <p>
+      <label for="t1">你最喜欢的水果？<abbr title="必填项" aria-label="必填">*</abbr></label>
+      <input type="text" id="t1" name="fruit" list="l1" required
+             pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range|香蕉|樱桃|苹果|草莓|柠檬|橙子">
+      <datalist id="l1">
+        <option>香蕉</option>
+        <option>樱桃</option>
+        <option>苹果</option>
+        <option>草莓</option>
+        <option>柠檬</option>
+        <option>橙子</option>
+      </datalist>
+    </p>
+    <p>
+      <label for="t2">你的电子邮件地址？</label>
+      <input type="email" id="t2" name="email">
+    </p>
+    <p>
+      <label for="t3">请留言：</label>
+      <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+    </p>
+    <p>
+      <button>提交</button>
+    </p>
+  </form>
+</body>
+
+</html>

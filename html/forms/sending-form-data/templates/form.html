@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-    <html>
+    <html lang="zh-Hans">
     <head>
       <meta charset="utf-8">
-      <title>Python form submission example</title>
+      <title>Python 表单提交示例</title>
       <style>
         form {
           width: 420px;
@@ -27,15 +27,15 @@
     <body>
       <form method="post" action="{{ url_for('hello') }}">
         <div>
-          <label for="say">What greeting do you want to say?</label>
-          <input name="say" id="say" value="Hi">
+          <label for="say">你想说什么问候语？</label>
+          <input name="say" id="say" value="你好">
         </div>
         <div>
-          <label for="to">Who do you want to say it to?</label>
-          <input name="to" id="to" value="Mom">
+          <label for="to">你想对谁说？</label>
+          <input name="to" id="to" value="妈妈">
         </div>
         <div>
-          <button>Send my greetings</button>
+          <button>发送我的问候</button>
         </div>
       </form>
     </body>

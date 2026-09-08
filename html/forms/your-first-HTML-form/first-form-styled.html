@@ -1,67 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 	<head>
 		<meta charset="utf-8" />
 		<title>你的第一个 HTML 表单（添加样式后）</title>
 		<style>
+			body{
+				/* 将表单居中显示在页面上 */
+				text-align: center;
+			}
 			form {
-				/* 将表单在页面内居中 */
-				margin: 0 auto;
-				width: 400px;
-				/* 为表单添加边框 */
+				display: inline-block;
+				/* 表单轮廓 */
 				padding: 1em;
 				border: 1px solid #ccc;
 				border-radius: 1em;
 			}
 
-			ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-
-			form li + li {
+			p + p {
 				margin-top: 1em;
 			}
 
 			label {
-				/* 确保所有标签等宽且排列整齐 */
+				/* 统一尺寸和对齐方式 */
 				display: inline-block;
-				width: 90px;
+				min-width: 90px;
+
 				text-align: right;
 			}
 
 			input,
 			textarea {
-				/* 确保所有文本框字体一致设置为默认字体，textarea为默认等宽字体 */
+				/* 确保所有文本框使用相同的字体设置。默认情况下，textarea 使用等宽字体 */
 				font: 1em sans-serif;
-				/* 确保所有文本框字号一致 */
+				/* 统一文本框尺寸 */
 				width: 300px;
-				box-sizing: border-box; 
-				/* 设置文本框边框的外观 */
+				box-sizing: border-box;
+				/* 统一表单控件边框 */
 				border: 1px solid #999;
 			}
 
 			input:focus,
 			textarea:focus {
-				/* 为当前元素设置强调色 */
-				border-color: #000;
+				/* 设置轮廓的宽度和样式 */
+				outline-style: solid;
+				/* 突出显示当前活动元素 */
+				outline-color: #000;
 			}
 
 			textarea {
-				/* 让多行文本框中的文字与标签对齐 */
+				/* 让多行文本框与标签对齐 */
 				vertical-align: top;
-				/* 留足空间以便输入文字 */
+				/* 提供输入文字的空间 */
 				height: 5em;
 			}
 
 			.button {
-				/* 将按钮与文本框对齐 */
-				padding-left: 90px;	 /* 与标签元素大小一致 */
+				/* 让按钮与文本框对齐 */
+				padding-left: 90px;
+				/* 与标签元素的尺寸相同 */
 			}
 
 			button {
-				/* 上部外边距与标签和文本框之间的距离基本一致 */
+				/* 此额外边距大致等于标签与文本框之间的间距 */
 				margin-left: 0.5em;
 			}
 		</style>
@@ -69,23 +69,21 @@
 
 	<body>
 		<form action="/my-handling-form-page" method="post">
-			<ul>
-				<li>
-					<label for="name">名字：</label>
-					<input type="text" id="name" name="user_name" />
-				</li>
-				<li>
-					<label for="mail">电子邮件：</label>
-					<input type="email" id="mail" name="user_mail" />
-				</li>
-				<li>
-					<label for="msg">信息：</label>
-					<textarea id="msg" name="user_message"></textarea>
-				</li>
-				<li class="button">
-					<button type="submit">发送信息</button>
-				</li>
-			</ul>
+			<p>
+				<label for="name">名字：</label>
+				<input type="text" id="name" name="user_name" />
+			</p>
+			<p>
+				<label for="mail">电子邮箱：</label>
+				<input type="email" id="mail" name="user_mail" />
+			</p>
+			<p>
+				<label for="msg">信息：</label>
+				<textarea id="msg" name="user_message"></textarea>
+			</p>
+			<p class="button">
+				<button type="submit">发送你的信息</button>
+			</p>
 		</form>
 	</body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>开关示例</title>
     <style>
       * {
         box-sizing: border-box;
       }
 
-      /* 使用弹性盒子排列控件和标签 */
+      /* 使用 Flexbox 让控件和标签对齐 */
 
       li {
         width: 100px;
@@ -18,7 +19,7 @@
         position: relative;
       }
 
-      /* 设置标签尺寸，使用绝对位置将开、关图形叠放 */
+      /* 设置标签尺寸，使用定位将开、关部分叠放在一起 */
 
       label {
         width: 20px;
@@ -31,7 +32,7 @@
         position: absolute;
       }
 
-      /* 使用 apperance 删除单选框的默认样式，设置外围点击区域 */
+      /* 使用 appearance 删除复选框的默认样式，并创建外部开关区域 */
 
       input[type="checkbox"] {
         -webkit-appearance: none;
@@ -44,7 +45,7 @@
         transition: all 0.4s;
       }
 
-      /* 设置 ::before 内容的样式，使之与内部开关动作样式一致。 */
+      /* 设置 ::before 内容，使其看起来像内部开关，也就是会移动的部分 */
 
       input[type="checkbox"]::before {
         width: 16px;
@@ -58,7 +59,7 @@
         transition: all 0.4s;
       }
 
-      /* 设置外围背景色，设置内部开关动画，使用 transition 让动画流畅 */
+      /* 复选框选中时改变外部背景色并移动内部开关，用过渡效果使动画平滑 */
 
       input[type="checkbox"]:checked {
         background-color: #ffaa00;
@@ -70,7 +71,7 @@
         transition: all 0.4s;
       }
 
-      /* 让标签的 开、关 部分响应点击 */
+      /* 选中或未选中时分别显示标签中的“开”和“关” */
 
       input[type="checkbox"] ~ label .on, input[type="checkbox"]:checked ~ label .off {
         opacity: 0;
@@ -80,7 +81,7 @@
         opacity: 1;
       }
 
-      /* 让 Chrome 在聚焦时的外围框架更细，而不现实默认的蓝色粗线。 */
+      /* 让 Chrome 中的焦点轮廓比默认的粗蓝色轮廓更细 */
 
       input:focus {
         outline: 1px dotted black;

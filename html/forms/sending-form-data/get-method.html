@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8">
-    <title>Get method example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>GET 方法示例</title>
     <style>
       form {
         width: 420px;
@@ -19,23 +20,24 @@
         padding-right: 10px;
       }
 
-      button, input {
+      button,
+      input {
         float: right;
       }
     </style>
   </head>
   <body>
-    <form action="http://foo.com" method="get">
+    <form action="http://example.com" method="get">
       <div>
-        <label for="say">What greeting do you want to say?</label>
-        <input name="say" id="say" value="Hi">
+        <label for="say">你想说什么问候语？</label>
+        <input name="say" id="say" value="你好" />
       </div>
       <div>
-        <label for="to">Who do you want to say it to?</label>
-        <input name="to" value="Mom">
+        <label for="to">你想对谁说？</label>
+        <input name="to" value="妈妈" />
       </div>
       <div>
-        <button>Send my greetings</button>
+        <button>发送我的问候</button>
       </div>
     </form>
   </body>
