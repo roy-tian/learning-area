@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>基础 HTML 文本：任务 3</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <style class="editable">
+      h1, strong {
+        color: purple;
+      }
+
+      em {
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+      <h1>强调和重要性</h1>
+
+      <p>我在意两件事——音乐和朋友。有一天，我或许能让我的朋友彼此认识，也让他们喜欢我的音乐！</p>
+
+    </section>
+
+    <textarea class="playable playable-css" style="height: 130px;">
+h1, strong {
+  color: purple;
+}
+
+em {
+  color: gray;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 220px;">
+      <h1>强调和重要性</h1>
+
+      <p>我在意两件事——音乐和朋友。有一天，我或许能让我的朋友彼此认识，也让他们喜欢我的音乐！</p>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="重置" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>基础 HTML 文本：任务 2</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <style class="editable">
+      ul {
+        border: 2px solid orange;
+      }
+
+      ol {
+        border: 2px solid purple;
+      }
+
+      ol, ul {
+        padding: 5px 20px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <h1>查看列表</h1>
+
+      <p>请将下面的我最喜欢的蔬菜列表转换为无序列表。</p>
+
+        黄瓜
+        西兰花
+        芦笋
+        甜椒
+
+      <p>请将下面的操作步骤转换为有序列表。</p>
+
+        先敲门
+        有人回应后，说出暗号
+        至少等待 5 秒
+        转动把手并推门
+    </section>
+
+    <textarea class="playable playable-css" style="height: 130px;">
+ul {
+  border: 2px solid orange;
+}
+
+ol {
+  border: 2px solid purple;
+}
+
+ol, ul {
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 220px;">
+<h1>查看列表</h1>
+
+<p>请将下面的我最喜欢的蔬菜列表转换为无序列表。</p>
+
+  黄瓜
+  西兰花
+  芦笋
+  甜椒
+
+<p>请将下面的操作步骤转换为有序列表。</p>
+
+  先敲门
+  有人回应后，说出暗号
+  至少等待 5 秒
+  转动把手并推门
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="重置" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

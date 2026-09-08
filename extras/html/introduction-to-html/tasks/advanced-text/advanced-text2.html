@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>高级 HTML 文本：任务 2</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <style class="editable">
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+        color: purple;
+      }
+
+      p {
+        margin: 0.5em 0;
+      }
+
+      abbr, time {
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <h1>高级文本语义</h1>
+
+      <p>先从一段引用开始：</p>
+
+      <p>默认情况下，只要使用正确，HTML 就具备可访问性。</p>
+
+      <p>CSS 也可以让网页更易访问，或者降低可访问性。</p>
+
+      <p>化学式：H20（水）、C2H6O（乙醇）。</p>
+
+      <p>日期：2019 年 12 月 25 日（圣诞节）、2019 年 11 月 2 日（亡灵节）。</p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 130px;">
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: purple;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+abbr, time {
+  color: green;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 220px;">
+<h1>高级文本语义</h1>
+
+<p>先从一段引用开始：</p>
+
+<p>默认情况下，只要使用正确，HTML 就具备可访问性。</p>
+
+<p>CSS 也可以让网页更易访问，或者降低可访问性。</p>
+
+<p>化学式：H20（水）、C2H6O（乙醇）。</p>
+
+<p>日期：2019 年 12 月 25 日（圣诞节）、2019 年 11 月 2 日（亡灵节）。</p>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="重置" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

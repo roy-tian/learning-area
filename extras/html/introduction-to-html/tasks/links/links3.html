@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>链接：任务 3</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <style class="editable">
+      p {
+        color: gray;
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <p>我们经常研究独角鲸。要了解更多信息， <a href="narwhals.html" target="_blank">点击这里</a>。</p>
+
+      <p>如果你还有问题，可以给我们的支持团队发送电子邮件—— <a href="mailto:whales@example.com">点击这里</a> 发送邮件。</p>
+
+      <p>你还可以 <a href="factfile.pdf" target="_blank">点击这里</a> 下载我们的资料文件，其中包含更多信息和常见问题。</p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 130px;">
+p {
+  color: gray;
+  margin: 0.5em 0;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 220px;">
+      <p>我们经常研究独角鲸。要了解更多信息， <a href="narwhals.html" target="_blank">点击这里</a>。</p>
+
+      <p>如果你还有问题，可以给我们的支持团队发送电子邮件—— <a href="mailto:whales@example.com">点击这里</a> 发送邮件。</p>
+
+      <p>你还可以 <a href="factfile.pdf" target="_blank">点击这里</a> 下载我们的资料文件，其中包含更多信息和常见问题。</p>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="重置" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
