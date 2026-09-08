@@ -1,3 +1,14 @@
-*.DS_Store
-.idea
-.vscode
+# Operating system and personal editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.#*
+
+# Local-only and generated files
+/.temp/
+node_modules/
+__pycache__/
+*.py[cod]
