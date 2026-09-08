@@ -1,72 +1,72 @@
 [
   {
-    "name" : "baked beans",
+    "name" : "茄汁焗豆",
     "price" : 0.40,
     "image" : "beans.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "hot dogs",
+    "name" : "热狗",
     "price" : 1.99,
     "image" : "hotdogs.jpg",
     "type" : "meat"
   },
   {
-    "name" : "spam",
+    "name" : "午餐肉",
     "price" : 2.85,
     "image" : "spam.jpg",
     "type" : "meat"
   },
   {
-    "name" : "refried beans",
+    "name" : "炒豆泥",
     "price" : 0.99,
     "image" : "refried.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "kidney beans",
+    "name" : "红腰豆",
     "price" : 0.58,
     "image" : "kidney.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "garden peas",
+    "name" : "青豌豆",
     "price" : 0.52,
     "image" : "gardenpeas.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "mushy peas",
+    "name" : "豌豆泥",
     "price" : 0.58,
     "image" : "mushypeas.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "corned beef",
+    "name" : "咸牛肉",
     "price" : 2.39,
     "image" : "cornedbeef.jpg",
     "type" : "meat"
   },
   {
-    "name" : "tomato soup",
+    "name" : "番茄汤",
     "price" : 1.40,
     "image" : "tomatosoup.jpg",
     "type" : "soup"
   },
   {
-    "name" : "chopped tomatoes",
+    "name" : "番茄丁",
     "price" : 0.45,
     "image" : "tomato.jpg",
     "type" : "vegetables"
   },
   {
-    "name" : "chicken noodle soup",
+    "name" : "鸡肉面汤",
     "price" : 1.89,
     "image" : "chickennoodle.jpg",
     "type" : "soup"
   },
   {
-    "name" : "carrot and coriander soup",
+    "name" : "胡萝卜香菜汤",
     "price" : 1.49,
     "image" : "carrotcoriander.jpg",
     "type" : "soup"

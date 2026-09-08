@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>The Can Store</title>
+    <meta name="viewport" content="width=device-width">
+    <title>罐头商店（XHR 版）</title>
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
     <link href="can-style.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+
   </head>
 
   <body>
     <header>
-      <h1>The Can Store</h1>
+      <h1>罐头商店（XHR 版）</h1>
     </header>
     <div>
       <aside>
         <form>
           <div>
-            <label for="category">Choose a category:</label>
+            <label for="category">选择分类：</label>
             <select id="category">
-              <option selected>All</option>
-              <option>Vegetables</option>
-              <option>Meat</option>
-              <option>Soup</option>
+              <option value="All" selected>全部</option>
+              <option value="Vegetables">蔬菜</option>
+              <option value="Meat">肉类</option>
+              <option value="Soup">汤类</option>
             </select>
           </div>
           <div>
-            <label for="searchTerm">Enter search term:</label>
-            <input type="text" id="searchTerm" placeholder="e.g. beans">
+            <label for="searchTerm">输入搜索词：</label>
+            <input type="text" id="searchTerm" placeholder="例如：豆">
           </div>
           <div>
-            <button>Filter results</button>
+            <button>筛选结果</button>
           </div>
         </form>
       </aside>
@@ -40,13 +39,13 @@
       </main>
     </div>
     <footer>
-      <p>All icons found at the Noun Project:</p>
+      <p>所有图标来自 Noun Project：</p>
 
       <ul>
-        <li>Bean can icon by <a href="https://thenounproject.com/yalanis/">Yazmin Alanis</a></li>
-        <li>Vegetable icon by <a href="https://thenounproject.com/skatakila/">Ricardo Moreira</a></li>
-        <li>Soup icon by <a href="https://thenounproject.com/ArtZ91/">Arthur Shlain</a></li>
-        <li>Meat Chunk icon by <a href="https://thenounproject.com/smashicons/">Oliviu Stoian</a>.</li>
+        <li>豆罐头图标：<a href="https://thenounproject.com/yalanis/">Yazmin Alanis</a></li>
+        <li>蔬菜图标：<a href="https://thenounproject.com/skatakila/">Ricardo Moreira</a></li>
+        <li>汤类图标：<a href="https://thenounproject.com/ArtZ91/">Arthur Shlain</a></li>
+        <li>肉块图标：<a href="https://thenounproject.com/smashicons/">Oliviu Stoian</a>。</li>
       </ul>
     </footer>
     <script src="can-script.js"></script>

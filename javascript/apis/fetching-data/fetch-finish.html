@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fetch 示例（完成版）</title>
+
+    <style>
+      html,
+      pre {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 500px;
+        margin: 0 auto;
+        background-color: #ccc;
+      }
+
+      pre {
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+        padding: 1rem;
+        background-color: white;
+      }
+
+      label {
+        width: 200px;
+        margin-right: 33px;
+      }
+
+      select {
+        width: 350px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Fetch 示例（完成版）</h1>
+
+    <form>
+      <label for="verse-choose">选择诗节</label>
+      <select id="verse-choose" name="verse-choose">
+        <option value="Verse 1">第 1 节</option>
+        <option value="Verse 2">第 2 节</option>
+        <option value="Verse 3">第 3 节</option>
+        <option value="Verse 4">第 4 节</option>
+      </select>
+    </form>
+
+    <h2>《征服者蠕虫》，<em>埃德加·爱伦·坡，1843 年</em></h2>
+
+    <pre></pre>
+
+    <script>
+      const verseChoose = document.querySelector("select");
+      const poemDisplay = document.querySelector("pre");
+
+      verseChoose.addEventListener("change", () => {
+        const verse = verseChoose.value;
+        updateDisplay(verse);
+      });
+
+      function updateDisplay(verse) {
+        verse = verse.replace(" ", "").toLowerCase();
+        const url = `${verse}.txt`;
+
+        // 调用 `fetch()`，传入 URL。
+        fetch(url)
+          // fetch() 返回一个 promise。服务器返回响应后，
+          // 会使用该响应调用 promise 的 `then()` 处理器。
+          .then((response) => {
+            // 如果请求没有成功，就抛出错误。
+            if (!response.ok) {
+              throw new Error(`HTTP 错误：${response.status}`);
+            }
+            // 如果请求成功，就调用 response.text() 获取文本，
+            // 并立即返回 response.text() 返回的 promise。
+            return response.text();
+          })
+          // response.text() 成功后，使用文本调用 `then()` 处理器，
+          // 然后把文本复制到 poemDisplay 元素中。
+          .then((text) => {
+            poemDisplay.textContent = text;
+          })
+          // 捕获可能出现的错误，并在 poemDisplay 中显示错误信息。
+          .catch((error) => {
+            poemDisplay.textContent = `获取诗歌失败：${error}`;
+          });
+      }
+
+      updateDisplay("Verse 1");
+      verseChoose.value = "Verse 1";
+    </script>
+  </body>
+</html>

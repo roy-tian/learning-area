@@ -265,6 +265,21 @@ JavaScript 比较运算符：今天心情如何
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
 章节测验：弹球 + 恶魔圈（ES6 版）
 
+#### 3.4 JavaScript API
+
+1. [示例](https://roy-tian.github.io/learning-area/javascript/apis/fetching-data/fetch-finish.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/apis/fetching-data)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/Network_requests) |
+网络请求：使用 Fetch 获取数据
+2. [示例](https://roy-tian.github.io/learning-area/javascript/apis/fetching-data/can-store/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/apis/fetching-data/can-store)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/Network_requests) |
+网络请求：罐头商店
+3. [示例](https://roy-tian.github.io/learning-area/javascript/apis/fetching-data/can-store-xhr/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/apis/fetching-data/can-store-xhr)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/Network_requests) |
+网络请求：罐头商店（XHR 版）
+
 ### A. 其他工具
 
 1. [示例](https://roy-tian.github.io/learning-area/extras/tools/playable-code)
