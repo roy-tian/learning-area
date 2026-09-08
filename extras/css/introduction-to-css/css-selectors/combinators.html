@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>组合器示例</title>
+    <style>
+
+      section p {
+        color: blue;
+      }
+
+      section > p {
+        background-color: yellow;
+      }
+
+      h2 + p {
+        text-transform: uppercase;
+      }
+
+      h2 ~ p {
+        border: 1px dashed black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>标题 1</h2>
+      <p>段落 1</p>
+      <p>段落 2</p>
+      <div>
+        <h2>标题 2</h2>
+        <p>段落 3</p>
+        <p>段落 4</p>
+      </div>
+    </section>
+  </body>
+</html>

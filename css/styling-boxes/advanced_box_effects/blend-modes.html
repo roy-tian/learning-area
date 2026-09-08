@@ -1,281 +1,230 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8">
-    <title>CSS blend modes examples</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS 混合模式示例</title>
     <style>
-    html {
-      font-family: sans-serif;
-    }
+      html {
+        font-family: sans-serif;
+      }
 
-    body {
-      margin: 0;
-    }
+      body {
+        margin: 0;
+      }
 
-    div {
-      width: 280px;
-      height: 130px;
-      padding: 10px;
-      margin: 10px;
-    }
+      div {
+        width: 280px;
+        height: 130px;
+        padding: 10px;
+        margin: 10px;
+      }
 
-    article {
-      width: 330px;
-      height: 180px;
-      margin: 10px;
-      position: relative;
+      article {
+        width: 330px;
+        height: 180px;
+        margin: 10px;
+        position: relative;
+      }
 
-    }
+      body > div,
+      article div:first-child {
+        background: url(https://mdn.github.io/shared-assets/images/examples/colorful-heart.png)
+          no-repeat center 20px;
+        background-color: green;
+      }
 
-    body > div, article div:first-child {
-      background: url(colorful-heart.png) no-repeat center 20px;
-      background-color: green;
-    }
+      body > div,
+      article {
+        display: inline-block;
+      }
 
-    body > div, article {
-      display: inline-block;
-    }
+      article div:first-child {
+        position: absolute;
+        top: 10px;
+        left: 0;
+      }
 
-    article div:first-child {
-      position: absolute;
-      top: 10px;
-      left: 0;
-    }
+      article div:last-child {
+        background-color: purple;
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        z-index: -1;
+      }
 
-    article div:last-child {
-      background-color: purple;
-      position: absolute;
-      bottom: -10px;
-      right: 0;
-      z-index: -1;
-    }
+      .multiply {
+        background-blend-mode: multiply;
+      }
 
+      .multiply-mix {
+        mix-blend-mode: multiply;
+      }
 
-    .multiply {
-      background-blend-mode: multiply;
-    }
+      .screen {
+        background-blend-mode: screen;
+      }
 
-    .multiply-mix {
-      mix-blend-mode: multiply;
-    }
+      .screen-mix {
+        mix-blend-mode: screen;
+      }
 
-    .screen {
-      background-blend-mode: screen;
-    }
+      .overlay {
+        background-blend-mode: overlay;
+      }
 
-    .screen-mix {
-      mix-blend-mode: screen;
-    }
+      .overlay-mix {
+        mix-blend-mode: overlay;
+      }
 
-    .overlay {
-      background-blend-mode: overlay;
-    }
+      .darken {
+        background-blend-mode: darken;
+      }
 
-    .overlay-mix {
-      mix-blend-mode: overlay;
-    }
+      .darken-mix {
+        mix-blend-mode: darken;
+      }
 
-    .darken {
-      background-blend-mode: darken;
-    }
+      .lighten {
+        background-blend-mode: lighten;
+      }
 
-    .darken-mix {
-      mix-blend-mode: darken;
-    }
+      .lighten-mix {
+        mix-blend-mode: lighten;
+      }
 
-    .lighten {
-      background-blend-mode: lighten;
-    }
+      .color-dodge {
+        background-blend-mode: color-dodge;
+      }
 
-    .lighten-mix {
-      mix-blend-mode: lighten;
-    }
+      .color-dodge-mix {
+        mix-blend-mode: color-dodge;
+      }
 
-    .color-dodge {
-      background-blend-mode: color-dodge;
-    }
+      .color-burn {
+        background-blend-mode: color-burn;
+      }
 
-    .color-dodge-mix {
-      mix-blend-mode: color-dodge;
-    }
+      .color-burn-mix {
+        mix-blend-mode: color-burn;
+      }
 
-    .color-burn {
-      background-blend-mode: color-burn;
-    }
+      .hard-light {
+        background-blend-mode: hard-light;
+      }
 
-    .color-burn-mix {
-      mix-blend-mode: color-burn;
-    }
+      .hard-light-mix {
+        mix-blend-mode: hard-light;
+      }
 
-    .hard-light {
-      background-blend-mode: hard-light;
-    }
+      .soft-light {
+        background-blend-mode: soft-light;
+      }
 
-    .hard-light-mix {
-      mix-blend-mode: hard-light;
-    }
+      .soft-light-mix {
+        mix-blend-mode: soft-light;
+      }
 
-    .soft-light {
-      background-blend-mode: soft-light;
-    }
+      .difference {
+        background-blend-mode: difference;
+      }
 
-    .soft-light-mix {
-      mix-blend-mode: soft-light;
-    }
+      .difference-mix {
+        mix-blend-mode: difference;
+      }
 
-    .difference {
-      background-blend-mode: difference;
-    }
+      .hue {
+        background-blend-mode: hue;
+      }
 
-    .difference-mix {
-      mix-blend-mode: difference;
-    }
-
-    .hue {
-      background-blend-mode: hue;
-    }
-
-    .hue-mix {
-      mix-blend-mode: hue;
-    }
-
-
-
+      .hue-mix {
+        mix-blend-mode: hue;
+      }
     </style>
   </head>
   <body>
-  <h2>Background blend modes</h2>
+    <h2>背景混合模式</h2>
 
-    <div>
-      No blend mode
-    </div>
+    <div>无混合模式</div>
 
-    <div class="multiply">
-      Multiply
-    </div>
+    <div class="multiply">正片叠底</div>
 
-    <div class="screen">
-      Screen
-    </div>
+    <div class="screen">滤色</div>
 
-    <div class="overlay">
-      Overlay
-    </div>
+    <div class="overlay">叠加</div>
 
-    <div class="color-dodge">
-      Color-dodge
-    </div>
+    <div class="color-dodge">颜色减淡</div>
 
-    <div class="color-burn">
-      Color-burn
-    </div>
+    <div class="color-burn">颜色加深</div>
 
-    <div class="hard-light">
-      Hard-light
-    </div>
+    <div class="hard-light">强光</div>
 
-    <div class="soft-light">
-      Soft-light
-    </div>
+    <div class="soft-light">柔光</div>
 
-    <div class="difference">
-      Difference
-    </div>
+    <div class="difference">差值</div>
 
-    <div class="hue">
-      Hue
-    </div>
+    <div class="hue">色相</div>
 
-    <h2>Mix blend modes</h2>
+    <h2>混合模式</h2>
 
     <article>
-      No mix blend mode
-      <div>
-
-      </div>
-      <div>
-      </div>
+      无混合模式
+      <div></div>
+      <div></div>
     </article>
 
     <article>
-      Multiply mix
-      <div class="multiply-mix">
-
-      </div>
-      <div>
-      </div>
+      正片叠底混合
+      <div class="multiply-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Screen mix
-      <div class="screen-mix">
-
-      </div>
-      <div>
-      </div>
+      滤色混合
+      <div class="screen-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Overlay mix
-      <div class="overlay-mix">
-
-      </div>
-      <div>
-      </div>
+      叠加混合
+      <div class="overlay-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Color-dodge mix
-      <div class="color-dodge-mix">
-
-      </div>
-      <div>
-      </div>
+      颜色减淡混合
+      <div class="color-dodge-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Color-burn mix
-      <div class="color-burn-mix">
-
-      </div>
-      <div>
-      </div>
+      颜色加深混合
+      <div class="color-burn-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Hard-light mix
-      <div class="hard-light-mix">
-
-      </div>
-      <div>
-      </div>
+      强光混合
+      <div class="hard-light-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Soft-light mix
-      <div class="soft-light-mix">
-
-      </div>
-      <div>
-      </div>
+      柔光混合
+      <div class="soft-light-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Difference mix
-      <div class="difference-mix">
-
-      </div>
-      <div>
-      </div>
+      差值混合
+      <div class="difference-mix"></div>
+      <div></div>
     </article>
 
     <article>
-      Hue mix
-      <div class="hue-mix">
-
-      </div>
-      <div>
-      </div>
+      色相混合
+      <div class="hue-mix"></div>
+      <div></div>
     </article>
   </body>
 </html>

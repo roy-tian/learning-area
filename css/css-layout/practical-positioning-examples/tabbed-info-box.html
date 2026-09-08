@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>固定式选项卡信息框</title>
+    <title>选项卡信息框</title>
     <style>
       /* 通用设置 */
 
@@ -24,9 +24,7 @@
       .info-box {
         width: 452px;
         height: 400px;
-        margin: 0 auto;
-        position: fixed;
-        top: 0;
+        margin: 1.25rem auto 0;
       }
 
       /* 信息框选项卡样式 */
@@ -79,51 +77,10 @@
       .info-box [role="tabpanel"].is-hidden {
         display: none;
       }
-
-      /* 示例内容样式 */
-
-      .fake-content {
-        background-color: #a60000;
-        color: white;
-        padding: 10px;
-        height: 2000px;
-        margin-left: 470px;
-      }
-
-      .fake-content p {
-        margin-bottom: 200px;
-      }
     </style>
   </head>
-  <body>
-    <section class="fake-content">
-      <h1>示例内容</h1>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-      <p>
-        这是示例内容。实际网页的主要内容通常会放在这里。
-      </p>
-    </section>
 
+  <body>
     <section class="info-box">
       <div role="tablist" class="manual">
         <button

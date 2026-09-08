@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>选项卡信息框</title>
+    <style></style>
+  </head>
+
+  <body>
+    <section class="info-box">
+      <div role="tablist" class="manual">
+        <button
+          id="tab-1"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-1">
+          <span>选项卡 1</span>
+        </button>
+
+        <button
+          id="tab-2"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tabpanel-2">
+          <span>选项卡 2</span>
+        </button>
+        <button
+          id="tab-3"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tabpanel-3">
+          <span>选项卡 3</span>
+        </button>
+      </div>
+
+      <div class="panels">
+        <article id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+          <h2>第一个选项卡</h2>
+          <p>
+            这是一段用于展示选项卡内容的示例文字。你可以在这里放置文章、说明或其他网页内容。
+            选项卡面板会随着当前选项卡的切换而显示和隐藏。
+          </p>
+        </article>
+
+        <article id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2">
+          <h2>第二个选项卡</h2>
+          <p>
+            这个选项卡没有使用 Lorem Ipsum 占位文本，但仍然可以放置任何你需要的内容。
+          </p>
+        </article>
+
+        <article id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3">
+          <h2>第三个选项卡</h2>
+          <p>
+            这是第三个面板中的示例内容。下面再放置一个有序列表：是不是很有趣？
+          </p>
+          <ol>
+            <li>这里是有序列表的第一项。</li>
+            <li>这里是有序列表的第二项。</li>
+            <li>这里是有序列表的第三项。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <script src="tabs-manual.js"></script>
+  </body>
+</html>

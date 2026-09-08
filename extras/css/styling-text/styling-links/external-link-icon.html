@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>外部链接图标</title>
+    <style>
+    body {
+      width: 300px;
+      margin: 0 auto;
+      font-family: sans-serif;
+    }
+
+    p {
+      line-height: 1.4;
+    }
+
+    a {
+      outline: none;
+      text-decoration: none;
+      padding: 2px 1px 0;
+    }
+
+    a:link {
+      color: blue;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    a:focus, a:hover {
+      border-bottom: 1px solid;
+    }
+
+    a:active {
+      color: red;
+    }
+
+    a[href*="http"] {
+      background: url('external-link-52.png') no-repeat 100% 0;
+      background-size: 16px 16px;
+      padding-right: 19px;
+    }
+    </style>
+  </head>
+  <body>
+    <p>欲了解更多天气信息，请访问我们的<a href="weather.html">天气页面</a>，查看 <a href="https://en.wikipedia.org/wiki/Weather">Wikipedia 上的天气条目</a>，或浏览 <a href="http://www.extremescience.com/weather.htm">Extreme Science 上的天气内容</a>。</p>
+  </body>
+</html>
