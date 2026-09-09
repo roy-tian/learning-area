@@ -1,9 +1,5 @@
 # Web 入门
 
-图标依次表示示例源码和对应的 MDN 章节。
-
-## 补充示例（extras）
-
 1. [HTML 基础：Mozilla 酷毙了](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site) <a href="https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/file-braces.svg" alt="示例源码" title="示例源码" width="16" height="16"></a> <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/external-link.svg" alt="MDN 章节" title="MDN 章节" width="16" height="16"></a>
 2. [CSS 基础：Mozilla 酷毙了（样式版）](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-styled) <a href="https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-styled"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/file-braces.svg" alt="示例源码" title="示例源码" width="16" height="16"></a> <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/external-link.svg" alt="MDN 章节" title="MDN 章节" width="16" height="16"></a>
 3. [JavaScript 基础：Mozilla 酷毙了（脚本版）](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-scripted) <a href="https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-scripted"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/file-braces.svg" alt="示例源码" title="示例源码" width="16" height="16"></a> <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/JavaScript_basics"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/external-link.svg" alt="MDN 章节" title="MDN 章节" width="16" height="16"></a>
