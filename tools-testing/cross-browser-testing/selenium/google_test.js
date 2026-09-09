@@ -18,9 +18,9 @@ driver.findElement(By.name('btnK')).click();
 driver.sleep(2000).then(function() {
   driver.getTitle().then(function(title) {
     if(title === 'webdriver - Google Search') {
-      console.log('Test passed');
+      console.log('测试通过');
     } else {
-      console.log('Test failed');
+      console.log('测试失败');
     }
   });
 });

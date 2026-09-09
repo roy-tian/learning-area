@@ -1,7 +1,7 @@
 /* || 通用样式 */
 
 html {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
 body {
@@ -9,8 +9,9 @@ body {
   margin: 0 auto;
 }
 
-h1, h2 {
-  font-family: 'Faster One', cursive;
+h1,
+h2 {
+  font-family: "Faster One", cursive;
 }
 
 /* 页眉样式 */

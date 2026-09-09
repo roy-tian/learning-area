@@ -210,3 +210,28 @@ CSS 颜色选择工具
 [代码](https://github.com/roy-tian/learning-area/tree/master/extras/tools/touch-paint)
 [章节](https://developer.mozilla.org/zh-CN/docs/Web/API/Touch_events) |
 触摸绘图板
+
+#### A.1 跨浏览器测试
+
+1. [示例](https://roy-tian.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/tools-testing/cross-browser-testing/accessibility)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Cross_browser_testing) |
+跨浏览器测试：键盘无障碍
+2. [示例](https://roy-tian.github.io/learning-area/tools-testing/cross-browser-testing/html-css/button-with-fallback.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/tools-testing/cross-browser-testing/html-css)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Cross_browser_testing) |
+跨浏览器测试：HTML 和 CSS 回退
+3. [示例](https://roy-tian.github.io/learning-area/tools-testing/cross-browser-testing/feature-detection/css-feature-detect-finished.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/tools-testing/cross-browser-testing/feature-detection)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Cross_browser_testing) |
+跨浏览器测试：特性检测
+4. [示例](https://roy-tian.github.io/learning-area/tools-testing/cross-browser-testing/javascript/fetch-fixed/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/tools-testing/cross-browser-testing/javascript)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Cross_browser_testing) |
+跨浏览器测试：使用 Fetch 获取数据
+5. [示例](https://roy-tian.github.io/learning-area/tools-testing/cross-browser-testing/strategies/hidden-info-panel.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/tools-testing/cross-browser-testing/strategies)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Cross_browser_testing) |
+跨浏览器测试：隐藏信息面板
+
+上游已移除的旧 XHR 示例保存在 [extras/tools-testing/cross-browser-testing/javascript](https://github.com/roy-tian/learning-area/tree/master/extras/tools-testing/cross-browser-testing/javascript)。

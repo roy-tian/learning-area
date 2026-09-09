@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Good for loop</title>
+    <meta name="viewport" content="width=device-width">
+    <title>正确的 for 循环</title>
   </head>
   <body>
     <script>
       for(let i = 1; i <= 10; i++) {
         const para = document.createElement('p');
-        para.textContent = 'This is paragraph ' + i + '.';
+        para.textContent = '这是第 ' + i + ' 个段落。';
         document.body.appendChild(para);
         addHandler(para, i);
       }
 
       function addHandler(para, i) {
         para.onclick = function() {
-          alert('Hello from paragraph ' + i + '!');
+          alert('你好，我是第 ' + i + ' 个段落！');
         }
       }
     </script>

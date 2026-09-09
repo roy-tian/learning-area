@@ -40,7 +40,7 @@ footer p {
 }
 
 
-/* Properties for browsers with modern flexbox */
+/* 支持现代 Flexbox 的浏览器的属性 */
 
 .flexbox main {
   display: flex;
@@ -56,7 +56,7 @@ footer p {
 }
 
 
-/* Fallbacks for browsers that don't support modern flexbox */
+/* 不支持现代 Flexbox 的浏览器的回退样式 */
 
 .no-flexbox main div {
   width: 22%;

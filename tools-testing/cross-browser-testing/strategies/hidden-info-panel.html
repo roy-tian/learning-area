@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
+<html lang="zh-Hans">
+  <head>
 	<meta charset="utf-8">
-	<title>Hidden info panel</title>
+	<title>隐藏信息面板</title>
 
   <style>
     html {
       font-family: sans-serif;
     }
 
-    /* || Checkbox hack to control information box display */
+    /* || 使用复选框控制信息框的显示 */
 
     label[for="toggle"] {
       font-size: 3rem;
@@ -25,7 +25,7 @@
        top: -100px;
     }
 
-    /* information box styling */
+    /* 信息框样式 */
 
     aside {
       background-color: #a60000;
@@ -45,29 +45,29 @@
       transition: 0.6s all;
     }
 
-    /* Second part of the checkbox hack — the checked state */
+    /* 复选框技巧的第二部分——选中状态 */
 
     input[type=checkbox]:checked + aside {
       right: 0px;
     }
   </style>
 
-</head>
+  </head>
 <body>
 
 
   <label for="toggle">❔</label>
   <input type="checkbox" id="toggle">
   <aside>
-    <h2>Information</h2>
+    <h2>信息</h2>
 
-    <p>Some very important information about your app:</p>
+    <p>关于你的应用的一些重要信息：</p>
 
     <ol>
-      <li>It has a really cool slide-out information box.</li>
-      <li>This information box uses a combination of fixed positioning and a CSS transition for the smooth sliding.</li>
-      <li>It also uses a cool technique called the <a href="https://css-tricks.com/the-checkbox-hack/">checkbox hack</a>.</li>
-      <li>This allows you to create a nice "toggle on/toggle off" UI effect without using any JavaScript, which will work in IE9 and above (the smooth transition will work in IE10 and above.)</li>
+      <li>它有一个非常酷的滑出式信息框。</li>
+      <li>这个信息框结合使用固定定位和 CSS 过渡，实现平滑滑动。</li>
+      <li>它还使用了一种很酷的技术，称为<a href="https://css-tricks.com/the-checkbox-hack/">复选框技巧</a>。</li>
+      <li>这让你无需使用任何 JavaScript 就能创建漂亮的“切换开/关”用户界面效果，并且可在 IE9 及更高版本中工作（平滑过渡可在 IE10 及更高版本中工作）。</li>
 
     </ol>
 

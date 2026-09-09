@@ -8,7 +8,7 @@ function getPlanDetails(){
 	request({uri: baseUrl + "plan.json"}, function(err, res, body){
 		console.log(JSON.parse(body));
 	});
-	/* Response:
+	/* 响应：
 	{
 		automate_plan: <string>,
 		parallel_sessions_running: <int>,

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
 
-    <title>Arrow function example</title>
+    <title>箭头函数示例</title>
 
   </head>
 
@@ -11,7 +11,7 @@
     <script>
       let array = ['Chris', 'Bob', 'Mark', 'Paul'];
 
-      // Old style syntax
+      // 旧式语法
       //
       // array.forEach(function(e, i, a) {
       //    var elem = document.createElement('p');
@@ -19,7 +19,7 @@
       //    document.body.appendChild(elem);
       // });
 
-      // Arrow function syntax
+      // 箭头函数语法
       array.forEach((e, i, a) => {
          const elem = document.createElement('p');
          elem.textContent = (i + 1) + '. ' + e;

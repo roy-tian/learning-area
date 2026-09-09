@@ -39,15 +39,15 @@ driver.findElement(By.name('btnK')).click();
 driver.sleep(2000).then(function() {
   driver.getTitle().then(function(title) {
     if(title === 'webdriver - Google Search') {
-      console.log('Test passed');
+      console.log('测试通过');
       let testPassed = true;
     } else {
-      console.log('Test failed');
+      console.log('测试失败');
       let testPassed = false;
     }
 
     saucelabs.updateJob(driver.sessionID, {
-      name: 'Google search results page title test',
+      name: 'Google 搜索结果页面标题测试',
       passed: testPassed
     }, function(err,res) {
 

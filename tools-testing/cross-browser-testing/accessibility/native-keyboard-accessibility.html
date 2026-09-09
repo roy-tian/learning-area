@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Native keyboard accessibility</title>
+    <meta name="viewport" content="width=device-width">
+    <title>原生键盘无障碍</title>
     <style>
       input {
         margin-bottom: 10px;
@@ -20,38 +21,38 @@
   </head>
   <body>
 
-    <h1>Links</h1>
+    <h1>链接</h1>
 
-    <p>This is a link to <a href="https://www.mozilla.org">Mozilla</a>.</p>
+    <p>这是指向 <a href="https://www.mozilla.org">Mozilla</a> 的链接。</p>
 
-    <p>Another link, to the <a href="https://developer.mozilla.org">Mozilla Developer Network</a>.</p>
+    <p>这是另一个链接，指向 <a href="https://developer.mozilla.org">Mozilla 开发者网络</a>。</p>
 
-    <h2>Buttons</h2>
+    <h2>按钮</h2>
 
     <p>
-      <button data-message="This is from the first button">Click me!</button>
-      <button data-message="This is from the second button">Click me too!</button>
-      <button data-message="This is from the third button">And me!</button>
+      <button data-message="这是第一个按钮的消息">点我！</button>
+      <button data-message="这是第二个按钮的消息">也点我！</button>
+      <button data-message="这是第三个按钮的消息">还有我！</button>
     </p>
 
-    <h2>Form</h2>
+    <h2>表单</h2>
 
     <form>
       <div>
-        <label for="name">Fill in your name:</label>
+        <label for="name">填写姓名：</label>
         <input type="text" id="name" name="name">
       </div>
       <div>
-        <label for="age">Enter your age:</label>
+        <label for="age">输入年龄：</label>
         <input type="text" id="age" name="age">
       </div>
       <div>
-        <label for="mood">Choose your mood:</label>
+        <label for="mood">选择心情：</label>
         <select id="mood" name="mood">
-          <option>Happy</option>
-          <option>Sad</option>
-          <option>Angry</option>
-          <option>Worried</option>
+          <option>开心</option>
+          <option>难过</option>
+          <option>生气</option>
+          <option>担心</option>
         </select>
       </div>
     </form>

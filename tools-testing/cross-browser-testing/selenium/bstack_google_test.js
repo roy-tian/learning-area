@@ -1,9 +1,9 @@
-const request = require('request'); // require request to use the REST API
+const request = require('request'); // 引入 request 以使用 REST API
 let webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
 
-// Input capabilities
+// 输入功能
 let capabilities = {
    'browserName' : 'Firefox',
    'browser_version' : '56.0 beta',
@@ -14,7 +14,7 @@ let capabilities = {
    'browserstack.key' : 'DoDmjvSzK5eLSmAtVwi4',
    'browserstack.debug' : 'true',
    'build' : 'First build',
-   'project' : 'Google test 2' // split up into projects
+   'project' : 'Google 测试 2' // 拆分为多个项目
 };
 
 let driver = new webdriver.Builder().
@@ -22,7 +22,7 @@ let driver = new webdriver.Builder().
   withCapabilities(capabilities).
   build();
 
-// obtain session ID
+// 获取会话 ID
 let sessionId;
 
 driver.session_.then(function(sessionData) {
@@ -41,11 +41,11 @@ driver.findElement(By.name('btnK')).click();
 driver.sleep(2000).then(function() {
   driver.getTitle().then(function(title) {
     if(title === 'webdriver - Google Search') {
-      console.log('Test passed');
-      request({uri: "https://chrismills4:DoDmjvSzK5eLSmAtVwi4@www.browserstack.com/automate/sessions/" + sessionId + ".json", method:"PUT", form:{"status":"passed","reason":"Google results showed correct title"}});
+      console.log('测试通过');
+      request({uri: "https://chrismills4:DoDmjvSzK5eLSmAtVwi4@www.browserstack.com/automate/sessions/" + sessionId + ".json", method:"PUT", form:{"status":"passed","reason":"Google 结果显示了正确的标题"}});
     } else {
-      console.log('Test failed');
-      request({uri: "https://chrismills4:DoDmjvSzK5eLSmAtVwi4@www.browserstack.com/automate/sessions/" + sessionId + ".json", method:"PUT", form:{"status":"failed","reason":"Google results showed wrong title"}});
+      console.log('测试失败');
+      request({uri: "https://chrismills4:DoDmjvSzK5eLSmAtVwi4@www.browserstack.com/automate/sessions/" + sessionId + ".json", method:"PUT", form:{"status":"failed","reason":"Google 结果显示了错误的标题"}});
     }
   });
 });

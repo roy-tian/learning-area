@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Fake div buttons</title>
+    <meta name="viewport" content="width=device-width">
+    <title>伪 div 按钮</title>
     <style>
       div {
         background-color: rgb(240, 240, 240);
@@ -26,11 +27,11 @@
   </head>
   <body>
 
-    <h2>Fake buttons</h2>
+    <h2>伪按钮</h2>
 
-    <div data-message="This is from the first button" tabindex="0">Click me!</div>
-    <div data-message="This is from the second button" tabindex="0">Click me too!</div>
-    <div data-message="This is from the third button" tabindex="0">And me!</div>
+    <div data-message="这是第一个按钮的消息" tabindex="0" role="button">点我！</div>
+    <div data-message="这是第二个按钮的消息" tabindex="0" role="button">也点我！</div>
+    <div data-message="这是第三个按钮的消息" tabindex="0" role="button">还有我！</div>
 
     <script>
       const buttons = document.querySelectorAll('div');
@@ -47,7 +48,7 @@
       }
 
       document.onkeydown = function(e) {
-        if(e.keyCode === 13) { // The Enter/Return key
+        if(e.key === 'Enter') { // Enter/Return 键
           document.activeElement.onclick(e);
         }
       };
