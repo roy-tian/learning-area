@@ -1,4 +1,4 @@
-// grab references to buttons and video
+// 获取按钮和视频的引用。
 
 const playPauseBtn = document.querySelector('.playpause');
 const stopBtn = document.querySelector('.stop');
@@ -8,26 +8,26 @@ const timeLabel = document.querySelector('.time');
 
 const player = document.querySelector('audio');
 
-// Remove the native controls from all players
+// 移除所有播放器的原生控件。
 
 player.removeAttribute('controls');
 
-// Define constructor for player controls object
+// 定义播放器控件对象的构造函数。
 
 playPauseBtn.onclick = function() {
   if(player.paused) {
     player.play();
-    playPauseBtn.textContent = 'Pause';
+    playPauseBtn.textContent = '暂停';
   } else {
     player.pause();
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.textContent = '播放';
   }
 };
 
 stopBtn.onclick = function() {
   player.pause();
   player.currentTime = 0;
-  playPauseBtn.textContent = 'Play';
+  playPauseBtn.textContent = '播放';
 };
 
 rwdBtn.onclick = function() {
@@ -39,7 +39,7 @@ fwdBtn.onclick = function() {
   if(player.currentTime >= player.duration || player.paused) {
     player.pause();
     player.currentTime = 0;
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.textContent = '播放';
   }
 };
 
@@ -65,17 +65,17 @@ player.ontimeupdate = function() {
   timeLabel.textContent = mediaTime;
 };
 
-// Control transcript display
+// 控制文字稿的显示。
 
 const transcript = document.querySelector('.transcript');
 const transcriptBtn = document.querySelector('.transcript-container button');
 
 transcriptBtn.onclick = function() {
-  if(transcriptBtn.textContent === 'Show transcript') {
+  if(transcriptBtn.textContent === '显示文字稿') {
     transcript.style.height = '150px';
-    transcriptBtn.textContent = 'Hide transcript';
+    transcriptBtn.textContent = '隐藏文字稿';
   } else {
     transcript.style.height = '0';
-    transcriptBtn.textContent = 'Show transcript';
+    transcriptBtn.textContent = '显示文字稿';
   }
 };

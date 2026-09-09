@@ -1,4 +1,4 @@
-// functionality for showing/hiding the comments section
+// 控制评论区的显示和隐藏。
 
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
@@ -7,16 +7,16 @@ commentWrapper.style.display = 'none';
 
 showHideBtn.onclick = function() {
   let showHideText = showHideBtn.textContent;
-  if(showHideText === 'Show comments') {
-    showHideBtn.textContent = 'Hide comments';
+  if(showHideText === '显示评论') {
+    showHideBtn.textContent = '隐藏评论';
     commentWrapper.style.display = 'block';
   } else {
-    showHideBtn.textContent = 'Show comments';
+    showHideBtn.textContent = '显示评论';
     commentWrapper.style.display = 'none';
   }
 };
 
-// functionality for adding a new comment via the comments form
+// 通过评论表单添加新评论。
 
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');

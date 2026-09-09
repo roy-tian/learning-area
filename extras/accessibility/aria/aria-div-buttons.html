@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>ARIA div buttons</title>
+    <title>ARIA div 按钮</title>
     <style>
       div {
         background-color: rgb(240, 240, 240);
@@ -26,11 +26,11 @@
   </head>
   <body>
 
-    <h2>ARIA div buttons</h2>
+    <h2>ARIA div 按钮</h2>
 
-    <div data-message="This is from the first button" tabindex="0" role="button">Click me!</div>
-    <div data-message="This is from the second button" tabindex="0" role="button">Click me too!</div>
-    <div data-message="This is from the third button" tabindex="0" role="button">And me!</div>
+    <div data-message="这是第一个按钮的消息" tabindex="0" role="button">点我！</div>
+    <div data-message="这是第二个按钮的消息" tabindex="0" role="button">也点我！</div>
+    <div data-message="这是第三个按钮的消息" tabindex="0" role="button">还有我！</div>
 
     <script>
       const buttons = document.querySelectorAll('div');
@@ -47,7 +47,7 @@
       }
 
       document.onkeydown = function(e) {
-        if(e.keyCode === 13) { // The Enter/Return key
+        if(e.keyCode === 13) { // Enter/Return 键
           document.activeElement.onclick(e);
         }
       };

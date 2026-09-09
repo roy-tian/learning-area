@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
-  <title>ARIA tabbed info box</title>
+  <title>ARIA 标签页信息框</title>
   <style>
 
-  /* General setup */
+  /* 通用设置 */
 
   html {
     font-family: sans-serif;
@@ -19,7 +19,7 @@
     margin: 0;
   }
 
-  /* info-box setup */
+  /* 信息框设置 */
 
   .info-box {
     width: 450px;
@@ -27,7 +27,7 @@
     margin: 0 auto;
   }
 
-  /* styling info-box tabs */
+  /* 信息框标签页样式 */
 
   ul[role="tablist"] {
     padding-left: 0;
@@ -55,7 +55,7 @@
     color: white;
   }
 
-  /* styling info-box panels */
+  /* 信息框面板样式 */
 
   .info-box .panels {
     clear: both;
@@ -85,30 +85,30 @@
 
 <section class="info-box">
   <ul role="tablist">
-    <li class="active" role="tab" aria-selected="true" aria-setsize="3" aria-posinset="1" tabindex="0">Tab 1</li>
-    <li role="tab" aria-selected="false" aria-setsize="3" aria-posinset="2" tabindex="0">Tab 2</li>
-    <li role="tab" aria-selected="false" aria-setsize="3" aria-posinset="3" tabindex="0">Tab 3</li>
+    <li class="active" role="tab" aria-selected="true" aria-setsize="3" aria-posinset="1" tabindex="0">标签页 1</li>
+    <li role="tab" aria-selected="false" aria-setsize="3" aria-posinset="2" tabindex="0">标签页 2</li>
+    <li role="tab" aria-selected="false" aria-setsize="3" aria-posinset="3" tabindex="0">标签页 3</li>
   </ul>
   <div class="panels">
     <article class="active-panel" role="tabpanel" aria-hidden="false">
-      <h2>The first tab</h2>
+      <h2>第一个标签页</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. Vestibulum et orci scelerisque, vulputate tellus quis, lobortis dui. Vivamus varius libero at ipsum mattis efficitur ut nec nisl. Nullam eget tincidunt metus. Donec ultrices, urna maximus consequat aliquet, dui neque eleifend lorem, a auctor libero turpis at sem. Aliquam ut porttitor urna. Nulla facilisi.</p>
+      <p>这是第一个标签页的示例内容，用来演示信息框中可以放置一段较长的文字。你可以切换标签页，查看其他面板中的内容。</p>
     </article>
     <article role="tabpanel" aria-hidden="true">
-      <h2>The second tab</h2>
+      <h2>第二个标签页</h2>
 
-      <p>This tab hasn't got any Lorem Ipsum in it. But the content isn't very exciting all the same.</p>
+      <p>这个标签页没有 Lorem Ipsum 占位文本，不过其中的内容同样并不十分有趣。</p>
     </article>
     <article role="tabpanel" aria-hidden="true">
-      <h2>The third tab</h2>
+      <h2>第三个标签页</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis nibh, porttitor nec venenatis eu, pulvinar in augue. And now an ordered list: how exciting!</p>
+      <p>这是第三个标签页的示例内容。下面再放一个有序列表：是不是很有趣？</p>
 
       <ol>
-        <li>dui neque eleifend lorem, a auctor libero turpis at sem.</li>
-        <li>Aliquam ut porttitor urna.</li>
-        <li>Nulla facilisi</li>
+        <li>第一个列表项。</li>
+        <li>第二个列表项。</li>
+        <li>第三个列表项。</li>
       </ol>
     </article>
   </div>

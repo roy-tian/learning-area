@@ -1,5 +1,5 @@
-// Get references to all audio and video players
-// Store them all in a single array
+// 获取所有音频和视频播放器的引用。
+// 将它们存储在同一个数组中。
 
 const videos = document.querySelectorAll('video');
 
@@ -15,13 +15,13 @@ for(let v = 0; v < videos.length; v++) {
   players.push(videos[v]);
 }
 
-// Remove the native controls from all players
+// 移除所有播放器的原生控件。
 
 for(let p = 0; p < players.length; p++) {
   players[p].removeAttribute('controls');
 }
 
-// Define constructor for player controls object
+// 定义播放器控件对象的构造函数。
 
 function PlayerController(player, playPauseBtn, stopBtn, rwdBtn, fwdBtn, timeLabel) {
   this.player = player;
@@ -36,17 +36,17 @@ function PlayerController(player, playPauseBtn, stopBtn, rwdBtn, fwdBtn, timeLab
   this.playPauseBtn.onclick = function() {
     if(player.paused) {
       player.play();
-      playPauseBtn.textContent = 'Pause';
+      playPauseBtn.textContent = '暂停';
     } else {
       player.pause();
-      playPauseBtn.textContent = 'Play';
+      playPauseBtn.textContent = '播放';
     }
   }
 
   this.stopBtn.onclick = function() {
     player.pause();
     player.currentTime = 0;
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.textContent = '播放';
   }
 
   this.rwdBtn.onclick = function() {
@@ -58,7 +58,7 @@ function PlayerController(player, playPauseBtn, stopBtn, rwdBtn, fwdBtn, timeLab
     if(player.currentTime >= player.duration || player.paused) {
       player.pause();
       player.currentTime = 0;
-      playPauseBtn.textContent = 'Play';
+      playPauseBtn.textContent = '播放';
     }
   }
 
@@ -87,7 +87,7 @@ function PlayerController(player, playPauseBtn, stopBtn, rwdBtn, fwdBtn, timeLab
 
 
 
-// Add the controls bar to all players
+// 为所有播放器添加控件栏。
 
 for(let i = 0; i < players.length; i++) {
   const controls = document.createElement('div');
@@ -106,10 +106,10 @@ for(let i = 0; i < players.length; i++) {
   fwd.setAttribute('class', 'fwd');
   time.setAttribute('class', 'time');
 
-  playpause.textContent = 'Play';
-  stop.textContent = 'Stop';
-  rwd.textContent = 'Rwd';
-  fwd.textContent = 'Fwd';
+  playpause.textContent = '播放';
+  stop.textContent = '停止';
+  rwd.textContent = '后退';
+  fwd.textContent = '前进';
   time.textContent = '00:00';
 
   controls.appendChild(playpause);

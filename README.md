@@ -117,6 +117,58 @@ HTML 表单示例：明信片
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) |
 HTML 表单示例：开关
 
+### 2. 无障碍
+
+#### 2.1 HTML 无障碍
+
+1. [示例](https://roy-tian.github.io/learning-area/accessibility/html/accessible-image.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML) |
+无障碍 HTML：图片替代文本
+2. [示例](https://roy-tian.github.io/learning-area/accessibility/html/good-form.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML) |
+无障碍 HTML：表单
+3. [示例](https://roy-tian.github.io/learning-area/accessibility/html/good-links.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML) |
+无障碍 HTML：链接
+4. [示例](https://roy-tian.github.io/learning-area/accessibility/html/good-semantics.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/html)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML) |
+无障碍 HTML：语义化
+
+#### 2.2 ARIA
+
+1. [示例](https://roy-tian.github.io/learning-area/accessibility/aria/form-validation-updated.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/aria)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/WAI-ARIA_basics) |
+使用 ARIA 改善表单验证
+
+#### 2.3 多媒体无障碍
+
+1. [示例](https://roy-tian.github.io/learning-area/accessibility/multimedia/audio-transcript-ui)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/multimedia/audio-transcript-ui)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/Multimedia) |
+带文字稿的音频播放器
+2. [示例](https://roy-tian.github.io/learning-area/accessibility/multimedia/custom-controls-OOJS)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/multimedia/custom-controls-OOJS)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/Multimedia) |
+使用自定义控件的媒体播放器
+
+#### 2.4 章节测验
+
+1. [示例](https://roy-tian.github.io/learning-area/accessibility/assessment-start)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/assessment-start)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/Accessibility_troubleshooting) |
+无障碍排障：开始
+2. [示例](https://roy-tian.github.io/learning-area/accessibility/assessment-finished)
+[代码](https://github.com/roy-tian/learning-area/tree/master/accessibility/assessment-finished)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/Accessibility_troubleshooting) |
+无障碍排障：完成
+
+上游已移除的旧无障碍示例保存在 [extras/accessibility](https://github.com/roy-tian/learning-area/tree/master/extras/accessibility)。
+
 ### 3. JavaScript
 
 #### 3.1 JavaScript 初步

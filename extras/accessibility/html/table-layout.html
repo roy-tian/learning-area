@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+
+    <title>我的页面标题</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 下面三行用于让 HTML5 语义元素在旧版 Internet Explorer 中正常工作。 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body width="1200" bgcolor="#a9a9a9">
+
+    <table width="1200">
+      <!-- 主标题行 -->
+      <tr id="heading">
+        <td colspan="6">
+
+          <h1 align="center">页眉</h1>
+
+        </td>
+      </tr>
+      <!-- 导航菜单行 -->
+      <tr id="nav" bgcolor="#ffffff">
+        <td width="200">
+          <a href="#" align="center">主页</a>
+        </td>
+        <td width="200">
+          <a href="#" align="center">我们的团队</a>
+        </td>
+        <td width="200">
+          <a href="#" align="center">项目</a>
+        </td>
+        <td width="200">
+          <a href="#" align="center">联系</a>
+        </td>
+        <td width="300">
+          <form width="300">
+            <input type="search" name="q" placeholder="搜索查询" width="300">
+          </form>
+        </td>
+        <td width="100">
+          <button width="100">搜索</button>
+        </td>
+      </tr>
+      <!-- 间隔行 -->
+      <tr id="spacer" height="10">
+        <td>
+
+        </td>
+      </tr>
+      <!-- 主要内容和旁栏行 -->
+      <tr id="main">
+        <td id="content" colspan="4" bgcolor="#ffffff">
+
+          <h2 align="center">文章标题</h2>
+
+          <p>这是一段文章示例内容，用来展示使用表格布局的网站结构。</p>
+
+          <h3>子部分</h3>
+
+          <p>这是文章第一个子部分的示例文字。清晰的标题和段落能够帮助用户浏览内容。</p>
+
+          <p>段落内容可以继续展开说明主题，并与前后的标题建立清晰层次。</p>
+
+          <h3>另一个子部分</h3>
+
+          <p>这是另一个子部分的示例内容。合理使用语义结构能让页面更容易理解。</p>
+
+          <p>页面还可以包含更多文字，但清晰的结构始终比单纯的视觉样式更重要。</p>
+
+        </td>
+        <td id="aside" colspan="2" bgcolor="#ff80ff" valign="top">
+          <h2>相关文章</h2>
+
+          <ul>
+            <li><a href="#">我喜欢待在海边</a></li>
+            <li><a href="#">我喜欢待在海旁</a></li>
+            <li><a href="#">虽然那里位于英格兰北部</a></li>
+            <li><a href="#">那里总是下雨</a></li>
+            <li><a href="#">好吧……</a></li>
+          </ul>
+
+        </td>
+      </tr>
+      <!-- 间隔行 -->
+      <tr id="spacer" height="10">
+        <td>
+
+        </td>
+      </tr>
+      <!-- 页脚行 -->
+      <tr id="footer" bgcolor="#ffffff">
+        <td colspan="6">
+          <p>©版权所有 2050，作者不详。保留所有权利。</p>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

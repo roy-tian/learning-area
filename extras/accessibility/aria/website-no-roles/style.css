@@ -1,4 +1,4 @@
-/* || General setup */
+/* || 通用设置 */
 
 html, body {
   margin: 0;
@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
 }
 
-/* || typography */
+/* || 排版 */
 
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
@@ -48,7 +48,7 @@ p, li {
   line-height: 1.5;
 }
 
-/* || header layout */
+/* || 页眉布局 */
 
 header {
   margin-bottom: 10px;
@@ -111,7 +111,7 @@ input[type="submit"] {
   color: white; 
 } 
 
-/* || main layout */
+/* || 主体布局 */
 
 main {
   display: flex;

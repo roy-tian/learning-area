@@ -48,7 +48,7 @@ function validate(e) {
 function createLink(testItem) {
   const listItem = document.createElement('li');
   const anchor = document.createElement('a');
-  anchor.textContent = testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.';
+  anchor.textContent = '“' + testItem.input.name + '”字段为空：请填写该字段。';
   anchor.href = '#' + testItem.input.name;
   anchor.onclick = function() {
     testItem.input.focus();
@@ -71,12 +71,11 @@ function toggleMusician(bool) {
     instruItem.input.disabled = false;
     instruItem.label.style.color = '#000';
     instruItem.input.setAttribute('aria-disabled', 'false');
-    hiddenAlert.textContent = 'Instruments played field now enabled; use it to tell us what you play.';
+    hiddenAlert.textContent = '演奏的乐器字段已启用；请填写你演奏的乐器。';
   } else {
     instruItem.input.disabled = true;
     instruItem.label.style.color = '#999';
     instruItem.input.setAttribute('aria-disabled', 'true');
-    instruItem.input.removeAttribute('aria-label');
-    hiddenAlert.textContent = 'Instruments played field now disabled.';
+    hiddenAlert.textContent = '演奏的乐器字段已禁用。';
   }
 }

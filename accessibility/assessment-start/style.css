@@ -1,4 +1,4 @@
-/* || General setup */
+/* || 通用设置 */
 
 html, body {
   margin: 0;
@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
 }
 
-/* || typography */
+/* || 排版 */
 
 font[size="7"], font[size="6"], font[size="5"] {
   font-family: 'Sonsie One', cursive;
@@ -49,7 +49,7 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* || header layout */
+/* || 页眉布局 */
 
 div[class="nav"], article, footer, .secondary {
   background-color: green;
@@ -117,7 +117,7 @@ div[class="nav"] .search {
   color: white;
 }
 
-/* || main layout */
+/* || 主体布局 */
 
 main {
   display: flex;
@@ -135,7 +135,7 @@ footer {
   margin-top: 10px;
 }
 
-/* Table styling */
+/* 表格样式 */
 
 table {
   width: 100%;
@@ -159,7 +159,7 @@ tbody tr:nth-child(odd) {
   background-color: #def;
 }
 
-/* styling content images and audio */
+/* 内容图片和音频样式 */
 
 img, audio {
   display: block;
@@ -170,7 +170,7 @@ audio {
   width: 500px;
 }
 
-/* Comments styling */
+/* 评论样式 */
 
 .comments {
   background-color: #def;

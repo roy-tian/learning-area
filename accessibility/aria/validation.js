@@ -36,7 +36,7 @@ function validate(e) {
 function createLink(testItem) {
   const listItem = document.createElement('li');
   const anchor = document.createElement('a');
-  anchor.textContent = testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.';
+  anchor.textContent = '“' + testItem.input.name + '”字段为空：请填写该字段。';
   anchor.href = '#' + testItem.input.name;
   anchor.onclick = function() {
     testItem.input.focus();

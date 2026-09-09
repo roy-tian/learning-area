@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+
+    <title>带 ARIA 角色的示例网站</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 下面三行用于让 HTML5 语义元素在旧版 Internet Explorer 中正常工作。 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- 这是网站所有页面通用的主页眉。 -->
+
+    <header>
+      <h1>页眉</h1>
+
+      <!-- 虽然不是强制要求，但通常会将主导航菜单放在主页眉中。 -->
+
+      <nav role="navigation">
+        <ul>
+          <li><a href="#">主页</a></li>
+          <li><a href="#">我们的团队</a></li>
+          <li><a href="#">项目</a></li>
+          <li><a href="#">联系</a></li>
+        </ul>
+
+        <!-- 搜索表单也是浏览网站的常见非线性方式。 -->
+
+        <form role="search">
+          <input type="search" name="q" placeholder="搜索查询" aria-label="搜索站点内容">
+          <input type="submit" value="搜索">
+        </form>
+      </nav>
+    </header>
+
+    <!-- 这是页面的主要内容。 -->
+    <main>
+
+      <!-- 其中包含一篇文章。 -->
+      <article role="article">
+        <h2>文章标题</h2>
+
+        <p>这是一段文章示例内容，用来展示带 ARIA 角色的文章结构。</p>
+
+        <h3>子部分</h3>
+
+        <p>这是文章第一个子部分的示例文字。屏幕阅读器可以通过语义标题帮助用户浏览内容。</p>
+
+        <p>段落内容可以继续展开说明主题，并且与前后的标题建立清晰的层次关系。</p>
+
+        <h3>另一个子部分</h3>
+
+        <p>这是另一个子部分的示例内容。合理使用标题和段落能让页面更容易理解。</p>
+
+        <p>页面还可以包含更多文字，但清晰的语义结构始终比视觉样式更重要。</p>
+      </article>
+
+      <!-- aside 内容也可以嵌套在主要内容中。 -->
+      <aside role="complementary">
+        <h2>相关文章</h2>
+
+        <ul>
+          <li><a href="#">我喜欢待在海边</a></li>
+          <li><a href="#">我喜欢待在海旁</a></li>
+          <li><a href="#">虽然那里位于英格兰北部</a></li>
+          <li><a href="#">那里总是下雨</a></li>
+          <li><a href="#">好吧……</a></li>
+        </ul>
+      </aside>
+
+    </main>
+
+    <!-- 这是网站所有页面通用的主页脚。 -->
+
+    <footer>
+      <p>©版权所有 2050，作者不详。保留所有权利。</p>
+    </footer>
+
+  </body>
+</html>

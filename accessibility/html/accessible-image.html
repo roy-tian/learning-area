@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Accessible image example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>无障碍图片示例</title>
     <style>
       img {
         display: block;
@@ -12,20 +13,20 @@
   </head>
   <body>
 
-    <h1>Images</h1>
+    <h1>图片</h1>
 
     <img src="dinosaur.png">
 
     <img src="dinosaur.png"
-         alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+         alt="一只红色的霸王龙：这种两足恐龙像人一样直立，手臂很小，头部很大，还有许多锋利的牙齿。">
 
     <img src="dinosaur.png"
-         alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
-         title="The Mozilla red dinosaur">
+         alt="一只红色的霸王龙：这种两足恐龙像人一样直立，手臂很小，头部很大，还有许多锋利的牙齿。"
+         title="Mozilla 红色恐龙">
 
     <img src="dinosaur.png" aria-labelledby="dino-label">
 
-    <p id="dino-label">The Mozilla red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.</p>
+    <p id="dino-label">Mozilla 的红色霸王龙：这种两足恐龙像人一样直立，手臂很小，头部很大，还有许多锋利的牙齿。</p>
 
   </body>
 </html>

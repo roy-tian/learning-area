@@ -1,4 +1,4 @@
-// grab references to buttons and video
+// 获取按钮和视频的引用。
 
 const playPauseBtn = document.querySelector('.playpause');
 const stopBtn = document.querySelector('.stop');
@@ -8,26 +8,26 @@ const timeLabel = document.querySelector('.time');
 
 const player = document.querySelector('video');
 
-// Remove the native controls from all players
+// 移除播放器的原生控件。
 
 player.removeAttribute('controls');
 
-// Define constructor for player controls object
+// 定义播放器控件对象的构造函数。
 
 playPauseBtn.onclick = function() {
   if(player.paused) {
     player.play();
-    playPauseBtn.textContent = 'Pause';
+    playPauseBtn.textContent = '暂停';
   } else {
     player.pause();
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.textContent = '播放';
   }
 };
 
 stopBtn.onclick = function() {
   player.pause();
   player.currentTime = 0;
-  playPauseBtn.textContent = 'Play';
+  playPauseBtn.textContent = '播放';
 };
 
 rwdBtn.onclick = function() {
@@ -39,7 +39,7 @@ fwdBtn.onclick = function() {
   if(player.currentTime >= player.duration || player.paused) {
     player.pause();
     player.currentTime = 0;
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.textContent = '播放';
   }
 };
 
