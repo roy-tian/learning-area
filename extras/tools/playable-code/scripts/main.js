@@ -36,13 +36,15 @@ blockInput.addEventListener('keydown', (e) => {
   }
 });
 
-blockInput.addEventListener('keyup', () => {
+blockInput.addEventListener('input', updateUserEntry);
+
+function updateUserEntry() {
   userEntry = blockInput.value;
   blockOutput.innerHTML = blockInput.value;
   if (btnSolution.textContent === '隐藏答案') {
     btnSolution.textContent = '显示答案';
-  } 
-});
+  }
+}
 
 selectItems.addEventListener('change', () => {
   item = selectItems.value;
@@ -78,4 +80,5 @@ function insertAtCursor(text) {
   blockInput.selectionEnd = cursorPos + text.length;
   blockInput.focus();
   blockInput.scrollTop = scrollPos;
+  updateUserEntry();
 }

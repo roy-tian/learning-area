@@ -9,7 +9,7 @@ const CODE_DB = [
     name: 'link',
     description: '超链接',
     original: '<p>欲练葵花宝典，需引刀自宫</p>',
-    answer: '<p>欲练<a href="https://zh.wikipedia.org/zh-hans/葵花宝典" title="葵花宝典简介" target="_blank">葵花宝典</a>，需引刀自宫</p>'
+    answer: '<p>欲练<a href="https://zh.wikipedia.org/zh-hans/葵花宝典" title="葵花宝典简介" target="_blank" rel="noopener noreferrer">葵花宝典</a>，需引刀自宫</p>'
   },
   {
     name: 'decorate',
@@ -21,7 +21,7 @@ const CODE_DB = [
   相思无用，惟别而已。别期若有定，千般煎熬又何如？莫道黯然销魂，何处<strong>柳暗花明</strong>？<br>
   ——《<a href="https://zh.wikipedia.org/zh-hans/神鵰俠侶">神雕侠侣</a>》
 </p>
-<img src="images/sdxl.jfif">`
+<img src="images/sdxl.jfif" alt="《神雕侠侣》插图">`
   },
   {
     name: 'titleAndParagraph',
@@ -103,7 +103,7 @@ const CODE_DB = [
 <p>相传宫保鸡丁是清朝光绪年间的署理四川总督丁宝桢所发明，是他招待客人时叫家厨煮的菜肴。由于丁宝桢后来被封为东宫少保（太子少保），所以被称为“丁宫保”，而这道菜亦被称为“宫保鸡丁”</p>
 
 <h2>原料</h2>
-<img src="images/gongbao.png" style="float:right">
+<img src="images/gongbao.png" alt="宫保鸡丁成品" style="float:right">
 <ul>
   <li>去骨鸡胸肉：一斤八两</li>
   <li>干红辣椒：八钱</li>
@@ -177,7 +177,7 @@ const CODE_DB = [
 <p>譬如为山，未成一篑，止，吾止也。譬如平地，虽覆一篑，进，吾往也。</p>
 <p>要保持乐观，不要说泄气的话。（源自 Affirmations for Positive Thinking。）</p>`,
     answer:
-`<p>你好！欢迎访问我的激励网页！<a href="https://zh.wikipedia.org/zh-hans/孔子"><cite>孔子<cite></a>曰：</p>
+`<p>你好！欢迎访问我的激励网页！<a href="https://zh.wikipedia.org/zh-hans/孔子"><cite>孔子</cite></a>曰：</p>
 <blockquote cite="https://zh.wikipedia.org/zh-hans/孔子">
   <p>譬如为山，未成一篑，止，吾止也。譬如平地，虽覆一篑，进，吾往也。</p>
 </blockquote>
@@ -222,7 +222,7 @@ const CODE_DB = [
     description: '用<iframe>嵌入视频',
     original: '<p>改革春风吹满地</p>',
     answer: 
-`<iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+`<iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" title="哔哩哔哩视频：改革春风吹满地" allow="fullscreen"> </iframe>
 <p>改革春风吹满地</p>`
   },
   {

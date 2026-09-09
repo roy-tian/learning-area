@@ -1,5 +1,5 @@
 /*
- * COLOR PICKER TOOL
+ * 颜色选择器工具
  */
 
  .ui-color-picker {
@@ -23,13 +23,14 @@
   position: relative;
   float: left;
   display: table;
+  touch-action: none;
 }
 
 .ui-color-picker .picking-area:hover {
   cursor: default;
 }
 
-/* HSV format - Hue-Saturation-Value(Brightness) */
+/* HSV 格式 - 色相-饱和度-色阶（亮度） */
 .ui-color-picker .picking-area {
   background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
         linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0) 100%);
@@ -48,7 +49,7 @@
   background-color: #F00;
 }
 
-/* HSL format - Hue-Saturation-Lightness */
+/* HSL 格式 - 色相-饱和度-亮度 */
 .ui-color-picker[data-mode='HSL'] .picking-area {
   background: -moz-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
                   hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
@@ -94,6 +95,7 @@
   margin: 5px;
   border: 1px solid #FFF;
   float: left;
+  touch-action: none;
 }
 
 .ui-color-picker .hue {
@@ -131,7 +133,7 @@
   top: -1px;
 }
 
-/* input HSV and RGB */
+/* HSV 和 RGB 输入 */
 
 .ui-color-picker .info {
   width: 200px;
@@ -217,7 +219,7 @@
   box-sizing: border-box;
 }
 
-/* Preview color */
+/* 预览颜色 */
 .ui-color-picker .preview {
   width: 95px;
   height: 53px;
@@ -267,7 +269,7 @@
 }
 
 /*
- * UI Component
+ * UI 组件
  */
 
 .ui-input-slider {
@@ -283,7 +285,7 @@
   line-height: 100%;
 }
 
-/* Input Slider */
+/* 输入滑块 */
 
 .ui-input-slider > input {
   margin: 0;
@@ -307,6 +309,9 @@
   width: 16px;
   cursor: pointer;
   background: url("images/arrows.svg") center left no-repeat;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 .ui-input-slider-right {
@@ -336,7 +341,7 @@
 }
 
 /*
- * COLOR PICKER TOOL
+ * 颜色选择器工具
  */
 
 body {
@@ -359,7 +364,7 @@ body {
 }
 
 /**
- * Resize Handle
+ * 调整大小手柄
  */
 .resize-handle {
   width: 10px;
@@ -396,7 +401,7 @@ body {
 
 
 /**
- * 	Container
+ * 	容器
  */
 #container {
   width: 100%;
@@ -409,7 +414,7 @@ body {
 }
 
 /**
- * 	Picker Zone
+ * 	选择器区域
  */
 
 #picker {
@@ -432,7 +437,7 @@ body {
 }
 
 /**
- * Picker Container
+ * 选择器容器
  */
 
 #picker-samples {
@@ -520,7 +525,7 @@ body {
 }
 
 /**
- * 	Controls
+ * 	控件
  */
 
 #controls {
@@ -543,6 +548,8 @@ body {
   border: 1px solid #DDD;
   display: table;
   float: left;
+  padding: 0;
+  appearance: none;
 }
 
 #controls .icon:hover {
@@ -585,6 +592,8 @@ body {
   padding: 2px 0;
   background-color: #EEE;
   float: left;
+  border: 0;
+  font: inherit;
 }
 
 #controls .switch [data-active='true'] {
@@ -594,7 +603,7 @@ body {
 }
 
 /**
- * 	Trash Can
+ * 	垃圾桶
  */
 
 #delete {
@@ -629,12 +638,12 @@ body {
   transition: all 0.2s;
 }
 
-#delete[drag-state='enter'] {
+#delete[data-drag-state='enter'] {
   background-color: #999;
 }
 
 /**
- * 	Color Theme
+ * 	配色主题
  */
 
 #color-theme {
@@ -651,7 +660,7 @@ body {
 }
 
 /**
- * Color info box
+ * 颜色信息框
  */
 #color-info {
   width: 360px;
@@ -720,6 +729,7 @@ body {
   background-image: url('images/copy.svg');
   background-repeat: no-repeat;
   background-position: center left;
+  border: 0;
   border-left: 1px solid #EEE;
   text-align: right;
   float: left;
@@ -731,7 +741,7 @@ body {
 
 
 /**
- * 	Color Palette
+ * 	调色板
  */
 
 #palette {
@@ -817,22 +827,24 @@ body {
   background-size: 60px 60px;
   background-repeat: no-repeat;
   background-position: bottom right;
+  border: 0;
+  appearance: none;
 }
 
 #color-palette .controls .lock:hover {
   background-position: bottom left;
 }
 
-#color-palette .controls .lock[locked-state='true'] {
+#color-palette .controls .lock[data-locked-state='true'] {
   background-position: top left ;
 }
 
-#color-palette .controls .lock[locked-state='true']:hover {
+#color-palette .controls .lock[data-locked-state='true']:hover {
   background-position: top right;
 }
 
 /**
- * Canvas
+ * 画布
  */
 
 #canvas {
@@ -908,6 +920,11 @@ body {
   cursor: move;
 }
 
+#canvas .sample:focus {
+  outline: 2px solid #2C9FC9;
+  outline-offset: 2px;
+}
+
 #canvas .sample[data-active='true']:after {
   content: "";
   position: absolute;
@@ -936,6 +953,9 @@ body {
   top: 0;
   left: 0;
   display: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 #canvas .sample .delete {
@@ -947,11 +967,14 @@ body {
   top: 0;
   right: 0;
   display: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 
 /**
- * Canvas controls
+ * 画布控件
  */
 
 #canvas .toggle-bg {
@@ -963,6 +986,9 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 #canvas .toggle-bg:hover {

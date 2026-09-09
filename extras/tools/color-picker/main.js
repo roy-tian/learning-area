@@ -4,10 +4,10 @@ let UIColorPicker = (function UIColorPicker() {
   let pickers = [];
 
   /**
-   * RGBA Color class
+   * RGBA 颜色类
    *
-   * HSV/HSB and HSL
-   * (hue=色调, saturation=饱和度, value=色阶 / brightness=亮度, lightness=亮度)
+   * HSV/HSB 和 HSL
+   * （hue=色调，saturation=饱和度，value=色阶 / brightness=亮度，lightness=亮度）
    * @param hue        0-360
    * @param saturation 0-100
    * @param value      0-100
@@ -101,18 +101,26 @@ let UIColorPicker = (function UIColorPicker() {
       value >= 0 && value <= 255);
   };
 
+  Color.prototype.isValidAlphaValue = function isValidAlphaValue(value) {
+    return (typeof(value) === 'number' && isNaN(value) === false &&
+      value >= 0 && value <= 1);
+  };
+
   Color.prototype.setRGBA = function setRGBA(red, green, blue, alpha) {
     if (this.isValidRGBValue(red) === false ||
       this.isValidRGBValue(green) === false ||
       this.isValidRGBValue(blue) === false)
       return;
 
-      this.r = red | 0;
-      this.g = green | 0;
-      this.b = blue | 0;
+    if (alpha !== undefined && this.isValidAlphaValue(alpha) === false)
+      return;
 
-    if (this.isValidRGBValue(alpha) === true)
-      this.a = alpha | 0;
+    this.r = red | 0;
+    this.g = green | 0;
+    this.b = blue | 0;
+
+    if (alpha !== undefined)
+      this.a = alpha;
   };
 
   Color.prototype.setByName = function setByName(name, value) {
@@ -172,23 +180,27 @@ let UIColorPicker = (function UIColorPicker() {
   };
 
   Color.prototype.setHexa = function setHexa(value) {
-    let valid  = /(^#{0,1}[0-9A-F]{6}$)|(^#{0,1}[0-9A-F]{3}$)/i.test(value);
+    let match = /^#?([0-9A-F]{3,4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.exec(value);
 
-    if (valid !== true)
-      return;
+    if (match === null)
+      return false;
 
-    if (value[0] === '#')
-      value = value.slice(1, value.length);
+    value = match[1];
 
-    if (value.length === 3)
-      value = value.replace(/([0-9A-F])([0-9A-F])([0-9A-F])/i,'$1$1$2$2$3$3');
+    if (value.length === 3 || value.length === 4)
+      value = value.replace(/([0-9A-F])/gi, '$1$1');
 
     this.r = parseInt(value.substr(0, 2), 16);
     this.g = parseInt(value.substr(2, 2), 16);
     this.b = parseInt(value.substr(4, 2), 16);
 
-    this.alpha = 1;
-    this.RGBtoHSV();
+    if (value.length === 8)
+      this.a = parseFloat((parseInt(value.substr(6, 2), 16) / 255).toFixed(3));
+    else
+      this.a = 1;
+
+    this.updateHSX();
+    return true;
   };
 
   /*========== 转换方法 ==========*/
@@ -327,9 +339,9 @@ let UIColorPicker = (function UIColorPicker() {
     this.lightness = (lightness * 100) | 0;
   };
 
-  /*========== Get 方法 ==========*/
+  /*========== 获取方法 ==========*/
 
-  Color.prototype.getHexa = function getHexa() {
+  Color.prototype.getHexa = function getHexa(includeAlpha) {
     let r = this.r.toString(16);
     let g = this.g.toString(16);
     let b = this.b.toString(16);
@@ -337,6 +349,13 @@ let UIColorPicker = (function UIColorPicker() {
     if (this.g < 16) g = '0' + g;
     if (this.b < 16) b = '0' + b;
     let value = '#' + r + g + b;
+    let alpha = parseFloat(this.a);
+    if (includeAlpha === true && isNaN(alpha) === false && alpha !== 1) {
+      alpha = Math.max(0, Math.min(1, alpha));
+      let a = Math.round(alpha * 255).toString(16);
+      if (a.length < 2) a = '0' + a;
+      value += a;
+    }
     return value.toUpperCase();
   };
 
@@ -377,7 +396,7 @@ let UIColorPicker = (function UIColorPicker() {
   };
 
   Color.prototype.getColor = function getColor() {
-    if (this.a | 0 === 1)
+    if (parseFloat(this.a) === 1)
       return this.getHexa();
     return this.getRGBA();
   };
@@ -385,17 +404,37 @@ let UIColorPicker = (function UIColorPicker() {
   /*=======================================================================*/
   /*=======================================================================*/
 
-  /*========== 获取鼠标移动事件 ==========*/
+  /*========== 获取指针移动事件 ==========*/
 
-  let setMouseTracking = function setMouseTracking(elem, callback) {
-    elem.addEventListener('mousedown', function(e) {
+  let setPointerTracking = function setPointerTracking(elem, callback) {
+    let pointerId = null;
+
+    let pointerMove = function pointerMove(e) {
+      if (e.pointerId !== pointerId)
+        return;
+      e.preventDefault();
       callback(e);
-      document.addEventListener('mousemove', callback);
-    });
+    };
 
-    document.addEventListener('mouseup', function(e) {
-      document.removeEventListener('mousemove', callback);
+    let pointerEnd = function pointerEnd(e) {
+      if (e.pointerId !== pointerId)
+        return;
+      if (elem.hasPointerCapture(e.pointerId))
+        elem.releasePointerCapture(e.pointerId);
+      pointerId = null;
+    };
+
+    elem.addEventListener('pointerdown', function(e) {
+      if (e.button !== 0)
+        return;
+      pointerId = e.pointerId;
+      e.preventDefault();
+      callback(e);
+      elem.setPointerCapture(e.pointerId);
     });
+    elem.addEventListener('pointermove', pointerMove);
+    elem.addEventListener('pointerup', pointerEnd);
+    elem.addEventListener('pointercancel', pointerEnd);
   };
 
   /*====================*/
@@ -451,7 +490,11 @@ let UIColorPicker = (function UIColorPicker() {
 
     this.picking_area = area;
     this.color_picker = picker;
-    setMouseTracking(area, this.updateColor.bind(this));
+    area.setAttribute('role', 'group');
+    area.setAttribute('tabindex', '0');
+    area.setAttribute('aria-label', '颜色选择区域');
+    area.addEventListener('keydown', this.handlePickingKeydown.bind(this));
+    setPointerTracking(area, this.updateColor.bind(this));
 
     area.appendChild(picker);
     this.node.appendChild(area);
@@ -466,7 +509,14 @@ let UIColorPicker = (function UIColorPicker() {
 
     this.hue_area = area;
     this.hue_picker = picker;
-    setMouseTracking(area, this.updateHueSlider.bind(this));
+    area.setAttribute('role', 'slider');
+    area.setAttribute('tabindex', '0');
+    area.setAttribute('aria-label', '色调');
+    area.setAttribute('aria-valuemin', '0');
+    area.setAttribute('aria-valuemax', '359');
+    area.setAttribute('aria-valuestep', '1');
+    area.addEventListener('keydown', this.handleHueKeydown.bind(this));
+    setPointerTracking(area, this.updateHueSlider.bind(this));
 
     area.appendChild(picker);
     this.node.appendChild(area);
@@ -484,7 +534,14 @@ let UIColorPicker = (function UIColorPicker() {
     this.alpha_area = area;
     this.alpha_mask = mask;
     this.alpha_picker = picker;
-    setMouseTracking(area, this.updateAlphaSlider.bind(this));
+    area.setAttribute('role', 'slider');
+    area.setAttribute('tabindex', '0');
+    area.setAttribute('aria-label', '透明度');
+    area.setAttribute('aria-valuemin', '0');
+    area.setAttribute('aria-valuemax', '1');
+    area.setAttribute('aria-valuestep', '0.01');
+    area.addEventListener('keydown', this.handleAlphaKeydown.bind(this));
+    setPointerTracking(area, this.updateAlphaSlider.bind(this));
 
     area.appendChild(mask);
     mask.appendChild(picker);
@@ -507,13 +564,20 @@ let UIColorPicker = (function UIColorPicker() {
   ColorPicker.prototype.newInputComponent = function newInputComponent(title, topic, onChangeFunc) {
     let wrapper = document.createElement('div');
     let input = document.createElement('input');
-    let info = document.createElement('span');
+    let info = document.createElement('label');
+    let label = title;
+    if (topic === 'alpha') label = '透明度';
+    if (topic === 'hexa') label = '十六进制颜色';
+    let inputId = (this.topic || 'picker') + '-' + topic + '-input';
 
     wrapper.className = 'input';
     wrapper.setAttribute('data-topic', topic);
-    info.textContent = title;
+    info.textContent = label;
     info.className = 'name';
+    info.setAttribute('for', inputId);
+    input.id = inputId;
     input.setAttribute('type', 'text');
+    input.setAttribute('aria-label', label);
 
     wrapper.appendChild(info);
     wrapper.appendChild(input);
@@ -531,8 +595,10 @@ let UIColorPicker = (function UIColorPicker() {
 
   ColorPicker.prototype.createChangeModeButton = function createChangeModeButton() {
 
-    let button = document.createElement('div');
+    let button = document.createElement('button');
+    button.setAttribute('type', 'button');
     button.className = 'switch_mode';
+    button.setAttribute('aria-label', '切换颜色模式');
     button.addEventListener('click', function() {
       if (this.picker_mode === 'HSV')
         this.setPickerMode('HSL');
@@ -544,13 +610,76 @@ let UIColorPicker = (function UIColorPicker() {
     this.node.appendChild(button);
   };
 
+  ColorPicker.prototype.updateAria = function updateAria() {
+    let valueName = this.picker_mode === 'HSL' ? '亮度' : '色阶';
+    let value = this.picker_mode === 'HSL' ? this.color.lightness : this.color.value;
+
+    this.picking_area.setAttribute('aria-label',
+      '颜色选择区域，饱和度 ' + this.color.saturation + '%，' + valueName + ' ' + value + '%');
+    this.hue_area.setAttribute('aria-valuenow', this.color.hue);
+    this.hue_area.setAttribute('aria-valuetext', this.color.hue + '°');
+    this.alpha_area.setAttribute('aria-valuenow', parseFloat(this.color.a).toFixed(2));
+    this.alpha_area.setAttribute('aria-valuetext',
+      parseFloat(this.color.a).toFixed(2));
+  };
+
+  ColorPicker.prototype.handlePickingKeydown = function handlePickingKeydown(e) {
+    let step = e.shiftKey ? 10 : 1;
+    let saturation = this.color.saturation;
+    let value = this.picker_mode === 'HSL' ? this.color.lightness : this.color.value;
+
+    if (e.key === 'ArrowLeft') saturation -= step;
+    else if (e.key === 'ArrowRight') saturation += step;
+    else if (e.key === 'ArrowDown') value -= step;
+    else if (e.key === 'ArrowUp') value += step;
+    else return;
+
+    e.preventDefault();
+    saturation = Math.max(0, Math.min(100, saturation));
+    value = Math.max(0, Math.min(100, value));
+    this.color.setSaturation(saturation);
+    if (this.picker_mode === 'HSL')
+      this.color.setLightness(value);
+    else
+      this.color.setValue(value);
+    this.updateSLV();
+  };
+
+  ColorPicker.prototype.handleHueKeydown = function handleHueKeydown(e) {
+    let value = this.color.hue;
+    if (e.key === 'ArrowLeft') value--;
+    else if (e.key === 'ArrowRight') value++;
+    else if (e.key === 'Home') value = 0;
+    else if (e.key === 'End') value = 359;
+    else return;
+
+    e.preventDefault();
+    value = Math.max(0, Math.min(359, value));
+    this.setHue(value);
+    this.updateHuePicker();
+  };
+
+  ColorPicker.prototype.handleAlphaKeydown = function handleAlphaKeydown(e) {
+    let value = parseFloat(this.color.a);
+    let step = e.shiftKey ? 0.1 : 0.01;
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') value -= step;
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') value += step;
+    else if (e.key === 'Home') value = 0;
+    else if (e.key === 'End') value = 1;
+    else return;
+
+    e.preventDefault();
+    this.setAlpha(Math.max(0, Math.min(1, value)));
+  };
+
   /*************************************************************************/
   //    更新 UI 元素的属性
   /*************************************************************************/
 
   ColorPicker.prototype.updateColor = function updateColor(e) {
-    let x = e.pageX - this.picking_area.offsetLeft;
-    let y = e.pageY - this.picking_area.offsetTop;
+    let rect = this.picking_area.getBoundingClientRect();
+    let x = e.clientX - rect.left - this.picking_area.clientLeft;
+    let y = e.clientY - rect.top - this.picking_area.clientTop;
     let picker_offset = 5;
 
     // 长宽应一致
@@ -582,13 +711,15 @@ let UIColorPicker = (function UIColorPicker() {
     this.notify('red', this.color.r);
     this.notify('green', this.color.g);
     this.notify('blue', this.color.b);
-    this.notify('hexa', this.color.getHexa());
+    this.notify('hexa', this.color.getHexa(true));
+    this.updateAria();
 
     notify(this.topic, this.color);
   };
 
   ColorPicker.prototype.updateHueSlider = function updateHueSlider(e) {
-    let x = e.pageX - this.hue_area.offsetLeft;
+    let rect = this.hue_area.getBoundingClientRect();
+    let x = e.clientX - rect.left - this.hue_area.clientLeft;
     let width = this.hue_area.clientWidth;
 
     if (x < 0) x = 0;
@@ -603,19 +734,15 @@ let UIColorPicker = (function UIColorPicker() {
   };
 
   ColorPicker.prototype.updateAlphaSlider = function updateAlphaSlider(e) {
-    let x = e.pageX - this.alpha_area.offsetLeft;
+    let rect = this.alpha_area.getBoundingClientRect();
+    let x = e.clientX - rect.left - this.alpha_area.clientLeft;
     let width = this.alpha_area.clientWidth;
 
     if (x < 0) x = 0;
     if (x > width) x = width;
 
-    this.color.a = (x / width).toFixed(2);
-
+    this.setAlpha(x / width);
     this.updateSliderPosition(this.alpha_picker, x);
-    this.updatePreviewColor();
-
-    this.notify('alpha', this.color.a);
-    notify(this.topic, this.color);
   };
 
   ColorPicker.prototype.setHue = function setHue(value) {
@@ -628,8 +755,9 @@ let UIColorPicker = (function UIColorPicker() {
     this.notify('red', this.color.r);
     this.notify('green', this.color.g);
     this.notify('blue', this.color.b);
-    this.notify('hexa', this.color.getHexa());
+    this.notify('hexa', this.color.getHexa(true));
     this.notify('hue', this.color.hue);
+    this.updateAria();
 
     notify(this.topic, this.color);
   };
@@ -643,7 +771,11 @@ let UIColorPicker = (function UIColorPicker() {
     this.notify('red', this.color.r);
     this.notify('green', this.color.g);
     this.notify('blue', this.color.b);
-    this.notify('hexa', this.color.getHexa());
+    this.notify('saturation', this.color.saturation);
+    this.notify('value', this.color.value);
+    this.notify('lightness', this.color.lightness);
+    this.notify('hexa', this.color.getHexa(true));
+    this.updateAria();
 
     notify(this.topic, this.color);
   };
@@ -760,12 +892,18 @@ let UIColorPicker = (function UIColorPicker() {
   ColorPicker.prototype.inputChangeAlpha = function inputChangeAlpha(e) {
     let value = parseFloat(e.target.value);
 
-    if (typeof value === 'number' && isNaN(value) === false &&
-      value >= 0 && value <= 1)
-      this.color.a = value.toFixed(2);
+    if (this.color.isValidAlphaValue(value))
+      this.setAlpha(value);
+    else
+      this.setColor(this.color);
+  };
 
-    e.target.value = this.color.a;
-    this.updateAlphaPicker();
+  ColorPicker.prototype.setAlpha = function setAlpha(value) {
+    if (this.color.isValidAlphaValue(value) === false)
+      return;
+
+    this.color.a = parseFloat(value.toFixed(2));
+    this.setColor(this.color);
   };
 
   ColorPicker.prototype.inputChangeHexa = function inputChangeHexa(e) {
@@ -820,7 +958,8 @@ let UIColorPicker = (function UIColorPicker() {
     this.notify('lightness', this.color.lightness);
 
     this.notify('alpha', this.color.a);
-    this.notify('hexa', this.color.getHexa());
+    this.notify('hexa', this.color.getHexa(true));
+    this.updateAria();
     notify(this.topic, this.color);
   };
 
@@ -859,9 +998,21 @@ let UIColorPicker = (function UIColorPicker() {
     subscribers[topic].push(callback);
   };
 
-  let unsubscribe = function unsubscribe(callback) {
-    subscribers.indexOf(callback);
-    subscribers.splice(index, 1);
+  let unsubscribe = function unsubscribe(topic, callback) {
+    if (callback === undefined) {
+      callback = topic;
+      Object.keys(subscribers).forEach(function(topicName) {
+        unsubscribe(topicName, callback);
+      });
+      return;
+    }
+
+    if (subscribers[topic] === undefined)
+      return;
+
+    let index = subscribers[topic].indexOf(callback);
+    if (index !== -1)
+      subscribers[topic].splice(index, 1);
   };
 
   let notify = function notify(topic, value) {
@@ -901,7 +1052,7 @@ let UIColorPicker = (function UIColorPicker() {
 
 
 /**
- * UI-SlidersManager
+ * UI 滑块管理器
  */
 
 let InputSliderManager = (function InputSliderManager() {
@@ -911,7 +1062,9 @@ let InputSliderManager = (function InputSliderManager() {
 
   let InputComponent = function InputComponent(obj) {
     let input = document.createElement('input');
+    input.id = obj.topic + '-slider-input';
     input.setAttribute('type', 'text');
+    input.setAttribute('aria-label', obj.name || obj.topic);
     input.style.width = 50 + obj.precision * 10 + 'px';
 
     input.addEventListener('click', function(e) {
@@ -931,9 +1084,13 @@ let InputSliderManager = (function InputSliderManager() {
   };
 
   let SliderComponent = function SliderComponent(obj, sign) {
-    let slider = document.createElement('div');
+    let slider = document.createElement('button');
     let startX = null;
     let start_value = 0;
+
+    slider.setAttribute('type', 'button');
+    slider.setAttribute('aria-label',
+      (sign < 0 ? '减少' : '增加') + (obj.name || obj.topic));
 
     slider.addEventListener("click", function(e) {
       document.removeEventListener("mousemove", sliderMotion);
@@ -957,7 +1114,7 @@ let InputSliderManager = (function InputSliderManager() {
 
     let sliderMotion = function sliderMotion(e) {
       slider.style.cursor = "e-resize";
-      let delta = (e.clientX - startX) / obj.sensivity | 0;
+      let delta = (e.clientX - startX) / obj.sensitivity | 0;
       let value = delta * obj.step + start_value;
       setValue(obj.topic, value);
     };
@@ -973,7 +1130,7 @@ let InputSliderManager = (function InputSliderManager() {
     let topic = node.getAttribute('data-topic');
     let unit = node.getAttribute('data-unit');
     let name  = node.getAttribute('data-info');
-    let sensivity = node.getAttribute('data-sensivity') | 0;
+    let sensitivity = node.getAttribute('data-sensitivity') | 0;
     let precision = node.getAttribute('data-precision') | 0;
 
     this.min = isNaN(min) ? 0 : min;
@@ -981,9 +1138,10 @@ let InputSliderManager = (function InputSliderManager() {
     this.precision = precision >= 0 ? precision : 0;
     this.step = step < 0 || isNaN(step) ? 1 : step.toFixed(precision);
     this.topic = topic;
+    this.name = name || topic;
     this.node = node;
     this.unit = unit === null ? '' : unit;
-    this.sensivity = sensivity > 0 ? sensivity : 5;
+    this.sensitivity = sensitivity > 0 ? sensitivity : 5;
     value = isNaN(value) ? this.min : value;
 
     let input = new InputComponent(this);
@@ -994,9 +1152,10 @@ let InputSliderManager = (function InputSliderManager() {
     slider_right.className = 'ui-input-slider-right';
 
     if (name) {
-      let info = document.createElement('span');
+      let info = document.createElement('label');
       info.className = 'ui-input-slider-info';
       info.textContent = name;
+      info.setAttribute('for', input.id);
       node.appendChild(info);
     }
 
@@ -1085,14 +1244,14 @@ let InputSliderManager = (function InputSliderManager() {
     setValue(topic, slider.value);
   };
 
-  let setSensivity = function setSensivity(topic, value) {
+  let setSensitivity = function setSensitivity(topic, value) {
     let slider = sliders[topic];
     if (slider === undefined)
       return;
 
     value = value | 0;
 
-    slider.sensivity = value > 0 ? value : 5;
+    slider.sensitivity = value > 0 ? value : 5;
   };
 
   let getNode =  function getNode(topic) {
@@ -1114,8 +1273,12 @@ let InputSliderManager = (function InputSliderManager() {
   };
 
   let unsubscribe = function unsubscribe(topic, callback) {
-    subscribers[topic].indexOf(callback);
-    subscribers[topic].splice(index, 1);
+    if (subscribers[topic] === undefined)
+      return;
+
+    let index = subscribers[topic].indexOf(callback);
+    if (index !== -1)
+      subscribers[topic].splice(index, 1);
   };
 
   let notify = function notify() {
@@ -1156,7 +1319,8 @@ let InputSliderManager = (function InputSliderManager() {
     subscribe : subscribe,
     unsubscribe : unsubscribe,
     setPrecision : setPrecision,
-    setSensivity : setSensivity,
+    setSensitivity : setSensitivity,
+    setSensivity : setSensitivity,
     getPrecision : getPrecision,
     createSlider : createSlider,
   };
@@ -1169,7 +1333,7 @@ window.addEventListener("load", function() {
 
 let ColorPickerTool = (function ColorPickerTool() {
 
-  /*========== Get DOM Element By ID ==========*/
+  /*========== 按 ID 获取 DOM 元素 ==========*/
 
   function getElemById(id) {
     return document.getElementById(id);
@@ -1231,7 +1395,7 @@ let ColorPickerTool = (function ColorPickerTool() {
       elem.appendChild(handle);
     }
 
-    /*========== 使元素Make an element draggable relative to it's parent ==========*/
+    /*========== 让元素相对父元素可拖动 ==========*/
 
     let makeDraggable = function makeDraggable(elem, endFunction) {
 
@@ -1278,13 +1442,13 @@ let ColorPickerTool = (function ColorPickerTool() {
 
   })();
 
-  /*========== Color Class ==========*/
+  /*========== 颜色类 ==========*/
 
   let Color = UIColorPicker.Color;
   let HSLColor = UIColorPicker.HSLColor;
 
   /**
-   * ColorPalette (调色板)
+   * ColorPalette（调色板）
    */
   let ColorPalette = (function ColorPalette() {
 
@@ -1304,10 +1468,19 @@ let ColorPickerTool = (function ColorPickerTool() {
       this.node = node;
       this.color = new Color();
 
-      node.setAttribute('sample-id', this.uid);
+      node.setAttribute('data-sample-id', this.uid);
       node.setAttribute('draggable', 'true');
+      node.setAttribute('role', 'button');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', '调色板颜色 ' + (this.uid + 1));
       node.addEventListener('dragstart', this.dragStart.bind(this));
       node.addEventListener('click', this.pickColor.bind(this));
+      node.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.pickColor();
+        }
+      }.bind(this));
 
       samples.push(this);
     };
@@ -1395,13 +1568,16 @@ let ColorPickerTool = (function ColorPickerTool() {
       let title = document.createElement('div');
       let controls = document.createElement('div');
       let container = document.createElement('div');
-      let lock = document.createElement('div');
+      let lock = document.createElement('button');
 
       container.className = 'container';
       title.className = 'title';
       palette.className = 'palette';
       controls.className = 'controls';
       lock.className = 'lock';
+      lock.setAttribute('type', 'button');
+      lock.setAttribute('aria-label', '锁定此色板');
+      lock.setAttribute('aria-pressed', 'false');
       title.textContent = text;
 
       controls.appendChild(lock);
@@ -1411,7 +1587,8 @@ let ColorPickerTool = (function ColorPickerTool() {
 
       lock.addEventListener('click', function () {
         this.locked = !this.locked;
-        lock.setAttribute('locked-state', this.locked);
+        lock.setAttribute('data-locked-state', this.locked);
+        lock.setAttribute('aria-pressed', this.locked);
       }.bind(this));
 
       for(let i = 0; i < size; i++) {
@@ -1454,7 +1631,7 @@ let ColorPickerTool = (function ColorPickerTool() {
       color_palette.appendChild(palette.container);
     };
 
-    /* 亮度Brightness or Lightness - depends on the picker mode */
+    /* 亮度（Brightness 或 Lightness，取决于选择器模式） */
     let createVLPalette = function createSaturationPalette() {
       let palette = new Palette('亮度', 11);
 
@@ -1525,7 +1702,7 @@ let ColorPickerTool = (function ColorPickerTool() {
   })();
 
   /**
-   * ColorInfo
+   * 颜色信息
    */
   let ColorInfo = (function ColorInfo() {
 
@@ -1536,7 +1713,7 @@ let ColorPickerTool = (function ColorPickerTool() {
     let HSLA;
 
     let updateInfo = function updateInfo(color) {
-      if (color.a | 0 === 1) {
+      if (parseFloat(color.a) === 1) {
         RGBA.info.textContent = 'RGB';
         HSLA.info.textContent = 'HSL';
       }
@@ -1545,17 +1722,21 @@ let ColorPickerTool = (function ColorPickerTool() {
         HSLA.info.textContent = 'HSLA';
       }
 
+      RGBA.value.setAttribute('aria-label', RGBA.info.textContent + ' 颜色值');
+      HSLA.value.setAttribute('aria-label', HSLA.info.textContent + ' 颜色值');
+      RGBA.copy.setAttribute('aria-label', '选择 ' + RGBA.info.textContent + ' 颜色值');
+      HSLA.copy.setAttribute('aria-label', '选择 ' + HSLA.info.textContent + ' 颜色值');
       RGBA.value.value = color.getRGBA();
       HSLA.value.value = color.getHSLA();
-      HEXA.value.value = color.getHexa();
+      HEXA.value.value = color.getHexa(true);
     };
 
     let InfoProperty = function InfoProperty(info) {
 
       let node = document.createElement('div');
-      let title = document.createElement('div');
+      let title = document.createElement('label');
       let value = document.createElement('input');
-      let copy = document.createElement('div');
+      let copy = document.createElement('button');
 
       node.className = 'property';
       title.className = 'type';
@@ -1563,7 +1744,13 @@ let ColorPickerTool = (function ColorPickerTool() {
       copy.className = 'copy';
 
       title.textContent = info;
+      value.id = 'color-info-' + info.toLowerCase();
+      title.setAttribute('for', value.id);
       value.setAttribute('type', 'text');
+      value.readOnly = true;
+      value.setAttribute('aria-label', info + ' 颜色值');
+      copy.setAttribute('type', 'button');
+      copy.setAttribute('aria-label', '选择 ' + info + ' 颜色值');
 
       copy.addEventListener('click', function() {
         value.select();
@@ -1576,6 +1763,7 @@ let ColorPickerTool = (function ColorPickerTool() {
       this.node = node;
       this.value = value;
       this.info = title;
+      this.copy = copy;
 
       info_box.appendChild(node);
     };
@@ -1586,7 +1774,7 @@ let ColorPickerTool = (function ColorPickerTool() {
 
       RGBA = new InfoProperty('RGBA');
       HSLA = new InfoProperty('HSLA');
-      HEXA = new InfoProperty('HEXA');
+      HEXA = new InfoProperty('十六进制');
 
       UIColorPicker.subscribe('picker', updateInfo);
 
@@ -1599,7 +1787,7 @@ let ColorPickerTool = (function ColorPickerTool() {
   })();
 
   /**
-   * ColorPicker Samples
+   * 选择器颜色样本
    */
   let ColorPickerSamples = (function ColorPickerSamples() {
 
@@ -1622,12 +1810,21 @@ let ColorPickerTool = (function ColorPickerTool() {
       this.node = node;
       this.color = new Color(base_color);
 
-      node.setAttribute('sample-id', this.uid);
+      node.setAttribute('data-sample-id', this.uid);
       node.setAttribute('draggable', 'true');
+      node.setAttribute('role', 'button');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', '颜色样本 ' + (this.uid + 1));
 
       node.addEventListener('dragstart', this.dragStart.bind(this));
       node.addEventListener('dragover' , allowDropEvent);
       node.addEventListener('drop'     , this.dragDrop.bind(this));
+      node.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          node.click();
+        }
+      });
 
       this.updatePosition(this.index);
       this.updateBgColor();
@@ -1654,10 +1851,12 @@ let ColorPickerTool = (function ColorPickerTool() {
     ColorSample.prototype.activate = function activate() {
       UIColorPicker.setColor('picker', this.color);
       this.node.setAttribute('data-active', 'true');
+      this.node.setAttribute('aria-pressed', 'true');
     };
 
     ColorSample.prototype.deactivate = function deactivate() {
       this.node.removeAttribute('data-active');
+      this.node.setAttribute('aria-pressed', 'false');
     };
 
     ColorSample.prototype.dragStart = function dragStart(e) {
@@ -1672,6 +1871,8 @@ let ColorPickerTool = (function ColorPickerTool() {
     };
 
     ColorSample.prototype.deleteSample = function deleteSample() {
+      if (active === this)
+        unsetActiveSample();
       container.removeChild(this.node);
       samples[this.uid] = null;
       nr_samples--;
@@ -1692,15 +1893,16 @@ let ColorPickerTool = (function ColorPickerTool() {
     };
 
     let deleteSample = function deleteSample(e) {
-      trash_can.parentElement.setAttribute('drag-state', 'none');
+      trash_can.parentElement.setAttribute('data-drag-state', 'none');
 
       let location = e.dataTransfer.getData('location');
       if (location !== 'picker-samples')
         return;
 
       let sampleID = e.dataTransfer.getData('sampleID');
+      if (samples[sampleID] === undefined || samples[sampleID] === null)
+        return;
       samples[sampleID].deleteSample();
-      console.log(samples);
 
       updateUI();
     };
@@ -1716,10 +1918,14 @@ let ColorPickerTool = (function ColorPickerTool() {
       if (e.target.className !== 'sample')
         return;
 
+      let sampleID = e.target.getAttribute('data-sample-id');
+      if (sampleID === null || samples[sampleID] === undefined || samples[sampleID] === null)
+        return;
+
       unsetActiveSample(active);
       Tool.unsetVoidSample();
       CanvasSamples.unsetActiveSample();
-      active = samples[e.target.getAttribute('sample-id')];
+      active = samples[sampleID];
       active.activate();
     };
 
@@ -1736,6 +1942,7 @@ let ColorPickerTool = (function ColorPickerTool() {
 
     let updateContainerProp = function updateContainerProp() {
       samples_per_line = ((container.clientWidth - 5) / 52) | 0;
+      samples_per_line = Math.max(1, samples_per_line);
       let height = 52 * (1 + (nr_samples / samples_per_line) | 0);
       container.style.height = height + 10 + 'px';
     };
@@ -1767,9 +1974,18 @@ let ColorPickerTool = (function ColorPickerTool() {
         let icon = document.createElement('div');
 
         node.className = 'sample';
+        node.setAttribute('role', 'button');
+        node.setAttribute('tabindex', '0');
+        node.setAttribute('aria-label', '添加颜色样本');
         icon.id = 'add-icon';
         node.appendChild(icon);
         node.addEventListener('click', addButtonClick);
+        node.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            addButtonClick();
+          }
+        });
 
         updatePosition(0);
         container.appendChild(node);
@@ -1802,10 +2018,10 @@ let ColorPickerTool = (function ColorPickerTool() {
 
       trash_can.addEventListener('dragover', allowDropEvent);
       trash_can.addEventListener('dragenter', function() {
-        this.parentElement.setAttribute('drag-state', 'enter');
+        this.parentElement.setAttribute('data-drag-state', 'enter');
       });
       trash_can.addEventListener('dragleave', function(e) {
-        this.parentElement.setAttribute('drag-state', 'none');
+        this.parentElement.setAttribute('data-drag-state', 'none');
       });
       trash_can.addEventListener('drop', deleteSample);
 
@@ -1825,7 +2041,7 @@ let ColorPickerTool = (function ColorPickerTool() {
   })();
 
   /**
-   * Canvas Samples
+   * 画布样本
    */
   let CanvasSamples = (function CanvasSamples() {
 
@@ -1838,11 +2054,18 @@ let ColorPickerTool = (function ColorPickerTool() {
     let CanvasSample = function CanvasSample(color, posX, posY) {
 
       let node = document.createElement('div');
-      let pick = document.createElement('div');
-      let delete_btn = document.createElement('div');
+      let pick = document.createElement('button');
+      let delete_btn = document.createElement('button');
       node.className = 'sample';
       pick.className = 'pick';
       delete_btn.className = 'delete';
+      node.setAttribute('role', 'group');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', '画布颜色样本');
+      pick.setAttribute('type', 'button');
+      delete_btn.setAttribute('type', 'button');
+      pick.setAttribute('aria-label', '激活颜色样本');
+      delete_btn.setAttribute('aria-label', '删除颜色样本');
 
       this.uid = samples.length;
       this.node = node;
@@ -1852,7 +2075,7 @@ let ColorPickerTool = (function ColorPickerTool() {
 
       node.style.top = posY - 50 + 'px';
       node.style.left = posX - 50 + 'px';
-      node.setAttribute('sample-id', this.uid);
+      node.setAttribute('data-sample-id', this.uid);
 
       node.appendChild(pick);
       node.appendChild(delete_btn);
@@ -1862,6 +2085,16 @@ let ColorPickerTool = (function ColorPickerTool() {
       }.bind(this);
 
       node.addEventListener('dblclick', activate);
+      node.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+        if (e.key === 'Delete' || e.key === 'Backspace') {
+          e.preventDefault();
+          this.deleteSample();
+        }
+      }.bind(this));
       pick.addEventListener('click', activate);
       delete_btn.addEventListener('click', this.deleteSample.bind(this));
 
@@ -1889,6 +2122,7 @@ let ColorPickerTool = (function ColorPickerTool() {
 
     CanvasSample.prototype.activate = function activate() {
       this.node.setAttribute('data-active', 'true');
+      this.node.setAttribute('aria-label', '当前画布颜色样本');
       zindex.setAttribute('data-active', 'true');
 
       UIColorPicker.setColor('picker', this.color);
@@ -1897,6 +2131,7 @@ let ColorPickerTool = (function ColorPickerTool() {
 
     CanvasSample.prototype.deactivate = function deactivate() {
       this.node.removeAttribute('data-active');
+      this.node.setAttribute('aria-label', '画布颜色样本');
       zindex.removeAttribute('data-active');
     };
 
@@ -1916,8 +2151,9 @@ let ColorPickerTool = (function ColorPickerTool() {
       let color = Tool.getSampleColorFrom(e);
 
       if (color) {
-        let offsetX = e.pageX - canvas.offsetLeft;
-        let offsetY = e.pageY - canvas.offsetTop;
+        let rect = canvas.getBoundingClientRect();
+        let offsetX = e.clientX - rect.left - canvas.clientLeft;
+        let offsetY = e.clientY - rect.top - canvas.clientTop;
         let sample = new CanvasSample(color, offsetX, offsetY);
         if (tutorial) {
           tutorial = false;
@@ -1944,15 +2180,18 @@ let ColorPickerTool = (function ColorPickerTool() {
     };
 
     let createToggleBgButton = function createToggleBgButton() {
-      let button = document.createElement('div');
+      let button = document.createElement('button');
       let state = false;
+      button.setAttribute('type', 'button');
       button.className = 'toggle-bg';
+      button.setAttribute('aria-label', '切换画布背景');
+      button.setAttribute('aria-pressed', 'false');
       canvas.appendChild(button);
 
       button.addEventListener('click', function() {
-        console.log(state);
         state = !state;
         canvas.setAttribute('data-bg', state);
+        button.setAttribute('aria-pressed', state);
       });
     };
 
@@ -1986,6 +2225,17 @@ let ColorPickerTool = (function ColorPickerTool() {
   let StateButton = function StateButton(node, state) {
     this.state = false;
     this.callback = null;
+
+    if (node.tagName !== 'BUTTON') {
+      node.setAttribute('role', 'button');
+      node.setAttribute('tabindex', '0');
+      node.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          node.click();
+        }
+      });
+    }
 
     node.addEventListener('click', function() {
       this.state = !this.state;
@@ -2022,14 +2272,20 @@ let ColorPickerTool = (function ColorPickerTool() {
 
     let createPickerModeSwitch = function createPickerModeSwitch() {
       let parent = getElemById('controls');
-      let icon = document.createElement('div');
+      let icon = document.createElement('button');
       let button = document.createElement('div');
-      let hsv = document.createElement('div');
-      let hsl = document.createElement('div');
+      let hsv = document.createElement('button');
+      let hsl = document.createElement('button');
       let active = null;
 
+      icon.setAttribute('type', 'button');
+      icon.setAttribute('aria-label', '切换颜色模式');
       icon.className = 'icon picker-icon';
       button.className = 'switch';
+      button.setAttribute('role', 'group');
+      button.setAttribute('aria-label', '颜色模式');
+      hsv.setAttribute('type', 'button');
+      hsl.setAttribute('type', 'button');
       button.appendChild(hsv);
       button.appendChild(hsl);
 
@@ -2038,11 +2294,15 @@ let ColorPickerTool = (function ColorPickerTool() {
 
       active = hsl;
       active.setAttribute('data-active', 'true');
+      active.setAttribute('aria-pressed', 'true');
+      hsv.setAttribute('aria-pressed', 'false');
 
       function switchPickingModeTo(elem) {
         active.removeAttribute('data-active');
+        active.setAttribute('aria-pressed', 'false');
         active = elem;
         active.setAttribute('data-active', 'true');
+        active.setAttribute('aria-pressed', 'true');
         UIColorPicker.setPickerMode('picker', active.textContent);
       }
 
@@ -2105,6 +2365,7 @@ let ColorPickerTool = (function ColorPickerTool() {
       void_sw = new StateButton(void_sample);
       void_sw.subscribe( function (state) {
         void_sample.setAttribute('data-active', state);
+        void_sample.setAttribute('aria-pressed', state);
         if (state === true) {
           ColorPickerSamples.unsetActiveSample();
           CanvasSamples.unsetActiveSample();

@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool -->
+<html lang="zh-Hans">
 <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>CSS 颜色选择器</title>
  <link rel="stylesheet" href="style.css">
  <script src="main.js" defer></script>
@@ -17,18 +20,19 @@
  
       <div id="picker" class="block">
         <div class="ui-color-picker" data-topic="picker" data-mode="HSL"></div>
-        <div id="picker-samples" sample-id="master"></div>
+        <div id="picker-samples" data-sample-id="master"></div>
         <div id="controls">
-          <div id="delete">
+          <div id="delete" role="region" aria-label="拖动颜色到此处删除">
             <div id="trash-can"></div>
           </div>
-          <div id="void-sample" class="icon"></div>
+          <button type="button" id="void-sample" class="icon" aria-label="取消当前颜色选择" aria-pressed="false"></button>
         </div>
       </div>
- 
+
       <div id="canvas" data-tutorial="drop">
-        <div id="zindex" class="ui-input-slider" data-topic="z-index" data-info="z-index"
-          data-max="20" data-sensivity="10"></div>
+        <div id="zindex" class="ui-input-slider" data-topic="z-index" data-info="层级 (z-index)"
+          data-max="20" data-sensitivity="10"></div>
       </div>
    </div>
 </body>
+</html>

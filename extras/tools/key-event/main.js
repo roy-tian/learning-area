@@ -3,7 +3,7 @@ const consoleLog = document.getElementById('console-log');
 const btnClearConsole = document.getElementById('btn-clear-console');
 
 function logMessage(message) {
-  document.getElementById("console-log").innerHTML += message + "<br>";
+  consoleLog.append(document.createTextNode(message), document.createElement('br'));
 }
 
 textarea.addEventListener('keydown', (e) => {

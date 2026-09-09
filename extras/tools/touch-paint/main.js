@@ -7,10 +7,10 @@ startup();
 function startup() {
   el.width = 600;
   el.height = 600;
-  el.addEventListener("touchstart", handleStart, false);
-  el.addEventListener("touchend", handleEnd, false);
-  el.addEventListener("touchcancel", handleCancel, false);
-  el.addEventListener("touchmove", handleMove, false);
+  el.addEventListener("touchstart", handleStart, { passive: false });
+  el.addEventListener("touchend", handleEnd, { passive: false });
+  el.addEventListener("touchcancel", handleCancel, { passive: false });
+  el.addEventListener("touchmove", handleMove, { passive: false });
   log("初始化成功。");
 }
 
@@ -22,9 +22,10 @@ function handleStart(evt) {
   for (let i = 0; i < touches.length; i++) {
     log("开始第 " + i + " 个触摸 ...");
     ongoingTouches.push(copyTouch(touches[i]));
+    const point = getCanvasPoint(touches[i]);
     ctx.beginPath();
     ctx.fillStyle = colorForTouch(touches[i]);
-    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
+    ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI, false);
     // 在起点画一个圆
     ctx.fill();
     log("第 " + i + " 个触摸已开始。");
@@ -38,15 +39,16 @@ function handleMove(evt) {
     const color = colorForTouch(touches[i]);
     const idx = ongoingTouchIndexById(touches[i].identifier);
     if (idx >= 0) {
+      const point = getCanvasPoint(touches[i]);
       log("继续第 " + idx + " 个触摸。");
       ctx.beginPath();
-      log("ctx.moveTo(" + ongoingTouches[idx].pageX + ", " +
-        ongoingTouches[idx].pageY + ");");
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+      log("ctx.moveTo(" + ongoingTouches[idx].x + ", " +
+        ongoingTouches[idx].y + ");");
+      ctx.moveTo(ongoingTouches[idx].x, ongoingTouches[idx].y);
       ctx.lineWidth = 4;
       ctx.fillStyle = color;
-      log("ctx.lineTo(" + touches[i].pageX + ", " + touches[i].pageY + ");");
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
+      log("ctx.lineTo(" + point.x + ", " + point.y + ");");
+      ctx.lineTo(point.x, point.y);
       ctx.strokeStyle = color;
       ctx.stroke();
       ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // 切换到新触摸
@@ -65,12 +67,15 @@ function handleEnd(evt) {
     const color = colorForTouch(touches[i]);
     const idx = ongoingTouchIndexById(touches[i].identifier);
     if (idx >= 0) {
+      const point = getCanvasPoint(touches[i]);
       ctx.lineWidth = 4;
       ctx.fillStyle = color;
+      ctx.strokeStyle = color;
       ctx.beginPath();
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
+      ctx.moveTo(ongoingTouches[idx].x, ongoingTouches[idx].y);
+      ctx.lineTo(point.x, point.y);
+      ctx.stroke();
+      ctx.fillRect(point.x - 4, point.y - 4, 8, 8);
       // 在终点画一个正方形
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
@@ -86,11 +91,20 @@ function handleCancel(evt) {
 
   for (let i = 0; i < touches.length; i++) {
     const idx = ongoingTouchIndexById(touches[i].identifier);
-    ongoingTouches.splice(idx, 1);  // 用完后删除
+    if (idx >= 0)
+      ongoingTouches.splice(idx, 1);  // 用完后删除
   }
 }
 
 // 以下是便捷函数
+
+function getCanvasPoint(touch) {
+  const rect = el.getBoundingClientRect();
+  return {
+    x: touch.clientX - rect.left - el.clientLeft,
+    y: touch.clientY - rect.top - el.clientTop
+  };
+}
 
 function colorForTouch(touch) {
   const r = (touch.identifier % 16).toString(16);
@@ -102,10 +116,11 @@ function colorForTouch(touch) {
 }
 
 function copyTouch(touch) {
+  const point = getCanvasPoint(touch);
   return {
     identifier: touch.identifier,
-    pageX: touch.pageX,
-    pageY: touch.pageY
+    x: point.x,
+    y: point.y
   };
 }
 
@@ -122,6 +137,6 @@ function ongoingTouchIndexById(idToFind) {
 
 function log(msg) {
   const p = document.getElementById('log');
-  p.innerHTML =
-    new Date().toString().substring(16, 24) + ' ' + msg + "\n" + p.innerHTML;
+  p.textContent =
+    new Date().toString().substring(16, 24) + ' ' + msg + "\n" + p.textContent;
 }
