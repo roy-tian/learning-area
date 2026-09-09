@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8" />
-    <title>变量：任务1</title>
+    <title>变量：第 1 题</title>
     <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+    </style>
   </head>
 
   <body>
-    <section class="preview"></section>
-
-    <textarea class="playable playable-js" style="height: 300px;">
-// 在下方编写代码
+    <section class="preview">
 
 
 
-// 不要编写此行以下的代码！
+    </section>
+
+    <textarea class="playable playable-js" style="height: 220px;">
+
+// 在此处添加代码
+
+// 不要修改下面的代码！
 
 section.innerHTML = ' ';
-let para1 = document.createElement('p');
+const para1 = document.createElement('p');
 para1.textContent = myName;
-let para2 = document.createElement('p');
+const para2 = document.createElement('p');
 para2.textContent = myAge;
 section.appendChild(para1);
 section.appendChild(para2);
     </textarea>
 
     <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
+      <input id="reset" type="button" value="重置" />
     </div>
   </body>
-  <script defer class="editable"></script>
-  <script defer src="../playable.js"></script>
+  <script class="editable"></script>
+  <script src="../playable.js"></script>
 </html>

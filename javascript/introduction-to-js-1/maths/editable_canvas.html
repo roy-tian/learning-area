@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>可编辑画布示例</title>
     <style>
       html {
@@ -26,10 +27,10 @@
 
       textarea {
         height: 150px;
-        background-color: #F4F7F8;
+        background-color: #f4f7f8;
         border: none;
-        border-left: 6px solid #558ABB;
-        color: #4D4E53;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
         width: 90%;
         max-width: 700px;
         padding: 10px 10px 0px;
@@ -44,8 +45,12 @@
 
       canvas {
         background: white;
-        border: 1px solid #4D4E53;
+        border: 1px solid #4d4e53;
         border-radius: 2px;
+      }
+
+      li {
+        padding-bottom: 0.5em;
       }
     </style>
   </head>
@@ -54,14 +59,15 @@
     <canvas id="canvas" width="400" height="250" class="playable-canvas">
     </canvas>
 
-    <p>长 50 像素，宽 50 像素的矩形</p>
+    <p>矩形宽 50px、高 50px。</p>
 
     <h2>可编辑代码</h2>
-    <p class="a11y-label">点击 ESC 取消编辑状态（点击 Tab 可插入制表符）。</p>
-    <textarea id="code" class="playable-code" style="height: 150px;width: 95%">
-var x = 50; var y = 50;
-
-// 仅可编辑以下两行代码：
+    <p class="a11y-label">
+      Press Esc to move focus away from the code area (Tab inserts a tab
+      character).
+    </p>
+    <textarea id="code" class="playable-code" style="height: 150px; width: 95%">
+// 只能编辑下面两行
 x = 50;
 y = 50;
 
@@ -72,55 +78,96 @@ ctx.fillRect(10, 10, x, y);
     <div class="playable-buttons">
       <input id="reset" type="button" value="重置" />
     </div>
+    <div>
+      <p>试试下面的代码：</p>
+      <ol>
+        <li>
+          Change the line that calculates <code>x</code> so the box is still 50px wide, but
+          the 50 is calculated using the numbers 43 and 7 and an arithmetic
+          operator.
+        </li>
+        <li>
+          Change the line that calculates <code>y</code> so the box is 75px high, but the 75
+          is calculated using the numbers 25 and 3 and an arithmetic operator.
+        </li>
+        <li>
+          Change the line that calculates <code>x</code> so the box is 250px wide, but the
+          250 is calculated using two numbers and the remainder (modulo)
+          operator.
+        </li>
+        <li>
+          Change the line that calculates <code>y</code> so the box is 150px high, but the
+          150 is calculated using three numbers and the subtraction and division
+          operators.
+        </li>
+        <li>
+          Change the line that calculates <code>x</code> so the box is 200px wide, but the
+          200 is calculated using the number 4 and an assignment operator.
+        </li>
+        <li>
+          Change the line that calculates <code>y</code> so the box is 200px high, but the
+          200 is calculated using the numbers 50 and 3, the multiplication
+          operator, and the addition assignment operator.
+          别忘了先在单独一行给 <code>y</code> 赋默认值，这样加法才能按预期工作。
+        </li>
+      </ol>
+    </div>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const para = document.querySelector("p");
+      const ctx = canvas.getContext("2d");
+      const textarea = document.getElementById("code");
+      const reset = document.getElementById("reset");
+      const edit = document.getElementById("edit");
+      let code = textarea.value;
+      let x = 50;
+      let y = 50;
+
+      function drawCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        eval(textarea.value);
+        para.textContent = `矩形宽 ${x}px、高 ${y}px。`;
+      }
+
+      reset.addEventListener("click", function () {
+        textarea.value = code;
+        drawCanvas();
+      });
+
+      textarea.addEventListener("input", drawCanvas);
+      window.addEventListener("load", drawCanvas);
+
+      // stop tab key tabbing out of textarea and
+      // make it write a tab at the caret position instead
+
+      textarea.onkeydown = function (e) {
+        if (e.keyCode === 9) {
+          e.preventDefault();
+          insertAtCaret("\t");
+        }
+
+        if (e.keyCode === 27) {
+          textarea.blur();
+        }
+      };
+
+      function insertAtCaret(text) {
+        const scrollPos = textarea.scrollTop;
+        const caretPos = textarea.selectionStart;
+        const front = textarea.value.substring(0, caretPos);
+        const back = textarea.value.substring(
+          textarea.selectionEnd,
+          textarea.value.length
+        );
+
+        textarea.value = front + text + back;
+        caretPos = caretPos + text.length;
+        textarea.selectionStart = caretPos;
+        textarea.selectionEnd = caretPos;
+        textarea.focus();
+        textarea.scrollTop = scrollPos;
+      }
+    </script>
   </body>
-
-  <script>
-    const canvas = document.getElementById('canvas');
-    const para = document.querySelector('p');
-    const ctx = canvas.getContext('2d');
-    const textarea = document.getElementById('code');
-    const reset = document.getElementById('reset');
-    const edit = document.getElementById('edit');
-    let code = textarea.value;
-
-    function drawCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      eval(textarea.value);
-      para.textContent = '长 ' + x + ' 像素，宽 ' + y + ' 像素的矩形';
-    }
-
-    reset.addEventListener('click', function() {
-      textarea.value = code; drawCanvas();
-    });
-
-    textarea.addEventListener('input', drawCanvas);
-    window.addEventListener('load', drawCanvas);
-
-    // 阻止 Tab 键跳出文本框，仅在文本框中插入一个制表符。
-
-    textarea.onkeydown = function(e) {
-      if (e.keyCode === 9) {
-        e.preventDefault();
-        insertAtCaret('\t');
-      }
-
-      if (e.keyCode === 27) {
-        textarea.blur();
-      }
-    };
-
-    function insertAtCaret(text) {
-      const scrollPos = textarea.scrollTop;
-      const caretPos = textarea.selectionStart;
-      const front = (textarea.value).substring(0, caretPos);
-      const back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
-
-      textarea.value = front + text + back;
-      caretPos = caretPos + text.length;
-      textarea.selectionStart = caretPos;
-      textarea.selectionEnd = caretPos;
-      textarea.focus();
-      textarea.scrollTop = scrollPos;
-    }
-  </script>
 </html>

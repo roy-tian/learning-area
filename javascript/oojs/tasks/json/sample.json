@@ -2,7 +2,7 @@
   {
     "name" : "Lindy",
     "breed" : "Cymric",
-    "color" : "white",
+    "color" : "白色",
     "kittens" : [
       {
         "name" : "Percy",
@@ -21,7 +21,7 @@
   {
     "name" : "Mina",
     "breed" : "Aphrodite Giant",
-    "color" : "ginger",
+    "color" : "姜黄色",
     "kittens" : [
       {
         "name" : "Doris",
@@ -40,7 +40,7 @@
   {
     "name" : "Antonia",
     "breed" : "Ocicat",
-    "color" : "leopard spotted",
+    "color" : "豹纹斑点",
     "kittens" : [
       {
         "name" : "Bridget",

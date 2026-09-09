@@ -1,8 +1,8 @@
 # JavaScript functions marking guide
 
-The aim of the tasks is to demonstrate an understanding of the JavaScript features covered in the [Functions — reusable blocks of code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals), [Build your own function](https://wiki.developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Build_your_own_function), and [https://wiki.developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Return_values](https://wiki.developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Return_values) lessons in Learn Web Development on MDN.
+这些题目旨在检验对以下内容的理解： the JavaScript features covered in the [Functions — reusable blocks of code](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/conditionals), [Build your own function](https://wiki.developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Build_your_own_function), and [https://wiki.developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Return_values](https://wiki.developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Return_values) lessons in Learn Web Development on MDN.
 
-Note: If there is an error in your code, it will be outputted into the results panel on the page, to help you try to figure out the answer (or into the browser's JavaScript console, in the case of the downloadable version).
+注意：如果代码中出现错误，错误会输出到页面的结果面板中, to help you try to figure out the answer (or into the browser's JavaScript console, 对于可下载版本则会输出到浏览器的 JavaScript 控制台中).
 
 ## Task 1
 
@@ -10,20 +10,27 @@ In the first task, you have to create a simple function that prints a random nam
 
 The finished code should look something like this:
 
-```
-let names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
-
-let para = document.querySelector('p');
+```js
+const names = [
+  "Chris",
+  "Li Kang",
+  "Anne",
+  "Francesca",
+  "Mustafa",
+  "Tina",
+  "Bert",
+  "Jada",
+];
+const para = document.querySelector("p");
 
 function chooseName() {
-  let randomNumber = Math.floor(Math.random() * names.length);
-  let choice = names[randomNumber];
+  const randomNumber = Math.floor(Math.random() * names.length);
+  const choice = names[randomNumber];
   para.textContent = choice;
 }
 
 chooseName();
 ```
-
 
 ## Task 2
 
@@ -33,18 +40,18 @@ You'll want to clear the canvas before drawing, so that when the code is updated
 
 The finished code should look something like this:
 
-```
-let canvas = document.querySelector('canvas');
-let ctx = canvas.getContext('2d');
+```js
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 
-let x = 50;
-let y = 60;
-let width = 100;
-let height = 75;
-let color = 'blue';
+const x = 50;
+const y = 60;
+const width = 100;
+const height = 75;
+const color = "blue";
 
 function drawSquare(x, y, width, height, color) {
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = "white";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = color;
   ctx.fillRect(x, y, width, height);
@@ -59,22 +66,53 @@ In this task, you return to the problem posed in Task 1, with the aim of improvi
 
 1. Refactor the code that generates the random number into a separate function that takes two generic bounds that the random number should be between, and returns the result.
 2. Update the `chooseName()` function so that it makes use of the random number function, takes the array to choose from as a parameter (making it more flexible), and returns its result.
-3. Print this returned result into the paragraph.   
+3. Print this returned result into the paragraph.
 
-```
-let names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+```js
+const names = [
+  "Chris",
+  "Li Kang",
+  "Anne",
+  "Francesca",
+  "Mustafa",
+  "Tina",
+  "Bert",
+  "Jada",
+];
+const para = document.querySelector("p");
 
-let para = document.querySelector('p');
-
-function random(min,max) {
+function random(min, max) {
   const num = Math.floor(Math.random() * (max - min)) + min;
   return num;
 }
 
 function chooseItem(array) {
-  let choice = array[random(0, array.length)];
+  const choice = array[random(0, array.length)];
   return choice;
 }
 
 para.textContent = chooseItem(names);
+```
+
+## Task 4
+
+In this task, you are asked to change the named `isShort()` function into an arrow function expression.
+
+The finished code should look something like this:
+
+```js
+const names = [
+  "Chris",
+  "Li Kang",
+  "Anne",
+  "Francesca",
+  "Mustafa",
+  "Tina",
+  "Bert",
+  "Jada",
+];
+const para = document.createElement("p");
+
+const shortNames = names.filter((name) => name.length < 5);
+para.textContent = shortNames;
 ```

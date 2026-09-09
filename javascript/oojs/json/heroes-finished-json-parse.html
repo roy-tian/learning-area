@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
 
-    <title>Our superheroes</title>
+    <title>我们的超级英雄</title>
 
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -20,36 +20,37 @@
       </section>
 
     <script>
-    const header = document.querySelector('header');
-    const section = document.querySelector('section');
 
-    let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'text';
-    request.send();
+    async function populate() {
 
-    request.onload = function() {
-      const superHeroesText = request.response;
+      const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+      const request = new Request(requestURL);
+
+      const response = await fetch(request);
+      const superHeroesText = await response.text();
+
       const superHeroes = JSON.parse(superHeroesText);
       populateHeader(superHeroes);
-      showHeroes(superHeroes);
+      populateHeroes(superHeroes);
+
     }
 
-    function populateHeader(jsonObj) {
+    function populateHeader(obj) {
+      const header = document.querySelector('header');
       const myH1 = document.createElement('h1');
-      myH1.textContent = jsonObj['squadName'];
+      myH1.textContent = obj.squadName;
       header.appendChild(myH1);
 
       const myPara = document.createElement('p');
-      myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+      myPara.textContent = `家乡：${obj.homeTown} // 成立时间：${obj.formed}`;
       header.appendChild(myPara);
     }
 
-    function showHeroes(jsonObj) {
-      const heroes = jsonObj['members'];
+    function populateHeroes(obj) {
+      const section = document.querySelector('section');
+      const heroes = obj.members;
 
-      for(let i = 0; i < heroes.length; i++) {
+      for (const hero of heroes) {
         const myArticle = document.createElement('article');
         const myH2 = document.createElement('h2');
         const myPara1 = document.createElement('p');
@@ -57,15 +58,15 @@
         const myPara3 = document.createElement('p');
         const myList = document.createElement('ul');
 
-        myH2.textContent = heroes[i].name;
-        myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-        myPara2.textContent = 'Age: ' + heroes[i].age;
-        myPara3.textContent = 'Superpowers:';
+        myH2.textContent = hero.name;
+        myPara1.textContent = `秘密身份：${hero.secretIdentity}`;
+        myPara2.textContent = `年龄：${hero.age}`;
+        myPara3.textContent = '超能力：';
 
-        const superPowers = heroes[i].powers;
-        for(let j = 0; j < superPowers.length; j++) {
+        const superPowers = hero.powers;
+        for (const power of superPowers) {
           const listItem = document.createElement('li');
-          listItem.textContent = superPowers[j];
+          listItem.textContent = power;
           myList.appendChild(listItem);
         }
 
@@ -78,6 +79,9 @@
         section.appendChild(myArticle);
       }
     }
+
+    populate();
+
     </script>
   </body>
 </html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Shopping list example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物清单示例</title>
     <style>
       li {
         margin-bottom: 10px;
       }
 
       li button {
-        font-size: 8px;
+        font-size: 12px;
         margin-left: 20px;
         color: #666;
       }
@@ -17,13 +18,13 @@
   </head>
   <body>
 
-    <h1>My shopping list</h1>
+    <h1>我的购物清单</h1>
 
-    <div>
-      <label for="item">Enter a new item:</label>
+    <form>
+      <label for="item">输入新项目：</label>
       <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
+      <button>添加项目</button>
+    </form>
 
     <ul>
 
@@ -34,8 +35,10 @@
       const input = document.querySelector('input');
       const button = document.querySelector('button');
 
-      button.onclick = function() {
-        let myItem = input.value;
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const myItem = input.value;
         input.value = '';
 
         const listItem = document.createElement('li');
@@ -45,15 +48,15 @@
         listItem.appendChild(listText);
         listText.textContent = myItem;
         listItem.appendChild(listBtn);
-        listBtn.textContent = 'Delete';
+        listBtn.textContent = '删除';
         list.appendChild(listItem);
 
-        listBtn.onclick = function(e) {
+        listBtn.addEventListener('click', () => {
           list.removeChild(listItem);
-        }
+        });
 
         input.focus();
-      }
+      });
     </script>
   </body>
 </html>

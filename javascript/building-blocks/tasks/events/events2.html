@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8" />
-    <title>Events: Task 2</title>
+    <title>事件：第 2 题</title>
     <link rel="stylesheet" href="../styles.css" />
     <style>
       * {
@@ -30,15 +30,15 @@
 
     </section>
 
-    <canvas width="480" height="320">
+    <canvas width="480" height="320" tabindex="0">
 
     </canvas>
 
 
     <textarea class="playable playable-js" style="height: 220px;">
 
-let canvas = document.querySelector('canvas');
-let ctx = canvas.getContext('2d');
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 
 function drawCircle(x, y, size) {
   ctx.fillStyle = 'white';
@@ -56,12 +56,12 @@ const size = 30;
 
 drawCircle(x, y, size);
 
-// Add your code here
+// 在此处添加代码
 
     </textarea>
 
     <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
+      <input id="reset" type="button" value="重置" />
     </div>
   </body>
   <script class="editable"></script>

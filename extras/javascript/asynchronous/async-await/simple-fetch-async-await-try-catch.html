@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>使用 async/await 的简单 fetch() 示例</title>
+  </head>
+  <body>
+    <script>
+      async function myFetch() {
+        try {
+          let response = await fetch('coffee.jpg');
+          let myBlob = await response.blob();
+
+          let objectURL = URL.createObjectURL(myBlob);
+          let image = document.createElement('img');
+          image.src = objectURL;
+          document.body.appendChild(image);
+        } catch(e) {
+          console.log(e);
+        }
+      }
+
+      myFetch();
+    </script>
+  </body>
+</html>

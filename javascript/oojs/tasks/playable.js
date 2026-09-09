@@ -1,3 +1,4 @@
+// 可运行代码编辑器的辅助脚本。
 var section = document.querySelector('section');
 var editable = document.querySelector('.editable');
 var textareaJS = document.querySelector('.playable-js');

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Basic do...while loop example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>基础 do...while 循环示例</title>
     <style>
 
     </style>
@@ -14,22 +15,22 @@
 
     <script>
     const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
-    let info = 'My cats are called ';
+    let myFavoriteCats = '我的猫叫 ';
     const para = document.querySelector('p');
 
     let i = 0;
 
     do {
-      if(i === cats.length - 1) {
-        info += 'and ' + cats[i] + '.';
+      if (i === cats.length - 1) {
+        myFavoriteCats += `and ${cats[i]}.`;
       } else {
-        info += cats[i] + ', ';
+        myFavoriteCats += `${cats[i]}, `;
       }
 
       i++;
-    } while(i < cats.length);
+    } while (i < cats.length);
 
-    para.textContent = info;
+    para.textContent = myFavoriteCats;
 
     </script>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>函数：第 3 题</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+
+
+    </section>
+
+    <textarea class="playable playable-js" style="height: 220px;">
+const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada'];
+const para = document.createElement('p');
+
+function isShort(name) {
+  return name.length < 5;
+}
+
+const shortNames = names.filter(isShort);
+para.textContent = shortNames;
+
+// 不要修改下面的代码！
+
+section.innerHTML = ' ';
+
+section.appendChild(para);
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="重置" />
+    </div>
+  </body>
+  <script class="editable"></script>
+  <script src="../playable.js"></script>
+</html>

@@ -1,4 +1,5 @@
-self.addEventListener('install', function(e) {
+// 使用缓存让视频商店支持离线访问。
+self.addEventListener('install', e => {
  e.waitUntil(
    caches.open('video-store').then(function(cache) {
      return cache.addAll([
@@ -11,11 +12,9 @@ self.addEventListener('install', function(e) {
  );
 });
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', e => {
   console.log(e.request.url);
   e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
+    caches.match(e.request).then(response => response || fetch(e.request))
   );
 });

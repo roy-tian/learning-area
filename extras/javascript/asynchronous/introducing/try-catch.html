@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>简单 try...catch 示例</title>
+  </head>
+  <body>
+    <script>
+      // 来自服务器的数据
+      let json = '{"id":"007", "firstName":"James", "lastName": "Bond"}';
+
+      try {
+        // 将文本表示转换为 JS 对象
+        let user = JSON.parse(json);
+        // Log the results to console
+        console.log(user.id); // 007
+        console.log(user.firstName); // James
+        console.log(user.lastName); // Bond
+      } catch(err) {
+        console.log('错误名称：' + err.name);
+        console.log('错误消息：' + err.message);
+      } finally {
+        // 无论成功还是失败，这段代码都会执行
+        console.log('查询完成');
+      }
+    </script>
+  </body>
+</html>

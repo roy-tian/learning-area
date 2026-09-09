@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>Object basics: Task 1</title>
+    <title>对象基础：第 1 题</title>
     <style>
       p {
         color: purple;
@@ -26,28 +26,28 @@
 
   </body>
   <script>
-    let cat = {
+    const cat = {
       name : 'Bertie',
       breed : 'Cymric',
       color : 'white',
       greeting: function() {
-        console.log('Meow!');
+        console.log('喵！');
       }
     }
 
-    // Add your code here
+    // 在此处添加代码
 
 
 
-    // Don't edit the code below here!
+    // 不要修改下面的代码！
 
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
 
-    para1.textContent = `The cat's name is ${ catName }.`;
-    para2.textContent = `The cat's color is ${ cat.color }.`;
+    para1.textContent = `猫的名字是 ${ catName }。`;
+    para2.textContent = `猫的颜色是 ${ cat.color }。`;
 
     section.appendChild(para1);
     section.appendChild(para2);

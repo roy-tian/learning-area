@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Object-oriented JavaScript inheritance</title>
+    <meta name="viewport" content="width=device-width">
+    <title>面向对象 JavaScript 继承</title>
   </head>
 
   <body>
@@ -25,11 +26,11 @@
       }
 
       greeting() {
-        console.log(`Hi! I'm ${this.name.first}`);
+        console.log(`你好！我是 ${this.name.first}`);
       };
 
       farewell() {
-        console.log(`${this.name.first} has left the building. Bye for now!`);
+        console.log(`${this.name.first}已经离开了。暂时再见！`);
       };
     }
 
@@ -56,13 +57,13 @@
 
     let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
     // Check the default value
-    console.log(snape.subject) // Returns "Dark arts"
+    console.log(snape.subject) // 返回“黑暗艺术”
 
     // Change the value
     snape.subject = "Balloon animals" // Sets subject to "Balloon animals"
 
     // Check it again and see if it matches the new value
-    console.log(snape.subject) // Returns "Balloon animals"
+    console.log(snape.subject) // 返回“气球动物”
 
     </script>
 </html>

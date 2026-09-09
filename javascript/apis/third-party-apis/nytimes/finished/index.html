@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《纽约时报》API 示例</title>
+  <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+<body>
+  <h1>《纽约时报》文章搜索</h1>
+
+  <div class="wrapper">
+
+    <div class="controls">
+      <form>
+        <p>
+          <label for="search">输入一个搜索词（必填）：</label>
+          <input type="text" id="search" class="search" required>
+        </p>
+        <p>
+          <label for="start-date">输入开始日期（格式为 YYYYMMDD）：</label>
+          <input type="date" id="start-date" class="start-date" pattern="[0-9]{8}">
+        </p>
+        <p>
+          <label for="end-date">输入结束日期（格式为 YYYYMMDD）：</label>
+          <input type="date" id="end-date" class="end-date" pattern="[0-9]{8}">
+        </p>
+        <p>
+          <button class="submit">提交搜索</button>
+        </p>
+      </form>
+    </div>
+
+    <div class="results">
+      <nav>
+        <button class="prev">前 10 条</button>
+        <button class="next">后 10 条</button>
+      </nav>
+
+      <section>
+      </section>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

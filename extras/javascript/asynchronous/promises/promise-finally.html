@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>fetch() promise.finally() 示例</title>
+  </head>
+  <body>
+    <script>
+      // Define function to fetch a file and return it in a usable form
+      function fetchAndDecode(url, type) {
+        // Returning the top level promise, so the result of the entire chain is returned out of the function
+        return fetch(url).then(response => {
+          // 根据获取文件的类型，使用相应函数解码其内容
+          if(type === 'blob') {
+            return response.blob();
+          } else if(type === 'text') {
+            return response.text();
+          }
+        })
+        .catch(e => {
+          console.log(`获取资源时出现问题："${url}": ` + e.message);
+        })
+        .finally(() => {
+          console.log(`fetch 尝试 "${url}" 已结束。`);
+        });
+      }
+
+      // 调用 fetchAndDecode() 获取图片和文本，并将它们的 promise 存入变量
+      let coffee = fetchAndDecode('coffee.jpg', 'blob');
+      let tea = fetchAndDecode('tea.jpg', 'blob');
+      let description = fetchAndDecode('description.txt', 'text');
+
+      // 使用 Promise.all()，仅在三个函数调用都完成后运行代码
+      Promise.all([coffee, tea, description]).then(values => {
+        console.log(values);
+        // 将 promise 返回的每个值存入单独变量，并根据 Blob 创建对象 URL
+        let objectURL1 = URL.createObjectURL(values[0]);
+        let objectURL2 = URL.createObjectURL(values[1]);
+        let descText = values[2];
+
+        // 在 <img> 元素中显示图片
+        let image1 = document.createElement('img');
+        let image2 = document.createElement('img');
+        image1.src = objectURL1;
+        image2.src = objectURL2;
+        document.body.appendChild(image1);
+        document.body.appendChild(image2);
+
+        // 在段落中显示文本
+        let para = document.createElement('p');
+        para.textContent = descText;
+        document.body.appendChild(para);
+      });
+    </script>
+  </body>
+</html>

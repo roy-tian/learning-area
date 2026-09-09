@@ -1,141 +1,127 @@
-window.onload = function() {
-  // Create constants
-  const section = document.querySelector('section');
-  const videos = [
-    { 'name' : 'crystal' },
-    { 'name' : 'elf' },
-    { 'name' : 'frog' },
-    { 'name' : 'monster' },
-    { 'name' : 'pig' },
-    { 'name' : 'rabbit' }
-  ];
-  // Create an instance of a db object for us to store our database in
-  let db;
+// 创建常量
+const section = document.querySelector('section');
+const videos = [
+  { 'name' : 'crystal' },
+  { 'name' : 'elf' },
+  { 'name' : 'frog' },
+  { 'name' : 'monster' },
+  { 'name' : 'pig' },
+  { 'name' : 'rabbit' }
+];
+// 创建一个 db 对象实例，用来保存数据库
+let db;
 
 function init() {
-  // Loop through the video names one by one
-  for(let i = 0; i < videos.length; i++) {
-    // Open transaction, get object store, and get() each video by name
-    let objectStore = db.transaction('videos_os').objectStore('videos_os');
-    let request = objectStore.get(videos[i].name);
-    request.onsuccess = function() {
-      // If the result exists in the database (is not undefined)
+  // 逐个遍历视频名称
+  for(const video of videos) {
+    // 打开事务、获取对象存储，并按名称获取每个视频
+    const objectStore = db.transaction('videos_os').objectStore('videos_os');
+    const request = objectStore.get(video.name);
+    request.addEventListener('success', () => {
+      // 如果数据库中存在结果（结果不是 undefined）
       if(request.result) {
-        // Grab the videos from IDB and display them using displayVideo()
-        console.log('taking videos from IDB');
+        // 从 IDB 获取视频，并使用 displayVideo() 显示
+        console.log('正在从 IDB 获取视频');
         displayVideo(request.result.mp4, request.result.webm, request.result.name);
       } else {
-        // Fetch the videos from the network
-        fetchVideoFromNetwork(videos[i]);
+        // 从网络获取视频
+        fetchVideoFromNetwork(video);
       }
-    };
+    });
   }
 }
 
-  // Define the fetchVideoFromNetwork() function
-  function fetchVideoFromNetwork(video) {
-    console.log('fetching videos from network');
-    // Fetch the MP4 and WebM versions of the video using the fetch() function,
-    // then expose their response bodies as blobs
-    let mp4Blob = fetch('videos/' + video.name + '.mp4').then(response =>
-      response.blob()
-    );
-    let webmBlob = fetch('videos/' + video.name + '.webm').then(response =>
-      response.blob()
-    );
+// Define the fetchVideoFromNetwork() function
+function fetchVideoFromNetwork(video) {
+  console.log('正在从网络获取视频');
+  // 使用 fetch() 函数获取视频的 MP4 和 WebM 版本，
+  // 然后将响应主体转换为 Blob
+  const mp4Blob = fetch(`videos/${video.name}.mp4`).then(response => response.blob());
+  const webmBlob = fetch(`videos/${video.name}.webm`).then(response => response.blob());
 
-    // Only run the next code when both promises have fulfilled
-    Promise.all([mp4Blob, webmBlob]).then(function(values) {
-      // display the video fetched from the network with displayVideo()
-      displayVideo(values[0], values[1], video.name);
-      // store it in the IDB using storeVideo()
-      storeVideo(values[0], values[1], video.name);
-    });
-  }
+  // 两个 promise 都兑现后才执行下面的代码
+  Promise.all([mp4Blob, webmBlob]).then(values => {
+    // 使用 displayVideo() 显示从网络获取的视频
+    displayVideo(values[0], values[1], video.name);
+    // 使用 storeVideo() 将其存入 IDB
+    storeVideo(values[0], values[1], video.name);
+  });
+}
 
-  // Define the storeVideo() function
+// 定义 storeVideo() 函数
 function storeVideo(mp4Blob, webmBlob, name) {
-  // Open transaction, get object store; make it a readwrite so we can write to the IDB
-  let objectStore = db.transaction(['videos_os'], 'readwrite').objectStore('videos_os');
-  // Create a record to add to the IDB
-  let record = {
+  // 打开事务并获取对象存储；将其设为 readwrite，以便写入 IDB
+  const objectStore = db.transaction(['videos_os'], 'readwrite').objectStore('videos_os');
+  // 创建要添加到 IDB 的记录
+  const record = {
     mp4 : mp4Blob,
     webm : webmBlob,
     name : name
   }
 
-  // Add the record to the IDB using add()
-  let request = objectStore.add(record);
+  // 使用 add() 将记录添加到 IDB
+  const request = objectStore.add(record);
 
-  request.onsuccess = function() {
-    console.log('Record addition attempt finished');
-  }
+  request.addEventListener('success', () => console.log('记录添加尝试已结束'));
+  request.addEventListener('error', () => console.error(request.error));
+}
 
-  request.onerror = function() {
-    console.log(request.error);
-  }
+// 定义 displayVideo() 函数
+function displayVideo(mp4Blob, webmBlob, title) {
+  // 根据 Blob 创建对象 URL
+  const mp4URL = URL.createObjectURL(mp4Blob);
+  const webmURL = URL.createObjectURL(webmBlob);
 
-};
+  // 创建用于在页面中嵌入视频的 DOM 元素
+  const article = document.createElement('article');
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+  const video = document.createElement('video');
+  video.controls = true;
+  const source1 = document.createElement('source');
+  source1.src = mp4URL;
+  source1.type = 'video/mp4';
+  const source2 = document.createElement('source');
+  source2.src = webmURL;
+  source2.type = 'video/webm';
 
-  // Define the displayVideo() function
-  function displayVideo(mp4Blob, webmBlob, title) {
-    // Create object URLs out of the blobs
-    let mp4URL = URL.createObjectURL(mp4Blob);
-    let webmURL = URL.createObjectURL(webmBlob);
+  // 将 DOM 元素嵌入页面
+  section.appendChild(article);
+  article.appendChild(h2);
+  article.appendChild(video);
+  video.appendChild(source1);
+  video.appendChild(source2);
+}
 
-    // Create DOM elements to embed video in the page
-    const article = document.createElement('article');
-    const h2 = document.createElement('h2');
-    h2.textContent = title;
-    const video = document.createElement('video');
-    video.controls = true;
-    const source1 = document.createElement('source');
-    source1.src = mp4URL;
-    source1.type = 'video/mp4';
-    const source2 = document.createElement('source');
-    source2.src = webmURL;
-    source2.type = 'video/webm';
+// 打开数据库；如果数据库不存在就创建它
+// (see upgradeneeded below)
+const request = window.indexedDB.open('videos_db', 1);
 
-    // Embed DOM elements into page
-    section.appendChild(article);
-    article.appendChild(h2);
-    article.appendChild(video);
-    video.appendChild(source1);
-    video.appendChild(source2);
-  }
+// 错误处理器表示数据库打开失败
+request.addEventListener('error', () => console.error('数据库打开失败'));
 
-  // Open our database; it is created if it doesn't already exist
-  // (see onupgradeneeded below)
-  let request = window.indexedDB.open('videos_db', 1);
+// 成功处理器表示数据库已成功打开
+request.addEventListener('success', () => {
+  console.log('数据库已成功打开');
 
-  // onerror handler signifies that the database didn't open successfully
-  request.onerror = function() {
-    console.log('Database failed to open');
-  };
+  // 将已打开的数据库对象存入 db 变量，下面会频繁使用它
+  db = request.result;
+  init();
+});
 
-  // onsuccess handler signifies that the database opened successfully
-  request.onsuccess = function() {
-    console.log('Database opened succesfully');
+// 如果尚未完成，就设置数据库表
+request.addEventListener('upgradeneeded', e => {
 
-    // Store the opened database object in the db variable. This is used a lot below
-    db = request.result;
-    init();
-  };
+  // 获取已打开数据库的引用
+  const db = e.target.result;
 
-  // Setup the database tables if this has not already been done
-  request.onupgradeneeded = function(e) {
+  // 创建用于存储视频的 objectStore（基本上类似一张表）
+  // 包括自动递增的键
+  const objectStore = db.createObjectStore('videos_os', { keyPath: 'name' });
 
-    // Grab a reference to the opened database
-    let db = e.target.result;
+  // 定义 objectStore 中包含哪些数据项
+  objectStore.createIndex('mp4', 'mp4', { unique: false });
+  objectStore.createIndex('webm', 'webm', { unique: false });
 
-    // Create an objectStore to store our videos in (basically like a single table)
-    // including a auto-incrementing key
-    let objectStore = db.createObjectStore('videos_os', { keyPath: 'name' });
-
-    // Define what data items the objectStore will contain
-    objectStore.createIndex('mp4', 'mp4', { unique: false });
-    objectStore.createIndex('webm', 'webm', { unique: false });
-
-    console.log('Database setup complete');
-  };
-};
+  console.log('数据库设置完成');
+});

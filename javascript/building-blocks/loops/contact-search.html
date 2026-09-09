@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Simple contact search example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>简单联系人搜索示例</title>
     <style>
 
     </style>
   </head>
   <body>
 
-  <label for="search">Search by contact name: </label>
+  <label for="search">按联系人姓名搜索：</label>
   <input id="search" type="text">
-  <button>Search</button>
+  <button>搜索</button>
 
   <p></p>
 
@@ -22,20 +23,23 @@
     const input = document.querySelector('input');
     const btn = document.querySelector('button');
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', () => {
       const searchName = input.value.toLowerCase();
       input.value = '';
       input.focus();
-      for(let i = 0; i < contacts.length; i++) {
-        let splitContact = contacts[i].split(':');
-        if(splitContact[0].toLowerCase() === searchName) {
-          para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';
+      para.textContent = '';
+      for (let contact of contacts) {
+        let splitContact = contact.split(':');
+        if (splitContact[0].toLowerCase() === searchName) {
+          para.textContent = splitContact[0] + ' 的电话号码是 ' + splitContact[1] + '。';
           break;
-        } else {
-          para.textContent = 'Contact not found.';
         }
       }
+      if (para.textContent === '') {
+       para.textContent = '找不到联系人。';
+     }
     });
+
     </script>
 
   </body>

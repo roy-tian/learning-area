@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8" />
-    <title>Conditionals: Task 3</title>
+    <title>条件语句：第 3 题</title>
     <link rel="stylesheet" href="../styles.css" />
     <style>
       * {
@@ -17,39 +17,33 @@
   </head>
 
   <body>
-    <section class="preview">
+    <section class="preview"></section>
 
+    <textarea class="playable playable-js" style="height: 220px">
 
+let machineActive = true;
+let pwd = 'cheese';
 
-    </section>
+let machineResult;
+let pwdResult;
 
-    <textarea class="playable playable-js" style="height: 220px;">
+// 在此处添加代码
 
-let response;
-let score = 75;
-let machineActive = false;
-
-if(machineActive) {
-	// Add your code here
-} else {
-  response = 'The machine is turned off. Turn it on to process your score.';
-}
-
-// Don't edit the code below here!
+// 不要修改下面的代码！
 
 section.innerHTML = ' ';
 let para1 = document.createElement('p');
 let para2 = document.createElement('p');
 
-para1.textContent = `Your score is ${ score }.`;
-para2.textContent = response;
+para1.textContent = machineResult;
+para2.textContent = pwdResult;
 
 section.appendChild(para1);
 section.appendChild(para2);
     </textarea>
 
     <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
+      <input id="reset" type="button" value="重置" />
     </div>
   </body>
   <script class="editable"></script>

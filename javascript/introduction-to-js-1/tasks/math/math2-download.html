@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>Math: Task 2</title>
+    <title>数学：第 2 题</title>
     <style>
       p {
         color: purple;
@@ -26,20 +26,20 @@
 
   </body>
   <script>
-  // Final result should be 10.42
-  // Add/update your code here
+    // 最终结果应为 4633.33
+    // 在此处添加或更新代码
 
-  let result = 7 + 13 / 9 + 7;
-  let result2 = 100 / 2 * 6;
+    let result = 7 + 13 / 9 + 7;
+    let result2 = 100 / 2 * 6;
 
-    // Don't edit the code below here!
+    // 不要修改下面的代码！
 
     const section = document.querySelector('section');
 
-    let para1 = document.createElement('p');
-    para1.textContent = `Your finalResult is ${ finalResult }`;
-    let para2 = document.createElement('p');
-    let finalNumberCheck = isNaN(finalNumber) === false ? 'finalNumber is a number type. Well done!' : `Ooops! finalNumber is not a number.`;
+    const para1 = document.createElement('p');
+    para1.textContent = `你的 finalResult 是 ${ finalResult }`;
+    const para2 = document.createElement('p');
+    const finalNumberCheck = isNaN(finalNumber) === false ? 'finalNumber 是数字类型。做得好！' : `糟糕！finalNumber 不是数字。`;
     para2.textContent = finalNumberCheck;
 
     section.appendChild(para1);

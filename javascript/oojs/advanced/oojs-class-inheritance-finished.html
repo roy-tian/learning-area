@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Object-oriented JavaScript inheritance</title>
+    <meta name="viewport" content="width=device-width">
+    <title>面向对象 JavaScript 继承</title>
   </head>
 
   <body>
     <div>
-      <label for="jscode">Enter code:</label>
+      <label for="jscode">输入代码：</label>
       <input type="text" id="jscode">
-      <button>Submit code</button>
+      <button>提交代码</button>
     </div>
 
     <p></p>
@@ -38,7 +39,7 @@
       Person.prototype.bio = function() {
         // First define a string, and make it equal to the part of
         // the bio that we know will always be the same.
-        let string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+        let string = this.name.first + ' ' + this.name.last + ' 是 ' + this.age + ' 岁。';
         // define a variable that will contain the pronoun part of
         // the second sentence
         let pronoun;
@@ -46,11 +47,11 @@
         // check what the value of gender is, and set pronoun
         // to an appropriate value in each case
         if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
-          pronoun = 'He likes ';
+          pronoun = '他喜欢 ';
         } else if(this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
-          pronoun = 'She likes ';
+          pronoun = '她喜欢 ';
         } else {
-          pronoun = 'They like ';
+          pronoun = '他们喜欢 ';
         }
 
         // add the pronoun string on to the end of the main string
@@ -62,14 +63,14 @@
         if(this.interests.length === 1) {
           string += this.interests[0] + '.';
         } else if(this.interests.length === 2) {
-          string += this.interests[0] + ' and ' + this.interests[1] + '.';
+          string += this.interests[0] + ' 和 ' + this.interests[1] + '.';
         } else {
           // if there are more than 2 interests, we loop through them
           // all, adding each one to the main string followed by a comma,
           // except for the last one, which needs an and & a full stop
           for(let i = 0; i < this.interests.length; i++) {
             if(i === this.interests.length - 1) {
-              string += 'and ' + this.interests[i] + '.';
+              string += '和' + this.interests[i] + '。';
             } else {
               string += this.interests[i] + ', ';
             }
@@ -81,11 +82,11 @@
       };
 
       Person.prototype.greeting = function() {
-        alert('Hi! I\'m ' + this.name.first + '.');
+        alert('你好！我是' + this.name.first + '。');
       };
 
       Person.prototype.farewell = function() {
-        alert(this.name.first + ' has left the building. Bye for now!');
+        alert(this.name.first + '已经离开了。暂时再见！');
       }
 
       let person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing']);
@@ -97,7 +98,11 @@
       }
 
       Teacher.prototype = Object.create(Person.prototype);
-      Teacher.prototype.constructor = Teacher;
+      Object.defineProperty(Teacher.prototype, 'constructor', {
+         value: Teacher,
+         enumerable: false, // so that it does not appear in 'for in' loop
+         writable: true
+      });
 
       Teacher.prototype.greeting = function() {
         let prefix;
@@ -110,7 +115,7 @@
           prefix = 'Mx.';
         }
 
-        alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
+        alert('你好，我的名字是 ' + prefix + ' ' + this.name.last + '，我教授 ' + this.subject + '。');
       };
 
       let teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');

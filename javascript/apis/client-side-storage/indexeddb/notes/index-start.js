@@ -1,4 +1,4 @@
-// Create needed constants
+// 创建所需常量
 const list = document.querySelector('ul');
 const titleInput = document.querySelector('#title');
 const bodyInput = document.querySelector('#body');

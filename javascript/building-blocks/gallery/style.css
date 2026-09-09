@@ -1,5 +1,5 @@
 h1 {
-  font-family: sans-serif;
+  font-family: helvetica, arial, sans-serif;
   text-align: center;
 }
 
@@ -22,7 +22,6 @@ body {
   width: 640px;
   height: 480px;
   background-color: rgba(0,0,0,0);
-  transition-duration: 500ms;
 }
 
 button {

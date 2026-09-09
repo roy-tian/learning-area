@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>简单异步同步示例</title>
+  </head>
+  <body>
+    <script>
+      console.log ('开始');
+      let image;
+
+      fetch('coffee.jpg').then((response) => {
+        console.log('成功了 :)')
+        return response.blob();
+      }).then((myBlob) => {
+        let objectURL = URL.createObjectURL(myBlob);
+        image = document.createElement('img');
+        image.src = objectURL;
+        document.body.appendChild(image);
+      }).then(() => {
+        console.log ('全部完成！ ' + image.src + ' 已显示。');
+      }).catch((err) => {
+        console.log('获取过程中出现问题：' + err.message);
+      });
+    </script>
+  </body>
+</html>

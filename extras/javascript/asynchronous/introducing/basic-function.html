@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>简单同步 JavaScript 示例</title>
+  </head>
+  <body>
+    <button>点击我</button>
+    <script>
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+      alert('你点击了我！');
+
+      let pElem = document.createElement('p');
+      pElem.textContent = '这是新添加的段落。';
+      document.body.appendChild(pElem);
+    });
+    </script>
+  </body>
+</html>

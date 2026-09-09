@@ -1,4 +1,4 @@
-/* 通用样式 */
+/* General */
 
 html {
   font-family: 'Raleway', sans-serif;
@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
 }
 
-/* 排版 */
+/* Typography */
 
 h1, h2 {
   font-family: 'Cherry Swash', cursive;
@@ -48,7 +48,7 @@ li {
   line-height: 1.5;
 }
 
-/* 区块样式 */
+/* block styling */
 
 header, aside, main, footer {
   padding: 20px;
@@ -81,7 +81,7 @@ main {
   flex: 7;
 }
 
-/* 表单样式 */
+/* Form styling */
 
 aside {
   display: flex;
@@ -123,7 +123,7 @@ button {
   box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px #ccc;
 }
 
-/* 商品样式 */
+/* Styling the products */
 
 main {
   display: flex;

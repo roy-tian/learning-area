@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>Math: Task 1</title>
+    <title>数学：第 1 题</title>
     <style>
       p {
         color: purple;
@@ -30,19 +30,19 @@
 
     let evenOddResult;
 
-    // Add your code here
+    // 在此处添加代码
 
-    
 
-    // Don't edit the code below here!
+
+    // 不要修改下面的代码！
 
     const section = document.querySelector('section');
 
-    let para1 = document.createElement('p');
-    let finalResultCheck = finalResult === 48 ? `Yes, well done!` : `No, it is ${ finalResult }`;
-    para1.textContent = `Is the finalResult 48? ${ finalResultCheck }`;
-    let para2 = document.createElement('p');
-    let evenOddResultCheck = evenOddResult === 0 ? 'The final result is even!' : 'The final result is odd. Hrm.'
+    const para1 = document.createElement('p');
+    const finalResultCheck = finalResult === 48 ? `是的，做得好！` : `不对，结果是 ${ finalResult }`;
+    para1.textContent = `finalResult 是 48 吗？${ finalResultCheck }`;
+    const para2 = document.createElement('p');
+    const evenOddResultCheck = evenOddResult === 0 ? '最终结果是偶数！' : '最终结果是奇数。嗯。';
     para2.textContent = evenOddResultCheck;
 
     section.appendChild(para1);

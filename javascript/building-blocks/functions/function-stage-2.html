@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Function stage 2</title>
+    <meta name="viewport" content="width=device-width">
+    <title>函数阶段 2</title>
     <style>
       .msgBox {
         position: absolute;
@@ -34,7 +35,7 @@
     </style>
   </head>
   <body>
-    <button>Display message box</button>
+    <button>显示消息框</button>
 
     <script>
       function displayMessage() {
@@ -45,16 +46,14 @@
         html.appendChild(panel);
 
         const msg = document.createElement('p');
-        msg.textContent = 'This is a message box';
+        msg.textContent = '这是一个消息框';
         panel.appendChild(msg);
 
         const closeBtn = document.createElement('button');
         closeBtn.textContent = 'x';
         panel.appendChild(closeBtn);
 
-        closeBtn.onclick = function() {
-          panel.parentNode.removeChild(panel);
-        }
+        closeBtn.addEventListener('click', () => panel.parentNode.removeChild(panel));
       }
     </script>
   </body>

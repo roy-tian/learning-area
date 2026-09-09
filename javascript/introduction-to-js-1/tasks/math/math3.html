@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8" />
-    <title>Math: Task 3</title>
+    <title>数学：第 3 题</title>
     <link rel="stylesheet" href="../styles.css" />
     <style>
       * {
@@ -25,30 +25,30 @@
 
     <textarea class="playable playable-js" style="height: 400px;">
 
-// Statement 1: The elephant weights less than the mouse
-let eleWeight = 1000;
-let mouseWeight = 2;
+// 陈述 1：大象比老鼠轻
+const eleWeight = 1000;
+const mouseWeight = 2;
 
-// Statement 2: The Ostrich is taller than the duck
-let ostrichHeight = 2;
-let duckHeight = 0.3;
+// 陈述 2：鸵鸟比鸭子高
+const ostrichHeight = 2;
+const duckHeight = 0.3;
 
-// Statement 3: The two passwords match
-let pwd1 = 'stromboli';
-let pwd2 = 'stROmBoLi'
+// 陈述 3：两个密码匹配
+const pwd1 = 'stromboli';
+const pwd2 = 'stROmBoLi';
 
-// Add your code here
+// 在此处添加代码
 
-// Don't edit the code below here!
+// 不要修改下面的代码！
 
 section.innerHTML = ' ';
-let para1 = document.createElement('p');
-let para2 = document.createElement('p');
-let para3 = document.createElement('p');
+const para1 = document.createElement('p');
+const para2 = document.createElement('p');
+const para3 = document.createElement('p');
 
-let weightTest = weightComparison ? 'True — elephants weight less than mice!?' : 'False — of course an elephant is heavier than a mouse!';
-let heightTest = heightComparison ? 'True — an ostrich is indeed taller than a duck!' : 'False — apparently a duck is taller than an ostrich!?';
-let pwdTest = pwdMatch ? 'True — the passwords match.' : 'False — the passwords do not match; please check them';
+const weightTest = weightComparison ? '正确——大象确实比老鼠轻！？' : '错误——大象当然比老鼠重！';
+const heightTest = heightComparison ? '正确——鸵鸟确实比鸭子高！' : '错误——看来鸭子比鸵鸟高！？';
+const pwdTest = pwdMatch ? '正确——密码匹配。' : '错误——密码不匹配；请检查密码';
 
 para1.textContent = weightTest;
 section.appendChild(para1);
@@ -59,7 +59,7 @@ section.appendChild(para3);
     </textarea>
 
     <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
+      <input id="reset" type="button" value="重置" />
     </div>
   </body>
   <script class="editable"></script>

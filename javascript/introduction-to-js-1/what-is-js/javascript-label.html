@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
   <head>
-    <meta charset="utf-8">
-    <title>互动标签示例</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JavaScript 标签示例</title>
     <style>
-      p {
-        font-family: sans-serif;
+      button {
+        font-family: "helvetica neue", helvetica, sans-serif;
         letter-spacing: 1px;
         text-transform: uppercase;
         text-align: center;
-        border: 2px solid rgba(0, 0, 200, 0.6);
-        background: rgba(0, 0, 200, 0.3);
-        color: rgba(0, 0, 200, 0.6);
-        box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+        border: 2px solid rgb(200 200 0 / 0.6);
+        background: rgba(0, 217, 217, 0.6);
+        color: rgb(100 0 0 / 1);
+        box-shadow: 1px 1px 2px rgb(0 0 200 / 0.4);
         border-radius: 10px;
         padding: 3px 10px;
-        display: inline-block;
         cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <p>玩家1：小明</p>
+    <button type="button">玩家 1：Chris</button>
 
     <script>
-      const para = document.querySelector('p');
-      para.addEventListener('click', updateName);
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", updateName);
+
       function updateName() {
-        const name = prompt('输入一个新的名字：');
-        para.textContent = '玩家1：' + name;
+        const name = prompt("输入新姓名");
+        button.textContent = `玩家 1：${name}`;
       }
     </script>
   </body>

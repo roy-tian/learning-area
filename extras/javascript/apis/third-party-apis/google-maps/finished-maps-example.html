@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps 示例</title>
+    <style>
+      #map_canvas {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>简单地图示例</h1>
+
+    <div id="map_canvas"></div>
+    <script>
+    function initMap() {
+      var myOptions = {
+        zoom: 8,
+        center: {lat: 53.480759, lng: -2.242631},
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        disableDefaultUI: true,
+        // Step 4. Customize displayed controls
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      // Step 2. Add custom icon
+
+      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+      var marker = new google.maps.Marker({
+        position: {lat: 53.480759, lng: -2.242631},
+        icon: iconBase + 'flag_maps.png',
+        map: map
+      });
+
+      // Step 3. Add info window
+
+      var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">自定义信息窗口</h2><p>这是一个很酷的自定义信息窗口。</p></div>';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=ENTER-API-KEY-HERE&callback=initMap"
+    async defer></script>
+  </body>
+</html>

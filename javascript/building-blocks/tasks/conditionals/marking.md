@@ -1,8 +1,8 @@
 # JavaScript conditionals marking guide
 
-The aim of the tasks is to demonstrate an understanding of the JavaScript features covered in the [Making decisions in your code — conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals) lesson in Learn Web Development on MDN.
+这些题目旨在检验对以下内容的理解： the JavaScript features covered in the [Making decisions in your code — conditionals](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/conditionals) lesson in Learn Web Development on MDN.
 
-Note: If there is an error in your code, it will be outputted into the results panel on the page, to help you try to figure out the answer (or into the browser's JavaScript console, in the case of the downloadable version).
+注意：如果代码中出现错误，错误会输出到页面的结果面板中, to help you try to figure out the answer (or into the browser's JavaScript console, 对于可下载版本则会输出到浏览器的 JavaScript 控制台中).
 
 ## Task 1
 
@@ -12,22 +12,23 @@ To finish off, you need to add an `else if` clause to also check whether it is w
 
 The finished code should look something like this:
 
-```
-let season = 'summer';
+```js
+let season = "summer";
 let response;
 
-if(season === 'summer') {
-  response = 'It\'s probably nice and warm where you are; enjoy the sun!';
-} else if(season === 'winter') {
-  response = 'I hope you are not too cold. Put some warm clothes on!';
+if (season === "summer") {
+  response = "你所在的地方可能阳光温暖，好好享受阳光吧！";
+} else if (season === "winter") {
+  response = "希望你那里不会太冷。穿些暖和的衣服吧！";
 } else {
-  response = 'I don\'t know what the season is where you are. Hope you are well.';
+  response =
+    "我不知道你那里是什么季节。希望你一切都好。";
 }
 ```
 
 ## Task 2
 
-Task 2 tests some more complex conditionals, like not equal, less than, greater than, etc., along with a nested structure. 
+Task 2 tests some more complex conditionals, like not equal, less than, greater than, etc., along with a nested structure.
 
 You are given two variables containing an indicator of the answer machine being switched on or not (`true`/`false`), and a score. You are also given an uninitialized `response` variable.
 
@@ -35,74 +36,41 @@ You need to create one `if ... else` structure that checks whether the machine i
 
 Inside the `if` part, you need to nest an `if ... else if` structure that puts appropriate messages into the `response` variable depending on different scores. The conditional operator tests should look like this:
 
-* `score < 0 || score > 100` - "This is not possible, an error has occurred." This could also be done just by an `else` clause, as the scores between 0 and 100 are all covered by the other clauses. But it's nice to be exact.
-* `score >= 0 && score < 20` - "That was a terrible score — total fail!"
-* `score >= 20 && score < 40` - "You know some things, but it's a pretty bad score. Needs improvement."
-* `score >= 40 && score < 70` — "You did a passable job, not bad!"
-* `score >= 70 && score < 90` — "That\'s a great score, you really know your stuff."
-* `score >= 90 && score <= 100` — "What an amazing score! Did you cheat? Are you for real?"
+- `score < 0 || score > 100` - "这不可能，发生了错误。" This could also be done just by an `else` clause, as the scores between 0 and 100 are all covered by the other clauses. But it's nice to be exact.
+- `score >= 0 && score < 20` - "分数太低了——完全不及格！"
+- `score >= 20 && score < 40` - "你知道一些东西，但分数相当低，还需要改进。"
+- `score >= 40 && score < 70` — "做得还可以，不错！"
+- `score >= 70 && score < 90` — "分数很棒，你确实掌握得很好。"
+- `score >= 90 && score <= 100` — "分数真惊人！你作弊了吗？这是真的吗？"
 
 The finished code should look something like this:
 
-```
+```js
 let response;
 let score = 75;
 let machineActive = false;
 
-if(machineActive) {
-  if(score < 0 || score > 100) {
-    response = 'This is not possible, an error has occurred.';
-  } else if(score >= 0 && score < 20) {
-    response = 'That was a terrible score — total fail!';
-  } else if(score >= 20 && score < 40) {
-    response = 'You know some things, but it's a pretty bad score. Needs improvement.';
-  } else if(score >= 40 && score < 70) {
-    response = 'You did a passable job, not bad!';
-  } else if(score >= 70 && score < 90) {
-    response = 'That\'s a great score, you really know your stuff.';
-  } else if(score >= 90 && score <= 100) {
-    response = 'What an amazing score! Did you cheat? Are you for real?';
+if (machineActive) {
+  if (score < 0 || score > 100) {
+    response = "这不可能，发生了错误。";
+  } else if (score >= 0 && score < 20) {
+    response = "分数太低了——完全不及格！";
+  } else if (score >= 20 && score < 40) {
+    response =
+      "你知道一些东西，但分数相当低，还需要改进。";
+  } else if (score >= 40 && score < 70) {
+    response = "做得还可以，不错！";
+  } else if (score >= 70 && score < 90) {
+    response = "分数很棒，你确实掌握得很好。";
+  } else if (score >= 90 && score <= 100) {
+    response = "分数真惊人！你作弊了吗？这是真的吗？";
   }
 } else {
-  response = 'The machine is turned off. Turn it on to process your score.';
+  response = "机器已关闭。请打开机器来处理分数。";
 }
 ```
 
 ## Task 3
-
-In this task we want you to take the code you wrote for the previous example, and convert it so that the inner structure uses a `switch` statement.
-
-Use the switch `default` option for the "not possible" option.
-
-The full `if ... else` block including added `switch` statement should look like this:
-
-```
-if(machineActive) {
-	switch (true) {
-		case (score >= 0 && score < 20):
-		  response = 'That was a terrible score — total fail!';
-		  break;
-		case (score >= 20 && score < 40):
-		  response = 'You know some things, but it\'s a pretty bad score. Needs improvement.';
-		  break;
-		case (score >= 40 && score < 70):
-		  response = 'You did a passable job, not bad!';
-		  break;
-		case (score >= 70 && score < 90):
-		  response = 'That\'s a great score, you really know your stuff.';
-		  break;
-		case (score >= 90 && score <= 100):
-		  response = 'What an amazing score! Did you cheat? Are you for real?';
-		  break;
-		default:
-		  response = 'This is not possible, an error has occurred.';
-	}
-} else {
-  response = 'The machine is turned off. Turn it on to process your score.';
-}
-```
-
-## Task 4
 
 For the final task we have to offer in this set, we need you to first write an `if ... else` statement that checks whether `machineActive` is `true`. If so, set `machineResult` to a string telling the user they can successfully log in. If not, set it to a message telling them they need to activate the machine before they can log in.
 
@@ -110,17 +78,20 @@ Inside the `if` part of the structure, you need to write a ternary operator that
 
 Your solution should look something like this:
 
-```
+```js
 let machineActive = true;
-let pwd = 'cheese';
+let pwd = "cheese";
 
 let machineResult;
 let pwdResult;
 
-if(machineActive) {
-  machineResult = 'Machine is active. Trying login.'
-  pwdResult = pwd === 'cheese' ? 'Login successful.' : 'Password incorrect; login failed.'
+if (machineActive) {
+  machineResult = "机器已激活。正在尝试登录。";
+  pwdResult =
+    pwd === "cheese"
+      ? "登录成功。"
+      : "密码不正确；登录失败。";
 } else {
-  machineResult = 'Machine is inactive. Activate and try logging in again.';
+  machineResult = "机器未激活。请激活后重试登录。";
 }
 ```

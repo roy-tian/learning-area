@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Prevent default example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>阻止默认行为示例</title>
     <style>
       div {
         margin-bottom: 10px;
@@ -12,11 +13,11 @@
   <body>
     <form>
       <div>
-        <label for="fname">First name: </label>
+        <label for="fname">名：</label>
         <input id="fname" type="text">
       </div>
       <div>
-        <label for="lname">Last name: </label>
+        <label for="lname">姓：</label>
         <input id="lname" type="text">
       </div>
       <div>
@@ -30,13 +31,12 @@
       const lname = document.getElementById('lname');
       const para = document.querySelector('p');
 
-      form.onsubmit = function(e) {
-        if(fname.value === '' || lname.value === '') {
+      form.addEventListener('submit', e => {
+        if (fname.value === '' || lname.value === '') {
           e.preventDefault();
-          para.textContent = 'You need to fill in both names!'
+          para.textContent = '你需要填写名和姓！';
         }
-      }
-
+      });
     </script>
   </body>
 </html>

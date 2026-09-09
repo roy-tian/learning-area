@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>MapQuest 示例</title>
+    <style>
+      #map {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script>
+      var L;
+
+      window.onload = function() {
+        L.mapquest.key = 'YOUR-API-KEY-HERE';
+
+        // 'map' 指向 ID 为 map 的 <div> 元素
+        var map = L.mapquest.map('map', {
+          center: [53.480759, -2.242631],
+          // 1. 将 'map' 改成 'hybrid'，也可以尝试其他地图类型
+          layers: L.mapquest.tileLayer('hybrid'),
+          zoom: 12
+        });
+
+        // 2. 添加控件
+        map.addControl(L.mapquest.control());
+
+        // 3. 添加图标
+        L.marker([53.480759, -2.242631], {
+          icon: L.mapquest.icons.marker({
+            primaryColor: '#22407F',
+            secondaryColor: '#3B5998',
+            shadow: true,
+            size: 'md',
+            symbol: 'A'
+          })
+        })
+        .bindPopup('这里是曼彻斯特！')
+        .addTo(map);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>简单的 MapQuest 示例</h1>
+
+    <div id="map"></div>
+  </body>
+</html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Object-oriented JavaScript class further exercises</title>
+    <meta name="viewport" content="width=device-width">
+    <title>面向对象 JavaScript 类进阶练习</title>
   </head>
 
   <body>
-    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    <p>此示例要求你在浏览器的 JavaScript 控制台中输入命令（参见<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_are_browser_developer_tools">什么是浏览器开发者工具</a> 了解更多信息）。</p>
 
   </body>
 
@@ -22,7 +23,7 @@
         this.bio = function() {
           // First define a string, and make it equal to the part of
           // the bio that we know will always be the same.
-          var string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+          var string = this.name.first + ' ' + this.name.last + ' 是 ' + this.age + ' 岁。';
           // define a variable that will contain the pronoun part of
           // the second sentence
           var pronoun;
@@ -30,11 +31,11 @@
           // check what the value of gender is, and set pronoun
           // to an appropriate value in each case
           if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
-            pronoun = 'He likes ';
+            pronoun = '他喜欢 ';
           } else if(this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
-            pronoun = 'She likes ';
+            pronoun = '她喜欢 ';
           } else {
-            pronoun = 'They like ';
+            pronoun = '他们喜欢 ';
           }
 
           // add the pronoun string on to the end of the main string
@@ -46,14 +47,14 @@
           if(this.interests.length === 1) {
             string += this.interests[0] + '.';
           } else if(this.interests.length === 2) {
-            string += this.interests[0] + ' and ' + this.interests[1] + '.';
+            string += this.interests[0] + ' 和 ' + this.interests[1] + '.';
           } else {
             // if there are more than 2 interests, we loop through them
             // all, adding each one to the main string followed by a comma,
             // except for the last one, which needs an and & a full stop
             for(var i = 0; i < this.interests.length; i++) {
               if(i === this.interests.length - 1) {
-                string += 'and ' + this.interests[i] + '.';
+                string += '和' + this.interests[i] + '。';
               } else {
                 string += this.interests[i] + ', ';
               }
@@ -64,7 +65,7 @@
           alert(string);
         };
         this.greeting = function() {
-          alert('Hi! I\'m ' + this.name.first + '.');
+          alert('你好！我是' + this.name.first + '。');
         };
       };
 

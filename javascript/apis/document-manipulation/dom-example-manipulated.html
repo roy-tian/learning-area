@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Simple DOM example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单 DOM 示例</title>
     <style>
       .highlight {
         color: white;
@@ -15,18 +16,18 @@
   </head>
   <body>
     <section>
-      <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
-      <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+      <img src="dinosaur.png" alt="一只红色的霸王龙：像人一样直立的双足恐龙，有小小的手臂和长满锋利牙齿的大脑袋。">
+      <p>我们将在这里添加一个指向 <a href="https://www.mozilla.org/">Mozilla 主页</a></p>
     </section>
 
     <script>
       const link = document.querySelector('a');
-      link.textContent = 'Mozilla Developer Network';
+      link.textContent = 'Mozilla 开发者网络';
       link.href = 'https://developer.mozilla.org';
 
       const sect = document.querySelector('section');
       const para = document.createElement('p');
-      para.textContent = 'We hope you enjoyed the ride.';
+      para.textContent = '希望你喜欢这次体验。';
       sect.appendChild(para);
 
       const text = document.createTextNode(' — the premier source for web development knowledge.');

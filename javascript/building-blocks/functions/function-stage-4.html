@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Function stage 4</title>
+    <meta name="viewport" content="width=device-width">
+    <title>函数阶段 4</title>
     <style>
       .msgBox {
         position: absolute;
@@ -37,15 +38,12 @@
     </style>
   </head>
   <body>
-    <button>Display message box</button>
+    <button>显示消息框</button>
 
     <script>
 
       const btn = document.querySelector('button');
-
-      btn.onclick = function() {
-        displayMessage('Brian: Hi there, how are you today?','chat');
-      };
+      btn.addEventListener('click', () => displayMessage('Brian：你好，今天过得怎么样？', 'chat'));
 
       function displayMessage(msgText,msgType) {
         const html = document.querySelector('html');

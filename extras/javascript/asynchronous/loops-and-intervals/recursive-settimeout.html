@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>递归 setTimeout() 示例</title>
+  </head>
+  <body>
+    <script>
+      let i = 1;
+
+      setTimeout(function run() {
+       console.log(i);
+       i++;
+       setTimeout(run, 100);
+      }, 100);
+
+      // Do the same thing using setInterval()
+      // setInterval(function run() {
+      //  console.log(i);
+      //  i++
+      // }, 100);
+    </script>
+  </body>
+</html>

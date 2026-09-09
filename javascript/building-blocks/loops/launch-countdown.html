@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Launch countdown example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>发射倒计时示例</title>
     <style>
 
     </style>
@@ -17,9 +18,9 @@
     while(i >= 0) {
       const para = document.createElement('p');
       if(i === 10) {
-        para.textContent = 'Countdown ' + i;
+        para.textContent = '倒计时 ' + i;
       } else if(i === 0) {
-        para.textContent = 'Blast off!';
+        para.textContent = '发射！';
       } else {
         para.textContent = i;
       }
@@ -28,6 +29,7 @@
 
       i--;
     }
+
     </script>
 
   </body>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>JSON: Task 1</title>
+    <title>JSON：第 1 题</title>
     <style>
       p {
         color: purple;
@@ -26,10 +26,15 @@
 
   </body>
   <script>
-    let motherInfo = 'The mother cats are called ';
-    let kittenInfo;
+    const section = document.querySelector('section');
 
-    fetch('sample.json')
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+    let motherInfo = '母猫叫 ';
+    let kittenInfo;
+    const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+    fetch(requestURL)
     .then(response => response.text())
     .then(text => displayCatInfo(text))
 
@@ -37,18 +42,14 @@
       let total = 0;
       let male = 0;
 
-      // Add your code here
+      // 在此处添加代码
 
-    // Don't edit the code below here!
+      // 不要修改下面的代码！
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
     }
 
-    const section = document.querySelector('section');
-
-    let para1 = document.createElement('p');
-    let para2 = document.createElement('p');
     section.appendChild(para1);
     section.appendChild(para2);
   </script>

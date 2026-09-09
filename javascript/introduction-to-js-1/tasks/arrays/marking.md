@@ -1,8 +1,8 @@
 # JavaScript arrays marking guide
 
-The aim of the tasks is to demonstrate an understanding of the JavaScript features covered in the [Arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays) lesson in Learn Web Development on MDN.
+这些题目旨在检验对以下内容的理解： the JavaScript features covered in the [Arrays](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Arrays) lesson in Learn Web Development on MDN.
 
-Note: If there is an error in your code, it will be outputted into the results panel on the page, to help you try to figure out the answer (or into the browser's JavaScript console, in the case of the downloadable version).
+注意：如果代码中出现错误，错误会输出到页面的结果面板中, to help you try to figure out the answer (or into the browser's JavaScript console, 对于可下载版本则会输出到浏览器的 JavaScript 控制台中).
 
 ## Task 1
 
@@ -14,15 +14,14 @@ Last of all, add an item to the start of the array using `.unshift()`.
 
 The answer should look something like this:
 
+```js
+let myArray = ["cats", "dogs", "chickens"];
+
+myArray[0] = "horses";
+myArray[1] = "pigs";
+
+myArray.unshift("crocodiles");
 ```
-let myArray = ['cats', 'dogs', 'chickens'];
-
-myArray[0] = 'horses';
-myArray[1] = 'pigs';
-
-myArray.unshift('crocodiles');
-```
-
 
 ## Task 2
 
@@ -36,10 +35,10 @@ Last up, retrieve the last item in the array with `myArray[myArray.length - 1]`;
 
 The example should look something like this:
 
-```
-let myString = 'Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri';
+```js
+let myString = "Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri";
 
-let myArray = myString.split('+');
+let myArray = myString.split("+");
 
 let arrayLength = myArray.length;
 
@@ -56,18 +55,47 @@ For an added challenge, you'll need to use `.forEach()` or some kind of loop (we
 
 Finally you need to stitch the array items together into a string using `myArray.join(' - ')`, and store the result in `myString`.
 
-```
-let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+```js
+let myArray = [
+  "Ryu",
+  "Ken",
+  "Chun-Li",
+  "Cammy",
+  "Guile",
+  "Sakura",
+  "Sagat",
+  "Juri",
+];
 
 myArray.pop();
 
-myArray.push('Zangief');
-myArray.push('Ibuki');
+myArray.push("Zangief");
+myArray.push("Ibuki");
 
-myArray.forEach(function(element, index) {
-  let newElement = `${ element } (${index})`;
+myArray.forEach(function (element, index) {
+  let newElement = `${element} (${index})`;
   myArray[index] = newElement;
 });
 
-let myString = myArray.join(' - ');
+let myString = myArray.join(" - ");
+```
+
+## Task 4
+
+You should start by finding the index of `"Eagles"`, using `birds.indexOf()`.
+
+Next, use the index with `birds.splice()` to remove the `"Eagles"` item.
+
+Finally, you can use `birds.filter()` to get an array containing only birds starting with "E".
+
+The function passed to `filter()` can use `bird.startsWith()` to test whether the bird starts with "E".
+
+```js
+const eaglesIndex = birds.indexOf("Eagles");
+birds.splice(eaglesIndex, 1);
+
+function startsWithE(bird) {
+  return bird.startsWith("E");
+}
+const eBirds = birds.filter(startsWithE);
 ```

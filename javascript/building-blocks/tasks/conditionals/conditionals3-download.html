@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
-    <meta charset="utf-8"/>
-    <title>Conditionals: Task 3</title>
+    <meta charset="utf-8" />
+    <title>条件语句：第 3 题</title>
     <style>
       p {
         color: purple;
@@ -17,37 +17,28 @@
   </head>
 
   <body>
-
-    <section class="preview">
-
-
-
-    </section>
-
+    <section class="preview"></section>
   </body>
   <script>
-    let response;
-    let score = 75;
-    let machineActive = false;
+    let machineActive = true;
+    let pwd = "cheese";
 
-    if(machineActive) {
-      // Add your code here
-    } else {
-      response = 'The machine is turned off. Turn it on to process your score.';
-    }
+    let machineResult;
+    let pwdResult;
 
-    // Don't edit the code below here!
+    // 在此处添加代码
 
-    const section = document.querySelector('section');
+    // 不要修改下面的代码！
 
-    let para1 = document.createElement('p');
-    let para2 = document.createElement('p');
+    const section = document.querySelector("section");
 
-    para1.textContent = `Your score is ${ score }.`;
-    para2.textContent = response;
+    let para1 = document.createElement("p");
+    let para2 = document.createElement("p");
+
+    para1.textContent = machineResult;
+    para2.textContent = pwdResult;
 
     section.appendChild(para1);
     section.appendChild(para2);
   </script>
-
 </html>

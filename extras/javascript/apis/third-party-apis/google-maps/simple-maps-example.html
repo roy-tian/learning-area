@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps 示例</title>
+    <style>
+      #map_canvas {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>简单地图示例</h1>
+
+    <div id="map_canvas"></div>
+    <script>
+    function initMap() {
+      var myOptions = {
+        zoom: 8,
+        center: {lat: 53.480759, lng: -2.242631},
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        disableDefaultUI: true
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=ENTER-API-KEY-HERE&callback=initMap"
+    async defer></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>使用 async/await 的简单 fetch() 示例</title>
+  </head>
+  <body>
+    <script>
+      // 调用 fetch() 获取图片，并将其存入变量
+      async function myFetch() {
+        let response = await fetch('coffee.jpg');
+        // Use a then() block to respond to the promise's successful completion
+        // by taking the returned response and running blob() on it to transform it into a blob
+        return await response.blob();
+        // blob() also returns a promise; when it successfully completes it returns
+        // 回调中的 Blob 对象
+      }
+
+      myFetch().then((blob) => {
+        // 创建指向 Blob 对象的对象 URL
+        let objectURL = URL.createObjectURL(blob);
+        // Create an <img> element to display the blob (it's an image)
+        let image = document.createElement('img');
+        // Set the src of the <img> to the object URL so the image displays it
+        image.src = objectURL;
+        // 将 <img> 元素添加到 DOM
+        document.body.appendChild(image);
+      });
+    </script>
+  </body>
+</html>

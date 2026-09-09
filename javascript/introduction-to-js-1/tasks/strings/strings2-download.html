@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>Strings: Task 2</title>
+    <title>字符串：第 2 题</title>
     <style>
       p {
         color: purple;
@@ -26,19 +26,19 @@
 
   </body>
   <script>
-    let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.';
-    let substring = 'green eggs and ham';
+    const quote = '我不喜欢绿色的火腿蛋。我不喜欢它们，山姆。';
+    const substring = 'green eggs and ham';
 
-    // Add your code here
+    // 在此处添加代码
 
-    // Don't edit the code below here!
+    // 不要修改下面的代码！
 
     const section = document.querySelector('section');
 
     section.innerHTML = ' ';
-    let para1 = document.createElement('p');
-    para1.textContent = `The quote is ${ quoteLength } characters long.`;
-    let para2 = document.createElement('p');
+    const para1 = document.createElement('p');
+    para1.textContent = `引文长度为 ${ quoteLength } 个字符。`;
+    const para2 = document.createElement('p');
     para2.textContent = revisedQuote;
 
     section.appendChild(para1);

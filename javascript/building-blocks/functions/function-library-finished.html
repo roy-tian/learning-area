@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Function library example</title>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>函数库示例</title>
   <style>
     input {
       font-size: 2em;
       margin: 10px 1px 0;
     }
   </style>
-</head>
+  </head>
 <body>
 
   <input class="numberInput" type="text">
@@ -29,7 +30,7 @@
 
     function factorial(num) {
       let x = num;
-      while(x > 1) {
+      while (x > 1) {
         num *= x-1;
         x--;
       }
@@ -37,16 +38,16 @@
       return num;
     }
 
-    input.onchange = function() {
-      const num = input.value;
-      if(isNaN(num)) {
-        para.textContent = 'You need to enter a number!';
+    input.addEventListener('change', () => {
+      const num = parseFloat(input.value);
+      if (isNaN(num)) {
+        para.textContent = '你需要输入一个数字！';
       } else {
-        para.textContent = num + ' squared is ' + squared(num) + '. ' +
-                           num + ' cubed is ' + cubed(num) + '. ' +
-                           num + ' factorial is ' + factorial(num) + '.';
+        para.textContent = `${num} 的平方是 ${squared(num)}。`;
+        para.textContent += `${num} 的立方是 ${cubed(num)}。`;
+        para.textContent += `${num} 的阶乘是 ${factorial(num)}。`;
       }
-    }
+    });
 
   </script>
 </body>

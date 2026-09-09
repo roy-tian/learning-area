@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
 
@@ -17,6 +17,10 @@
         margin: 0 auto;
       }
 
+      .form input[type="number"] {
+        width: 200px;
+      }
+
       .lastResult {
         color: white;
         padding: 3px;
@@ -27,11 +31,12 @@
   <body>
     <h1>猜数字游戏</h1>
 
-    <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+    <p>我们随机选出了一个 1 到 100 之间的数字。看看你能否在 10 次以内猜中。我们会告诉你猜得太高还是太低。</p>
 
     <div class="form">
-      <label for="guessField">请猜数：</label><input type="text" id="guessField" class="guessField">
-      <input type="submit" value="我猜" class="guessSubmit">
+      <label for="guessField">输入猜测：</label>
+      <input type="number" min="1" max="100" required id="guessField" class="guessField">
+      <input type="submit" value="提交猜测" class="guessSubmit">
     </div>
 
     <div class="resultParas">
@@ -51,12 +56,12 @@
       let resetButton;
 
       function checkGuess() {
-        let userGuess = Number(guessField.value);
+        const userGuess = Number(guessField.value);
         if (guessCount === 1) {
-          guesses.textContent = '上次猜的数：';
+          guesses.textContent = '之前的猜测：';
         }
 
-        guesses.textContent += userGuess + ' ';
+        guesses.textContent = `${guesses.textContent} ${userGuess}`;
 
         if (userGuess === randomNumber) {
           lastResult.textContent = '恭喜你！猜对了！';
@@ -64,16 +69,16 @@
           lowOrHi.textContent = '';
           setGameOver();
         } else if (guessCount === 10) {
-          lastResult.textContent = '!!!游戏结束!!!';
+          lastResult.textContent = '！！！游戏结束！！！';
           lowOrHi.textContent = '';
           setGameOver();
         } else {
-          lastResult.textContent = '你猜错了！';
+          lastResult.textContent = '错了！';
           lastResult.style.backgroundColor = 'red';
           if(userGuess < randomNumber) {
-            lowOrHi.textContent = '你刚才猜低了！' ;
+            lowOrHi.textContent = '上次猜得太低了！' ;
           } else if(userGuess > randomNumber) {
-            lowOrHi.textContent = '你刚才猜高了！';
+            lowOrHi.textContent = '上次猜得太高了！';
           }
         }
 
@@ -96,8 +101,8 @@
       function resetGame() {
         guessCount = 1;
         const resetParas = document.querySelectorAll('.resultParas p');
-        for(let i = 0 ; i < resetParas.length ; i++) {
-          resetParas[i].textContent = '';
+        for (const resetPara of resetParas) {
+          resetPara.textContent = '';
         }
 
         resetButton.parentNode.removeChild(resetButton);

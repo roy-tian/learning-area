@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Simple switch example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>简单 switch 示例</title>
   </head>
   <body>
-    <label for="weather">Select the weather type today: </label>
+    <label for="weather">选择今天的天气类型：</label>
     <select id="weather">
-      <option value="">--Make a choice--</option>
-      <option value="sunny">Sunny</option>
-      <option value="rainy">Rainy</option>
-      <option value="snowing">Snowing</option>
-      <option value="overcast">Overcast</option>
+      <option value="">--请选择--</option>
+      <option value="sunny">晴天</option>
+      <option value="rainy">雨天</option>
+      <option value="snowing">下雪</option>
+      <option value="overcast">阴天</option>
     </select>
 
     <p></p>
@@ -19,25 +20,24 @@
     <script>
       const select = document.querySelector('select');
       const para = document.querySelector('p');
-      let temperature = 29;
 
-      select.onchange = setWeather;
+      select.addEventListener("change", setWeather);
 
       function setWeather() {
         const choice = select.value;
 
         switch(choice) {
           case 'sunny':
-            para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+            para.textContent = '今天外面阳光明媚。穿上短裤吧！去海滩或公园吃个冰激凌。';
             break;
           case 'rainy':
-            para.textContent = 'Rain is falling outside; take a rain coat and a brolly, and don\'t stay out for too long.';
+            para.textContent = '外面正在下雨；带上雨衣和雨伞，不要在外面待太久。';
             break;
           case 'snowing':
-            para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+            para.textContent = '雪正在下——天气很冷！最好待在家里喝杯热巧克力，或者去堆雪人。';
             break;
           case 'overcast':
-            para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+            para.textContent = '虽然没有下雨，但天空灰暗阴沉；天气随时可能变化，所以还是带上雨衣吧。';
             break;
           default:
             para.textContent = '';

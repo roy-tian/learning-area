@@ -19,7 +19,7 @@
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics) |
 HTML 基础：Mozilla 酷毙了
 2. [示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-styled)
-[代码](https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-styled) 
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/getting-started-web/beginner-html-site-styled)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics) |
 CSS 基础：Mozilla 酷毙了（样式版）
 3. [示例](https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site-scripted)
@@ -121,7 +121,7 @@ HTML 表单示例：开关
 
 #### 3.1 JavaScript 初步
 
-1. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/javascript-label.html) 
+1. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/javascript-label.html)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/what-is-js)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript) |
 什么是 JavaScript
@@ -133,10 +133,10 @@ JavaScript 初体验：猜数字游戏
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
 JavaScript 比较运算符：状态机
-4. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional2.html)
-[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/maths/conditional2.html)
+4. [示例](https://roy-tian.github.io/learning-area/extras/javascript/introduction-to-js-1/maths/conditional2.html)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/javascript/introduction-to-js-1/maths/conditional2.html)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math#比较运算符) |
-JavaScript 比较运算符：今天心情如何
+JavaScript 比较运算符：今天心情如何（补充示例）
 5. [示例](https://roy-tian.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished)
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/introduction-to-js-1/assessment-finished)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Silly_story_generator) |
@@ -159,10 +159,10 @@ JavaScript 比较运算符：今天心情如何
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
 章节测验：弹球 + 恶魔圈
-3. [示例](https://roy-tian.github.io/learning-area/javascript/oojs/assessment-es-class)
-[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/oojs/assessment-es-class)
+3. [示例](https://roy-tian.github.io/learning-area/extras/javascript/oojs/assessment-es-class)
+[代码](https://github.com/roy-tian/learning-area/tree/master/extras/javascript/oojs/assessment-es-class)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/向“弹跳球”演示程序添加新功能) |
-章节测验：弹球 + 恶魔圈（ES6 版）
+章节测验：弹球 + 恶魔圈（ES6 版，补充示例）
 
 #### 3.4 JavaScript API
 
@@ -178,6 +178,19 @@ JavaScript 比较运算符：今天心情如何
 [代码](https://github.com/roy-tian/learning-area/tree/master/javascript/apis/fetching-data/can-store-xhr)
 [章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/Network_requests) |
 网络请求：罐头商店（XHR 版）
+
+#### 3.5 异步 JavaScript
+
+1. [示例：动画序列](https://roy-tian.github.io/learning-area/javascript/asynchronous/sequencing-animations/finished/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/asynchronous/sequencing-animations)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Extensions/Async_JS/Sequencing_animations) |
+使用 Promise 链组织动画
+2. [示例：Worker 质数生成器](https://roy-tian.github.io/learning-area/javascript/asynchronous/workers/finished/)
+[代码](https://github.com/roy-tian/learning-area/tree/master/javascript/asynchronous/workers)
+[章节](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Extensions/Async_JS/Introducing_workers) |
+使用 Web Worker 执行计算
+
+上游已移除的旧异步示例保存在 [extras/javascript/asynchronous](https://github.com/roy-tian/learning-area/tree/master/extras/javascript/asynchronous)。
 
 ### A. 其他工具
 

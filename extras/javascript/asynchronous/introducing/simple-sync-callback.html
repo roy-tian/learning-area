@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>简单回调示例</title>
+  </head>
+  <body>
+    <script>
+      function greet(name) {
+        alert('你好，' + name);
+      }
+
+      function processUserInput(callback) {
+        let name = prompt('请输入你的姓名。');
+        callback(name);
+      }
+
+      processUserInput(greet);
+    </script>
+  </body>
+</html>

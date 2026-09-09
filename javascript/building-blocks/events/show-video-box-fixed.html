@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>Show video box example</title>
+    <meta name="viewport" content="width=device-width">
+    <title>显示视频框示例</title>
     <style>
       div {
         position: absolute;
@@ -32,13 +33,13 @@
     </style>
   </head>
   <body>
-    <button>Display video</button>
+    <button>显示视频</button>
 
     <div class="hidden">
       <video>
         <source src="rabbit320.mp4" type="video/mp4">
         <source src="rabbit320.webm" type="video/webm">
-        <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+        <p>你的浏览器不支持 HTML5 视频。这里有一个<a href="rabbit320.mp4">视频链接</a> 可以使用。</p>
       </video>
     </div>
 
@@ -46,20 +47,23 @@
 
       const btn = document.querySelector('button');
       const videoBox = document.querySelector('div');
-      const video = document.querySelector('video');
 
-      btn.onclick = function() {
-        videoBox.setAttribute('class','showing');
+      function displayVideo() {
+        if (videoBox.getAttribute('class') === 'hidden') {
+          videoBox.setAttribute('class','showing');
+        }
       }
 
-      videoBox.onclick = function() {
-        videoBox.setAttribute('class','hidden');
-      };
+      btn.addEventListener('click', displayVideo);
 
-      video.onclick = function(e) {
+      videoBox.addEventListener('click', () => videoBox.setAttribute('class', 'hidden'));
+
+      const video = document.querySelector('video');
+
+      video.addEventListener('click', e => {
         e.stopPropagation();
         video.play();
-      };
+      });
 
     </script>
   </body>

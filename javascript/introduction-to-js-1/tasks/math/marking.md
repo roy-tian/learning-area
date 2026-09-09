@@ -1,8 +1,8 @@
 # JavaScript math marking guide
 
-The aim of the tasks is to demonstrate an understanding of the JavaScript features covered in the [Basic math in JavaScript — numbers and operators](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math) lesson in Learn Web Development on MDN.
+这些题目旨在检验对以下内容的理解： the JavaScript features covered in the [Basic math in JavaScript — numbers and operators](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Math) lesson in Learn Web Development on MDN.
 
-Note: If there is an error in your code, it will be outputted into the results panel on the page, to help you try to figure out the answer (or into the browser's JavaScript console, in the case of the downloadable version).
+注意：如果代码中出现错误，错误会输出到页面的结果面板中, to help you try to figure out the answer (or into the browser's JavaScript console, 对于可下载版本则会输出到浏览器的 JavaScript 控制台中).
 
 ## Task 1
 
@@ -12,14 +12,14 @@ Finally, you need to write a calculation that checks whether this number is even
 
 The answer should look something like this:
 
-```
-let number1 = 4;
-let number2 = 8;
-let number3 = 12;
-let number4 = 8;
+```js
+const number1 = 4;
+const number2 = 8;
+const number3 = 12;
+const number4 = 8;
 
-let additionResult = number1 + number2;
-let subtractionResult = number3 - number4;
+const additionResult = number1 + number2;
+const subtractionResult = number3 - number4;
 
 finalResult = additionResult * subtractionResult;
 
@@ -27,8 +27,6 @@ evenOddResult = finalResult % 2;
 ```
 
 This task also tests your variable naming abilities. An extra mark if the variables have sensible names that follow best practices (lower camel case, descriptive, not too long).
-
-
 
 ## Task 2
 
@@ -42,15 +40,15 @@ Finally, using `typeof` we can test if a variable contains a string. We need to 
 
 The result should look something like this:
 
-```
+```js
 let result = (7 + 13) / (9 + 7);
 let result2 = 100 / (2 * 6);
 
 result *= result2;
 
-let finalResult = result.toFixed(2);
+const finalResult = result.toFixed(2);
 
-let finalNumber = Number(finalResult)
+const finalNumber = Number(finalResult);
 ```
 
 ## Task 3
@@ -61,10 +59,10 @@ The test results should be stored inside variables called `weightComparison`, `h
 
 Your code should look something like this:
 
-```
-let weightComparison = eleWeight < mouseWeight;
+```js
+const weightComparison = eleWeight < mouseWeight;
 
-let heightComparison = ostrichHeight > duckHeight;
+const heightComparison = ostrichHeight > duckHeight;
 
-let pwdMatch = pwd1 === pwd2;
+const pwdMatch = pwd1 === pwd2;
 ```

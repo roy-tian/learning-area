@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>变量：任务3</title>
+    <title>变量：第 3 题</title>
     <style>
       p {
         color: purple;
@@ -26,21 +26,21 @@
 
   </body>
   <script>
-    // 在下方编写代码
+    // 在此处添加代码
 
     const myName = 'Default';
-    myName = '李雷'
+    myName = 'Chris';
 
-    let myAge = '18';
+    let myAge = '42';
 
-    // 不要编写此行以下的代码！
+    // 不要修改下面的代码！
 
     const section = document.querySelector('section');
 
-    let para1 = document.createElement('p');
-    let para2 = document.createElement('p');
+    const para1 = document.createElement('p');
+    const para2 = document.createElement('p');
     para1.textContent = myName;
-    para2.textContent = `20年后我 ${myAge + 20} 岁。`;
+    para2.textContent = `20 年后，我将是 ${myAge + 20} 岁`;
     section.appendChild(para1);
     section.appendChild(para2);
   </script>

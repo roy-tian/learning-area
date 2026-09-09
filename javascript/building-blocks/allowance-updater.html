@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <title>零花钱更新器示例</title>
+    <meta name="viewport" content="width=device-width">
+    <title>零花钱更新示例</title>
   </head>
   <body>
-    <label for="shopping-check">酱油买回来了吗？</label>
+    <label for="shopping-check">购物完成了吗？</label>
     <input type="checkbox" id="shopping-check">
 
     <p></p>
@@ -14,20 +15,22 @@
       const checkBox = document.querySelector('input');
       const para = document.querySelector('p');
       let shoppingDone = false;
-      let childsAllowance = 5;
 
-      checkBox.addEventListener('change', function() {
+      checkBox.addEventListener('change', () => {
         checkBox.disabled = true;
         shoppingDone = true;
         updateAllowance();
       });
 
       function updateAllowance() {
-        if(shoppingDone === true) {
+        let childsAllowance;
+        if (shoppingDone === true) {
           childsAllowance = 10;
+        } else {
+          childsAllowance = 5;
         }
 
-        para.textContent = '本周小孩儿挣了 ' + childsAllowance + ' 元零花钱。';
+        para.textContent = `孩子本周赚了 \$${childsAllowance}。`;
       }
 
       updateAllowance();

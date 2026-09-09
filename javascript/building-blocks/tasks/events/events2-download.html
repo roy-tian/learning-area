@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8"/>
-    <title>Events: Task 2</title>
+    <title>事件：第 2 题</title>
     <style>
       p {
         color: purple;
@@ -25,15 +25,13 @@
     <section class="preview">
     </section>
 
-    <canvas width="480" height="320">
+    <canvas width="480" height="320" tabindex="0">
 
     </canvas>
 
-
-  </body>
   <script>
-    let canvas = document.querySelector('canvas');
-    let ctx = canvas.getContext('2d');
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
 
     function drawCircle(x, y, size) {
       ctx.fillStyle = 'white';
@@ -51,8 +49,9 @@
 
     drawCircle(x, y, size);
 
-    // Add your code here
+    // 在此处添加代码
 
   </script>
+  </body>
 
 </html>

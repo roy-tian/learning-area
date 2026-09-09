@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>自定义 Promise 示例</title>
+  </head>
+  <body>
+    <script>
+      // 定义自定义 Promise 函数
+
+      let timeoutPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('成功！');
+        }, 2000);
+      });
+
+      timeoutPromise
+      .then(message => {
+         alert(message);
+      })
+    </script>
+  </body>
+</html>
