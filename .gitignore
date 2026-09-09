@@ -12,3 +12,4 @@ Desktop.ini
 node_modules/
 __pycache__/
 *.py[cod]
+.mypy_cache/
